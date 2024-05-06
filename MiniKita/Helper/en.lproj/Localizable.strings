@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  MiniKita
+
+  Created by Anjar Harimurti on 07/05/24.
+  
+*/
+
+"action_connect_health_kit" = "Connect to health";
+
+"title_welcome" = "Welcome!";
+
+
+"caption_access_health_kit" = "NamaApps needs to access to your Health data to build your meal plan challenge to achieve your healthy lifestyle goals";
+"caption_data_concern" = "Your health data will never leave this device.\nNamaApps is not a substitute for professional nutricionist advice. Always consult your doctor or nutricionist first.";
