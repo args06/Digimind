@@ -14,6 +14,8 @@
 		A4832A612BE9823C00C726AE /* OnBoardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4832A602BE9823C00C726AE /* OnBoardPage.swift */; };
 		A4832A6C2BE986A400C726AE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4832A6A2BE986A400C726AE /* Localizable.strings */; };
 		A4832A6E2BE9917F00C726AE /* LongButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4832A6D2BE9917F00C726AE /* LongButton.swift */; };
+		A4832A702BE99F6400C726AE /* Goals.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4832A6F2BE99F6400C726AE /* Goals.swift */; };
+		A4832A732BE9A44D00C726AE /* Allergies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4832A722BE9A44D00C726AE /* Allergies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		A4832A602BE9823C00C726AE /* OnBoardPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardPage.swift; sourceTree = "<group>"; };
 		A4832A6B2BE986A400C726AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A4832A6D2BE9917F00C726AE /* LongButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongButton.swift; sourceTree = "<group>"; };
+		A4832A6F2BE99F6400C726AE /* Goals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goals.swift; sourceTree = "<group>"; };
+		A4832A722BE9A44D00C726AE /* Allergies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allergies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +100,7 @@
 		A4832A5D2BE981FA00C726AE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A4832A602BE9823C00C726AE /* OnBoardPage.swift */,
+				A4832A712BE9A40900C726AE /* OnBoard */,
 				A4832A6D2BE9917F00C726AE /* LongButton.swift */,
 			);
 			path = View;
@@ -114,6 +118,16 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A4832A712BE9A40900C726AE /* OnBoard */ = {
+			isa = PBXGroup;
+			children = (
+				A4832A602BE9823C00C726AE /* OnBoardPage.swift */,
+				A4832A6F2BE99F6400C726AE /* Goals.swift */,
+				A4832A722BE9A44D00C726AE /* Allergies.swift */,
+			);
+			path = OnBoard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,7 +201,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4832A702BE99F6400C726AE /* Goals.swift in Sources */,
 				A4832A502BE4DC7300C726AE /* ContentView.swift in Sources */,
+				A4832A732BE9A44D00C726AE /* Allergies.swift in Sources */,
 				A4832A4E2BE4DC7300C726AE /* MiniKitaApp.swift in Sources */,
 				A4832A612BE9823C00C726AE /* OnBoardPage.swift in Sources */,
 				A4832A6E2BE9917F00C726AE /* LongButton.swift in Sources */,
