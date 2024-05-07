@@ -16,6 +16,8 @@
 		A4832A6E2BE9917F00C726AE /* LongButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4832A6D2BE9917F00C726AE /* LongButton.swift */; };
 		A4832A702BE99F6400C726AE /* Goals.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4832A6F2BE99F6400C726AE /* Goals.swift */; };
 		A4832A732BE9A44D00C726AE /* Allergies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4832A722BE9A44D00C726AE /* Allergies.swift */; };
+		A4832A782BE9E40E00C726AE /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4832A772BE9E40E00C726AE /* Constant.swift */; };
+		A4832A7A2BE9E48500C726AE /* ViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4832A792BE9E48500C726AE /* ViewExtention.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		A4832A6D2BE9917F00C726AE /* LongButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongButton.swift; sourceTree = "<group>"; };
 		A4832A6F2BE99F6400C726AE /* Goals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goals.swift; sourceTree = "<group>"; };
 		A4832A722BE9A44D00C726AE /* Allergies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allergies.swift; sourceTree = "<group>"; };
+		A4832A772BE9E40E00C726AE /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		A4832A792BE9E48500C726AE /* ViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtention.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				A4832A6A2BE986A400C726AE /* Localizable.strings */,
+				A4832A772BE9E40E00C726AE /* Constant.swift */,
+				A4832A792BE9E48500C726AE /* ViewExtention.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -100,8 +106,8 @@
 		A4832A5D2BE981FA00C726AE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A4832A7B2BE9E55400C726AE /* Helper */,
 				A4832A712BE9A40900C726AE /* OnBoard */,
-				A4832A6D2BE9917F00C726AE /* LongButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -128,6 +134,14 @@
 				A4832A722BE9A44D00C726AE /* Allergies.swift */,
 			);
 			path = OnBoard;
+			sourceTree = "<group>";
+		};
+		A4832A7B2BE9E55400C726AE /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A4832A6D2BE9917F00C726AE /* LongButton.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,8 +215,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4832A782BE9E40E00C726AE /* Constant.swift in Sources */,
 				A4832A702BE99F6400C726AE /* Goals.swift in Sources */,
 				A4832A502BE4DC7300C726AE /* ContentView.swift in Sources */,
+				A4832A7A2BE9E48500C726AE /* ViewExtention.swift in Sources */,
 				A4832A732BE9A44D00C726AE /* Allergies.swift in Sources */,
 				A4832A4E2BE4DC7300C726AE /* MiniKitaApp.swift in Sources */,
 				A4832A612BE9823C00C726AE /* OnBoardPage.swift in Sources */,

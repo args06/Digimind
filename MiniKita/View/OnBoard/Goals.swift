@@ -41,15 +41,16 @@ struct Goals: View {
         .padding()
         .safeAreaInset(edge: .bottom) {
             NavigationLink {
-                Goals()
+                Allergies()
             } label: {
                 Text("action_next")
+                    .foregroundStyle(.white)
                     .font(.headline)
-                    .frame(maxWidth: .infinity)
+                    .hSpacing()
                     .frame(height: 50)
+                    .background(.gray, in: .rect(cornerRadius: 12))
             }
-            .buttonStyle(.borderedProminent)
-            .padding(16)
+            .padding(.horizontal, 16)
         }
     }
 }

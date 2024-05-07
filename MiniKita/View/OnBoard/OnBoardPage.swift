@@ -33,7 +33,7 @@ struct OnBoardPage: View {
                         UnevenRoundedRectangle(cornerRadii: .init(topLeading: 16, topTrailing: 16))
                     )
                     .frame(width: 235, height: 368)
-                    .frame(maxWidth: .infinity, alignment: .center)
+                    .hSpacing()
                     .padding(.top, 52)
                 
                 Text("caption_data_concern")
@@ -44,18 +44,19 @@ struct OnBoardPage: View {
                 
             }
             .padding(16)
-            .frame(maxHeight: .infinity)
+            .vSpacing()
             .safeAreaInset(edge: .bottom) {
                 NavigationLink {
                     Goals()
                 } label: {
                     Text("action_connect_health_kit")
+                        .foregroundStyle(.white)
                         .font(.headline)
-                        .frame(maxWidth: .infinity)
+                        .hSpacing()
                         .frame(height: 50)
+                        .background(Color("Primary"), in: .rect(cornerRadius: 12))
                 }
-                .buttonStyle(.borderedProminent)
-                .padding(16)
+                .padding(.horizontal, 16)
             }
         }
     }
