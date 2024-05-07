@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Allergies: View {
+struct AllergiesPage: View {
     var body: some View {
         ScrollView {
             VStack {
@@ -37,7 +37,7 @@ struct Allergies: View {
                     .font(.headline)
                     .hSpacing()
                     .frame(height: 50)
-                    .background(Color("Primary"), in: .rect(cornerRadius: 12))
+                    .background(Color("IguanaGreen"), in: .rect(cornerRadius: 12))
             }
             .padding(.horizontal, 16)
         }
@@ -46,6 +46,6 @@ struct Allergies: View {
 
 #Preview {
     NavigationStack {
-        Allergies()
+        AllergiesPage()
     }
 }

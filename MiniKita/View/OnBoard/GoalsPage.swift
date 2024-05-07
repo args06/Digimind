@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Goals: View {
+struct GoalsPage: View {
     
     var body: some View {
         VStack {
@@ -41,7 +41,7 @@ struct Goals: View {
         .padding()
         .safeAreaInset(edge: .bottom) {
             NavigationLink {
-                Allergies()
+                AllergiesPage()
             } label: {
                 Text("action_next")
                     .foregroundStyle(.white)
@@ -57,6 +57,6 @@ struct Goals: View {
 
 #Preview {
     NavigationStack {
-        Goals()
+        GoalsPage()
     }
 }

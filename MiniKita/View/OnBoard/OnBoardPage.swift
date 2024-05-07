@@ -47,14 +47,14 @@ struct OnBoardPage: View {
             .vSpacing()
             .safeAreaInset(edge: .bottom) {
                 NavigationLink {
-                    Goals()
+                    GoalsPage()
                 } label: {
                     Text("action_connect_health_kit")
                         .foregroundStyle(.white)
                         .font(.headline)
                         .hSpacing()
                         .frame(height: 50)
-                        .background(Color("Primary"), in: .rect(cornerRadius: 12))
+                        .background(Color("IguanaGreen"), in: .rect(cornerRadius: 12))
                 }
                 .padding(.horizontal, 16)
             }

@@ -10,7 +10,7 @@ import SwiftUI
 struct LongButton: View {
     
     var label: String
-    var buttonColor: Color = Color("Primary")
+    var buttonColor: Color = Color("IguanaGreen")
     var textColor: Color = .white
     var action: () -> Void
     
