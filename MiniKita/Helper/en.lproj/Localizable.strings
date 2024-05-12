@@ -8,6 +8,7 @@
 
 "action_connect_health_kit" = "Connect to health";
 "action_gain_weight" = "Gain Weight";
+"action_generate" = "Generate";
 "action_lose_weight" = "Loss Weight";
 "action_maintain_weight" = "Maintaining Weight";
 "action_meal_plan" = "Plan Weekly Meals";
@@ -19,9 +20,12 @@
 
 "desc_access_health_kit" = "NgeMeal needs to access to your Health data to build your meal plan challenge to achieve your healthy lifestyle goals";
 "desc_ask_allergies" = "Any allergies?";
+"desc_ask_dislikes" = "Any dislikes?";
 "desc_ask_goal" = "What goals do you want to achieve?";
 
 
+"title_allergies" = "Allergies";
+"title_dislikes" = "Dislikes";
 "title_welcome" = "Welcome!";
 
 

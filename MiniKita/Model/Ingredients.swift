@@ -8,7 +8,8 @@
 import Foundation
 import SwiftUI
 
-enum Goal: String, CaseIterable {
-    case income = "Income"
-    case expense = "Expense"
+struct Ingredients: Identifiable,Hashable {
+    var id = UUID().uuidString
+    var name: String
 }
+
