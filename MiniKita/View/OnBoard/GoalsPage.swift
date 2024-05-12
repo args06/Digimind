@@ -48,8 +48,9 @@ struct GoalsPage: View {
                     .font(.headline)
                     .hSpacing()
                     .frame(height: 50)
-                    .background(.gray, in: .rect(cornerRadius: 12))
+                    .background(.blue, in: .rect(cornerRadius: 12))
             }
+            .buttonStyle(.plain)
             .padding(.horizontal, 16)
         }
     }

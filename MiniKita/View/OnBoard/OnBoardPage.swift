@@ -54,8 +54,9 @@ struct OnBoardPage: View {
                         .font(.headline)
                         .hSpacing()
                         .frame(height: 50)
-                        .background(Color("IguanaGreen"), in: .rect(cornerRadius: 12))
+                        .background(.blue, in: .rect(cornerRadius: 12))
                 }
+                .buttonStyle(.plain)
                 .padding(.horizontal, 16)
             }
         }

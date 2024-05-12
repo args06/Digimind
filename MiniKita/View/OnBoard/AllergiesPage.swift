@@ -39,6 +39,7 @@ struct AllergiesPage: View {
                     .frame(height: 50)
                     .background(Color("IguanaGreen"), in: .rect(cornerRadius: 12))
             }
+            .buttonStyle(.plain)
             .padding(.horizontal, 16)
         }
     }
