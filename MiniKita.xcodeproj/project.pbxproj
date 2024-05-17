@@ -32,6 +32,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6268EA912BF73F89001B5A99 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		6268EA922BF7411F001B5A99 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6268EA932BF74129001B5A99 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A4832A412BE4DC7300C726AE = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +72,9 @@
 		A4832A4C2BE4DC7300C726AE /* MiniKita */ = {
 			isa = PBXGroup;
 			children = (
+				6268EA932BF74129001B5A99 /* View */,
+				6268EA922BF7411F001B5A99 /* Model */,
+				6268EA912BF73F89001B5A99 /* Helper */,
 				A4832A4D2BE4DC7300C726AE /* MiniKitaApp.swift */,
 				A4832A4F2BE4DC7300C726AE /* ContentView.swift */,
 				A4832A512BE4DC7400C726AE /* Assets.xcassets */,
