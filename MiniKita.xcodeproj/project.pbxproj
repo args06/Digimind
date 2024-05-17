@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6268EA972BF746FC001B5A99 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6268EA952BF746FC001B5A99 /* Localizable.strings */; };
 		A4832A4E2BE4DC7300C726AE /* MiniKitaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4832A4D2BE4DC7300C726AE /* MiniKitaApp.swift */; };
 		A4832A502BE4DC7300C726AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4832A4F2BE4DC7300C726AE /* ContentView.swift */; };
 		A4832A522BE4DC7400C726AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4832A512BE4DC7400C726AE /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6268EA962BF746FC001B5A99 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A4832A4A2BE4DC7300C726AE /* MiniKita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniKita.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4832A4D2BE4DC7300C726AE /* MiniKitaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniKitaApp.swift; sourceTree = "<group>"; };
 		A4832A4F2BE4DC7300C726AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,6 +37,7 @@
 		6268EA912BF73F89001B5A99 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				6268EA952BF746FC001B5A99 /* Localizable.strings */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -49,8 +52,16 @@
 		6268EA932BF74129001B5A99 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6268EA942BF746D1001B5A99 /* Reusable */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		6268EA942BF746D1001B5A99 /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Reusable;
 			sourceTree = "<group>";
 		};
 		A4832A412BE4DC7300C726AE = {
@@ -150,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4832A552BE4DC7400C726AE /* Preview Assets.xcassets in Resources */,
+				6268EA972BF746FC001B5A99 /* Localizable.strings in Resources */,
 				A4832A522BE4DC7400C726AE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,6 +179,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6268EA952BF746FC001B5A99 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6268EA962BF746FC001B5A99 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A4832A562BE4DC7400C726AE /* Debug */ = {
