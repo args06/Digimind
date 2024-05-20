@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		586E75F32BFB5A15000C9295 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586E75F22BFB5A15000C9295 /* SplashScreen.swift */; };
 		6268EA972BF746FC001B5A99 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6268EA952BF746FC001B5A99 /* Localizable.strings */; };
 		A4832A4E2BE4DC7300C726AE /* MiniKitaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4832A4D2BE4DC7300C726AE /* MiniKitaApp.swift */; };
 		A4832A502BE4DC7300C726AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4832A4F2BE4DC7300C726AE /* ContentView.swift */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		586E75F22BFB5A15000C9295 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		6268EA962BF746FC001B5A99 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A4832A4A2BE4DC7300C726AE /* MiniKita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniKita.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4832A4D2BE4DC7300C726AE /* MiniKitaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniKitaApp.swift; sourceTree = "<group>"; };
@@ -34,6 +36,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		586E75F12BFB5A09000C9295 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				586E75F22BFB5A15000C9295 /* SplashScreen.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 		6268EA912BF73F89001B5A99 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -52,6 +62,7 @@
 		6268EA932BF74129001B5A99 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				586E75F12BFB5A09000C9295 /* Splash */,
 				6268EA942BF746D1001B5A99 /* Reusable */,
 			);
 			path = View;
@@ -173,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				586E75F32BFB5A15000C9295 /* SplashScreen.swift in Sources */,
 				A4832A502BE4DC7300C726AE /* ContentView.swift in Sources */,
 				A4832A4E2BE4DC7300C726AE /* MiniKitaApp.swift in Sources */,
 			);
