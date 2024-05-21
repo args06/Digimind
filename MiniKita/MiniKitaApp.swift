@@ -12,6 +12,7 @@ struct MiniKitaApp: App {
     var body: some Scene {
         WindowGroup {
             SplashScreen()
+                .preferredColorScheme(.light)
         }
     }
 }
