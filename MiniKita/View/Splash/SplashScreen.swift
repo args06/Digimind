@@ -14,7 +14,7 @@ struct SplashScreen: View {
     var body: some View {
         VStack {
             if isActive {
-                ContentView()
+                Dashboard()
             } else {
                 VStack {
                     Image("splash")
