@@ -8,34 +8,36 @@
 import SwiftUI
 
 struct ProgressBar: View {
+    let progress: CGFloat
+    var height: CGFloat
     
-    var width: CGFloat = UIScreen.main.bounds.size.width
-    var height: CGFloat = 20
-    var percent: CGFloat
-    
-    var backgroundColor: Color = .gray
-    var foregroundColor: Color = .rajah
+    var backgroundColor: Color = .phillipineGray
+    var foregroundColor: Color = .carrotOrange
     
     var body: some View {
-        
-        let multliplier = width / 100
-        
-        ZStack(alignment: .leading) {
-            RoundedRectangle(
-                cornerRadius: height, style: .continuous
-            )
-            .frame(height: height)
-            .foregroundColor(backgroundColor)
-            
-            RoundedRectangle(
-                cornerRadius: height, style: .continuous
-            )
-            .frame(width: percent * multliplier ,height: height)
-            .foregroundColor(foregroundColor)
+        VStack {
+            GeometryReader { geometry in
+                ZStack(alignment: .leading) {
+                    Rectangle()
+                        .frame(width: geometry.size.width, height: height)
+                        .opacity(0.3)
+                        .foregroundColor(backgroundColor)
+                        .cornerRadius(12)
+                    
+                    Rectangle()
+                        .frame(
+                            width: min(progress * geometry.size.width,
+                                       geometry.size.width),
+                            height: height
+                        )
+                        .foregroundColor(foregroundColor)
+                        .cornerRadius(12)
+                }
+            }
         }
     }
 }
 
 #Preview {
-    ProgressBar(percent: 72)
+    ProgressBar(progress: 0.72, height: 4)
 }

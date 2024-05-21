@@ -21,4 +21,10 @@ extension View {
         self
             .frame(maxHeight: .infinity, alignment: alignment)
     }
+    
+    @ViewBuilder
+    func allSpacing(_ alignment: Alignment = .center) -> some View {
+        self
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: alignment)
+    }
 }

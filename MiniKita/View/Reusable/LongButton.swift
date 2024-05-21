@@ -23,6 +23,9 @@ struct LongButton: View {
                 .frame(height: 50)
                 .background(buttonColor, in: .rect(cornerRadius: 12))
         })
+        .cornerRadius(12)
+        .shadow(color: .platinum, radius: 5, y: 3)
+        
     }
 }
 
