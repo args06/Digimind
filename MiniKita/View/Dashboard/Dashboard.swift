@@ -20,7 +20,7 @@ struct Dashboard: View {
     @State var carbProgress: CGFloat = 0.6
     @State var fiberProgress: CGFloat = 0.6
     
-    @State var nutritionCondition: String = "Other"
+    @State var calorieCondition: CalorieCondition = .under
     
     @State var moveToProteinPage: Bool = false
     @State var moveToFatPage: Bool = false
@@ -37,7 +37,7 @@ struct Dashboard: View {
                         .resizable()
                         .renderingMode(.template)
                         .foregroundStyle(
-                            backgroundColorTop(condition: nutritionCondition)
+                            backgroundColorTop(condition: calorieCondition)
                         )
                         .scaledToFit()
                         .frame(width: proxy.size.width)
@@ -201,7 +201,7 @@ struct Dashboard: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             .background(
-                backgroundColorBottom(condition: nutritionCondition)
+                backgroundColorBottom(condition: calorieCondition)
             )
             .onAppear {
                 calorieProgress = CGFloat(consumedCalorie) / CGFloat(totalCalorie)
@@ -212,11 +212,11 @@ struct Dashboard: View {
     
     private func checkCalorieCondition() {
         if consumedCalorie == totalCalorie {
-            nutritionCondition = "Full"
+            calorieCondition = .full
         } else if consumedCalorie > totalCalorie {
-            nutritionCondition = "Over"
+            calorieCondition = .over
         } else {
-            nutritionCondition = "Other"
+            calorieCondition = .under
         }
     }
 }

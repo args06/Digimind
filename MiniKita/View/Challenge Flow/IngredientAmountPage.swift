@@ -47,7 +47,7 @@ struct IngredientAmountPage: View {
                             FoodUnitsPicker(
                                 selection: $viewModel.selection,
                                 values: Array(1..<350),
-                                units: FoodUnits.Unit.allCases
+                                units: Unit.allCases
                             )
                         }
                     }
@@ -96,7 +96,7 @@ struct IngredientAmountPage: View {
 
 extension IngredientAmountPage {
     final class ViewModel: ObservableObject {
-        @Published var selection = FoodUnits(value: 1, unit: .grams)
+        @Published var selection = FoodUnits(value: 1, unit: .gram)
         @Published var isPickerVisible = false
     }
 }

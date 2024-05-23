@@ -10,7 +10,7 @@ import SwiftUI
 struct FoodUnitsPicker: UIViewRepresentable {
     let selection: Binding<FoodUnits>
     let values: [Int]
-    let units: [FoodUnits.Unit]
+    let units: [Unit]
     
     func makeUIView(context: Context) -> UIPickerView {
         let pickerView = UIPickerView(frame: .zero)
@@ -29,9 +29,9 @@ struct FoodUnitsPicker: UIViewRepresentable {
     final class Coordinator: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
         let selection: Binding<FoodUnits>
         let values: [Int]
-        let units: [FoodUnits.Unit]
+        let units: [Unit]
         
-        init(selection: Binding<FoodUnits>, values: [Int], units: [FoodUnits.Unit]) {
+        init(selection: Binding<FoodUnits>, values: [Int], units: [Unit]) {
             self.selection = selection
             self.values = values
             self.units = units
@@ -62,25 +62,18 @@ struct FoodUnitsPicker: UIViewRepresentable {
     }
 }
 
-struct FoodUnits {
-    let value: Int
-    let unit: Unit
-    
-    enum Unit: String, CaseIterable {
-        case grams, piece, tablespoon, teaspoon
-    }
-}
-
 struct DatePickerView_Previews: PreviewProvider {
     static var selection = Binding(
         get: {
-            FoodUnits(value: 1, unit: .grams)
+            FoodUnits(value: 1, unit: .gram)
         },
         set: { value in
             print(value)
         })
     
     static var previews: some View {
-        FoodUnitsPicker(selection: selection, values: Array(1..<100), units: FoodUnits.Unit.allCases)
+        FoodUnitsPicker(selection: selection, values: Array(1..<100), units: Unit.allCases)
     }
 }
+
+
