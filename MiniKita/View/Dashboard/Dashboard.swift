@@ -126,7 +126,7 @@ struct Dashboard: View {
                             Image("monster_complete_gray")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                        } else if calorieCondition == .full {
+                        } else if calorieCondition == .over {
                             Image("monster_full_gray")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
@@ -141,7 +141,7 @@ struct Dashboard: View {
                                 Image("monster_complete")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                            } else if calorieCondition == .full {
+                            } else if calorieCondition == .over {
                                 Image("monster_full")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
