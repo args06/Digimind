@@ -56,7 +56,7 @@ struct SplashScreen: View {
             birthDate = Date.from(year: 2001, month: 06, day: 26)
             
             age = calculateAge(birthDate: birthDate)
-            weight = 70
+            weight = 51
             height = 168
             gender = .male
             activityLevel = defineActivityLevel(often: 3, minute: 2)

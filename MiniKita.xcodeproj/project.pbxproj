@@ -40,6 +40,9 @@
 		62B8DE052C003C0B00FF3DFB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B8DE042C003C0B00FF3DFB /* User.swift */; };
 		62B8DE092C003DEA00FF3DFB /* UserDefaultKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B8DE082C003DEA00FF3DFB /* UserDefaultKey.swift */; };
 		62B8DE0B2C00457F00FF3DFB /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B8DE0A2C00457F00FF3DFB /* DateExtension.swift */; };
+		62FE04F52C026940009752BD /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FE04F42C026940009752BD /* ProfilePage.swift */; };
+		62FE04F72C0269B2009752BD /* InformationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FE04F62C0269B2009752BD /* InformationType.swift */; };
+		62FE04F92C0269D5009752BD /* DetailInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FE04F82C0269D5009752BD /* DetailInformation.swift */; };
 		A4832A4E2BE4DC7300C726AE /* MiniKitaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4832A4D2BE4DC7300C726AE /* MiniKitaApp.swift */; };
 		A4832A502BE4DC7300C726AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4832A4F2BE4DC7300C726AE /* ContentView.swift */; };
 		A4832A522BE4DC7400C726AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4832A512BE4DC7400C726AE /* Assets.xcassets */; };
@@ -80,6 +83,9 @@
 		62B8DE042C003C0B00FF3DFB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		62B8DE082C003DEA00FF3DFB /* UserDefaultKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKey.swift; sourceTree = "<group>"; };
 		62B8DE0A2C00457F00FF3DFB /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		62FE04F42C026940009752BD /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
+		62FE04F62C0269B2009752BD /* InformationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationType.swift; sourceTree = "<group>"; };
+		62FE04F82C0269D5009752BD /* DetailInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInformation.swift; sourceTree = "<group>"; };
 		A4832A4A2BE4DC7300C726AE /* MiniKita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniKita.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4832A4D2BE4DC7300C726AE /* MiniKitaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniKitaApp.swift; sourceTree = "<group>"; };
 		A4832A4F2BE4DC7300C726AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -121,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				6210D37D2BFB95E4007C6F99 /* Dashboard.swift */,
+				62FE04F42C026940009752BD /* ProfilePage.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -133,6 +140,7 @@
 				6210D3AA2BFDA63C007C6F99 /* NutritionType.swift */,
 				6210D3AC2BFDA6DF007C6F99 /* Gender.swift */,
 				6210D3AE2BFDA70A007C6F99 /* ActivityLevel.swift */,
+				62FE04F62C0269B2009752BD /* InformationType.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -202,6 +210,7 @@
 				586E75F72BFB8D18000C9295 /* LongButton.swift */,
 				6210D3A42BFCBCB3007C6F99 /* SpeechBubble.swift */,
 				6210D3A62BFCE850007C6F99 /* SpeechBubble2.swift */,
+				62FE04F82C0269D5009752BD /* DetailInformation.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -344,6 +353,7 @@
 				62B8DDFC2BFEEB4800FF3DFB /* FoodUnit.swift in Sources */,
 				586E75F32BFB5A15000C9295 /* SplashScreen.swift in Sources */,
 				6210D3AD2BFDA6DF007C6F99 /* Gender.swift in Sources */,
+				62FE04F52C026940009752BD /* ProfilePage.swift in Sources */,
 				A4832A502BE4DC7300C726AE /* ContentView.swift in Sources */,
 				6210D3A92BFDA570007C6F99 /* Unit.swift in Sources */,
 				6210D3892BFC6789007C6F99 /* CalorieCondition.swift in Sources */,
@@ -362,11 +372,13 @@
 				6210D3AF2BFDA70A007C6F99 /* ActivityLevel.swift in Sources */,
 				6210D3842BFBBCCE007C6F99 /* ProgressBar.swift in Sources */,
 				6210D3BD2BFDD260007C6F99 /* Nutrition.swift in Sources */,
+				62FE04F72C0269B2009752BD /* InformationType.swift in Sources */,
 				62B8DE0B2C00457F00FF3DFB /* DateExtension.swift in Sources */,
 				62B8DE032BFEED7900FF3DFB /* IntakeViewModel.swift in Sources */,
 				6210D3C12BFDD34E007C6F99 /* NutritionInfo.swift in Sources */,
 				586E76002BFBB2A6000C9295 /* IngredientAmountPage.swift in Sources */,
 				6210D3BB2BFDD22A007C6F99 /* IngredientPart.swift in Sources */,
+				62FE04F92C0269D5009752BD /* DetailInformation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
