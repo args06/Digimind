@@ -51,6 +51,8 @@ struct Dashboard: View {
     
     @StateObject var intakeViewModel = IntakeViewModel()
     
+    @State var isShowInformationPage = false
+    
     var day = CGFloat(6)
     
     var body: some View {
@@ -177,7 +179,7 @@ struct Dashboard: View {
                     Spacer()
                     
                     Button {
-                        print(ingredients[0].ingredientPart[0].partName)
+                        isShowInformationPage.toggle()
                     } label: {
                         Image(systemName: "info.circle")
                             .resizable()
@@ -193,6 +195,24 @@ struct Dashboard: View {
                     .hSpacing(.bottomTrailing)
                     .padding(.trailing, 16)
                     .padding(.bottom, 8)
+                    
+//                    NavigationLink {
+//                        InformationPage()
+//                    } label: {
+//                        Image(systemName: "info.circle")
+//                            .resizable()
+//                            .frame(width: 22, height: 22)
+//                    }
+//                    .foregroundStyle(.blue)
+//                    .frame(width: 34, height: 34)
+//                    .padding(6)
+//                    .background(
+//                        .antiFlashWhite,
+//                        in: .rect(cornerRadius: 24)
+//                    )
+//                    .hSpacing(.bottomTrailing)
+//                    .padding(.trailing, 16)
+//                    .padding(.bottom, 8)
                     
                     HStack {
                         NutritionButton(
@@ -295,6 +315,9 @@ struct Dashboard: View {
             calorieProgress = CGFloat(intakeViewModel.consumedDailyCalorie) / CGFloat(totalCalorie)
             
             checkCalorieCondition()
+        }
+        .sheet(isPresented: $isShowInformationPage) {
+            InformationPage()
         }
     }
     

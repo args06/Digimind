@@ -43,6 +43,7 @@
 		62FE04F52C026940009752BD /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FE04F42C026940009752BD /* ProfilePage.swift */; };
 		62FE04F72C0269B2009752BD /* InformationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FE04F62C0269B2009752BD /* InformationType.swift */; };
 		62FE04F92C0269D5009752BD /* DetailInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FE04F82C0269D5009752BD /* DetailInformation.swift */; };
+		62FE04FB2C027708009752BD /* InformationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FE04FA2C027708009752BD /* InformationPage.swift */; };
 		A4832A4E2BE4DC7300C726AE /* MiniKitaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4832A4D2BE4DC7300C726AE /* MiniKitaApp.swift */; };
 		A4832A502BE4DC7300C726AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4832A4F2BE4DC7300C726AE /* ContentView.swift */; };
 		A4832A522BE4DC7400C726AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4832A512BE4DC7400C726AE /* Assets.xcassets */; };
@@ -86,6 +87,7 @@
 		62FE04F42C026940009752BD /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
 		62FE04F62C0269B2009752BD /* InformationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationType.swift; sourceTree = "<group>"; };
 		62FE04F82C0269D5009752BD /* DetailInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInformation.swift; sourceTree = "<group>"; };
+		62FE04FA2C027708009752BD /* InformationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationPage.swift; sourceTree = "<group>"; };
 		A4832A4A2BE4DC7300C726AE /* MiniKita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniKita.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4832A4D2BE4DC7300C726AE /* MiniKitaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniKitaApp.swift; sourceTree = "<group>"; };
 		A4832A4F2BE4DC7300C726AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			children = (
 				6210D37D2BFB95E4007C6F99 /* Dashboard.swift */,
 				62FE04F42C026940009752BD /* ProfilePage.swift */,
+				62FE04FA2C027708009752BD /* InformationPage.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				6210D3C32BFDD3AB007C6F99 /* ModelData.swift in Sources */,
 				62B8DE092C003DEA00FF3DFB /* UserDefaultKey.swift in Sources */,
 				586E75F82BFB8D18000C9295 /* LongButton.swift in Sources */,
+				62FE04FB2C027708009752BD /* InformationPage.swift in Sources */,
 				586E75FC2BFB962C000C9295 /* ProcessingPage.swift in Sources */,
 				586E75F62BFB84DA000C9295 /* IngredientsPage.swift in Sources */,
 				586E75FE2BFB9BC9000C9295 /* IngredientPartPage.swift in Sources */,
