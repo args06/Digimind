@@ -44,6 +44,11 @@
 		62FE04F72C0269B2009752BD /* InformationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FE04F62C0269B2009752BD /* InformationType.swift */; };
 		62FE04F92C0269D5009752BD /* DetailInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FE04F82C0269D5009752BD /* DetailInformation.swift */; };
 		62FE04FB2C027708009752BD /* InformationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FE04FA2C027708009752BD /* InformationPage.swift */; };
+		62FE04FD2C027EFE009752BD /* RecapPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FE04FC2C027EFE009752BD /* RecapPage.swift */; };
+		62FE04FF2C027F51009752BD /* RecapBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FE04FE2C027F51009752BD /* RecapBadge.swift */; };
+		62FE05012C02822A009752BD /* RecapDetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FE05002C02822A009752BD /* RecapDetailPage.swift */; };
+		62FE05032C028517009752BD /* RecapHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FE05022C028517009752BD /* RecapHistory.swift */; };
+		62FE05052C0288A3009752BD /* HistoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FE05042C0288A3009752BD /* HistoryCard.swift */; };
 		A4832A4E2BE4DC7300C726AE /* MiniKitaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4832A4D2BE4DC7300C726AE /* MiniKitaApp.swift */; };
 		A4832A502BE4DC7300C726AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4832A4F2BE4DC7300C726AE /* ContentView.swift */; };
 		A4832A522BE4DC7400C726AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4832A512BE4DC7400C726AE /* Assets.xcassets */; };
@@ -88,6 +93,11 @@
 		62FE04F62C0269B2009752BD /* InformationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationType.swift; sourceTree = "<group>"; };
 		62FE04F82C0269D5009752BD /* DetailInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInformation.swift; sourceTree = "<group>"; };
 		62FE04FA2C027708009752BD /* InformationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationPage.swift; sourceTree = "<group>"; };
+		62FE04FC2C027EFE009752BD /* RecapPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecapPage.swift; sourceTree = "<group>"; };
+		62FE04FE2C027F51009752BD /* RecapBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecapBadge.swift; sourceTree = "<group>"; };
+		62FE05002C02822A009752BD /* RecapDetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecapDetailPage.swift; sourceTree = "<group>"; };
+		62FE05022C028517009752BD /* RecapHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecapHistory.swift; sourceTree = "<group>"; };
+		62FE05042C0288A3009752BD /* HistoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCard.swift; sourceTree = "<group>"; };
 		A4832A4A2BE4DC7300C726AE /* MiniKita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniKita.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4832A4D2BE4DC7300C726AE /* MiniKitaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniKitaApp.swift; sourceTree = "<group>"; };
 		A4832A4F2BE4DC7300C726AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -131,6 +141,8 @@
 				6210D37D2BFB95E4007C6F99 /* Dashboard.swift */,
 				62FE04F42C026940009752BD /* ProfilePage.swift */,
 				62FE04FA2C027708009752BD /* InformationPage.swift */,
+				62FE04FC2C027EFE009752BD /* RecapPage.swift */,
+				62FE05002C02822A009752BD /* RecapDetailPage.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -214,6 +226,9 @@
 				6210D3A42BFCBCB3007C6F99 /* SpeechBubble.swift */,
 				6210D3A62BFCE850007C6F99 /* SpeechBubble2.swift */,
 				62FE04F82C0269D5009752BD /* DetailInformation.swift */,
+				62FE04FE2C027F51009752BD /* RecapBadge.swift */,
+				62FE05022C028517009752BD /* RecapHistory.swift */,
+				62FE05042C0288A3009752BD /* HistoryCard.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -348,6 +363,7 @@
 			files = (
 				6210D3AB2BFDA63C007C6F99 /* NutritionType.swift in Sources */,
 				6210D3A72BFCE850007C6F99 /* SpeechBubble2.swift in Sources */,
+				62FE05052C0288A3009752BD /* HistoryCard.swift in Sources */,
 				6210D3862BFC445F007C6F99 /* NutritionButton.swift in Sources */,
 				6210D3822BFBB84D007C6F99 /* WaterWave.swift in Sources */,
 				62B8DE052C003C0B00FF3DFB /* User.swift in Sources */,
@@ -356,6 +372,7 @@
 				62B8DDFC2BFEEB4800FF3DFB /* FoodUnit.swift in Sources */,
 				586E75F32BFB5A15000C9295 /* SplashScreen.swift in Sources */,
 				6210D3AD2BFDA6DF007C6F99 /* Gender.swift in Sources */,
+				62FE04FF2C027F51009752BD /* RecapBadge.swift in Sources */,
 				62FE04F52C026940009752BD /* ProfilePage.swift in Sources */,
 				A4832A502BE4DC7300C726AE /* ContentView.swift in Sources */,
 				6210D3A92BFDA570007C6F99 /* Unit.swift in Sources */,
@@ -372,13 +389,16 @@
 				6210D3BF2BFDD30A007C6F99 /* NutritionDetail.swift in Sources */,
 				586E760C2BFBE1F0000C9295 /* FoodUnitsPicker.swift in Sources */,
 				A4832A4E2BE4DC7300C726AE /* MiniKitaApp.swift in Sources */,
+				62FE05012C02822A009752BD /* RecapDetailPage.swift in Sources */,
 				6210D3A52BFCBCB3007C6F99 /* SpeechBubble.swift in Sources */,
 				6210D3AF2BFDA70A007C6F99 /* ActivityLevel.swift in Sources */,
+				62FE04FD2C027EFE009752BD /* RecapPage.swift in Sources */,
 				6210D3842BFBBCCE007C6F99 /* ProgressBar.swift in Sources */,
 				6210D3BD2BFDD260007C6F99 /* Nutrition.swift in Sources */,
 				62FE04F72C0269B2009752BD /* InformationType.swift in Sources */,
 				62B8DE0B2C00457F00FF3DFB /* DateExtension.swift in Sources */,
 				62B8DE032BFEED7900FF3DFB /* IntakeViewModel.swift in Sources */,
+				62FE05032C028517009752BD /* RecapHistory.swift in Sources */,
 				6210D3C12BFDD34E007C6F99 /* NutritionInfo.swift in Sources */,
 				586E76002BFBB2A6000C9295 /* IngredientAmountPage.swift in Sources */,
 				6210D3BB2BFDD22A007C6F99 /* IngredientPart.swift in Sources */,

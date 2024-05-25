@@ -75,14 +75,18 @@ struct Dashboard: View {
                     
                     HStack(alignment: .center) {
                         
-                        Text("Day \(Int(day))")
-                            .foregroundStyle(.raisinBlack)
-                            .frame(width: 116)
-                            .padding(6)
-                            .background(
-                                .antiFlashWhite,
-                                in: .rect(cornerRadius: 12)
-                            )
+                        NavigationLink {
+                            RecapPage(isChallengeComplete: false)
+                        } label: {
+                            Text("Day \(Int(day))")
+                                .foregroundStyle(.raisinBlack)
+                                .frame(width: 116)
+                                .padding(6)
+                                .background(
+                                    .antiFlashWhite,
+                                    in: .rect(cornerRadius: 12)
+                                )
+                        }
                         
                         Spacer()
                         
