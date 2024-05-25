@@ -23,7 +23,23 @@
 		6210D3892BFC6789007C6F99 /* CalorieCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6210D3882BFC6789007C6F99 /* CalorieCondition.swift */; };
 		6210D3A52BFCBCB3007C6F99 /* SpeechBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6210D3A42BFCBCB3007C6F99 /* SpeechBubble.swift */; };
 		6210D3A72BFCE850007C6F99 /* SpeechBubble2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6210D3A62BFCE850007C6F99 /* SpeechBubble2.swift */; };
+		6210D3A92BFDA570007C6F99 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6210D3A82BFDA570007C6F99 /* Unit.swift */; };
+		6210D3AB2BFDA63C007C6F99 /* NutritionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6210D3AA2BFDA63C007C6F99 /* NutritionType.swift */; };
+		6210D3AD2BFDA6DF007C6F99 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6210D3AC2BFDA6DF007C6F99 /* Gender.swift */; };
+		6210D3AF2BFDA70A007C6F99 /* ActivityLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6210D3AE2BFDA70A007C6F99 /* ActivityLevel.swift */; };
+		6210D3B72BFDA972007C6F99 /* ingredientData.json in Resources */ = {isa = PBXBuildFile; fileRef = 6210D3B62BFDA972007C6F99 /* ingredientData.json */; };
+		6210D3B92BFDD1A6007C6F99 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6210D3B82BFDD1A6007C6F99 /* Ingredient.swift */; };
+		6210D3BB2BFDD22A007C6F99 /* IngredientPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6210D3BA2BFDD22A007C6F99 /* IngredientPart.swift */; };
+		6210D3BD2BFDD260007C6F99 /* Nutrition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6210D3BC2BFDD260007C6F99 /* Nutrition.swift */; };
+		6210D3BF2BFDD30A007C6F99 /* NutritionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6210D3BE2BFDD30A007C6F99 /* NutritionDetail.swift */; };
+		6210D3C12BFDD34E007C6F99 /* NutritionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6210D3C02BFDD34E007C6F99 /* NutritionInfo.swift */; };
+		6210D3C32BFDD3AB007C6F99 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6210D3C22BFDD3AB007C6F99 /* ModelData.swift */; };
 		6268EA972BF746FC001B5A99 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6268EA952BF746FC001B5A99 /* Localizable.strings */; };
+		62B8DDFC2BFEEB4800FF3DFB /* FoodUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B8DDFB2BFEEB4800FF3DFB /* FoodUnit.swift */; };
+		62B8DE032BFEED7900FF3DFB /* IntakeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B8DE022BFEED7900FF3DFB /* IntakeViewModel.swift */; };
+		62B8DE052C003C0B00FF3DFB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B8DE042C003C0B00FF3DFB /* User.swift */; };
+		62B8DE092C003DEA00FF3DFB /* UserDefaultKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B8DE082C003DEA00FF3DFB /* UserDefaultKey.swift */; };
+		62B8DE0B2C00457F00FF3DFB /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B8DE0A2C00457F00FF3DFB /* DateExtension.swift */; };
 		A4832A4E2BE4DC7300C726AE /* MiniKitaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4832A4D2BE4DC7300C726AE /* MiniKitaApp.swift */; };
 		A4832A502BE4DC7300C726AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4832A4F2BE4DC7300C726AE /* ContentView.swift */; };
 		A4832A522BE4DC7400C726AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4832A512BE4DC7400C726AE /* Assets.xcassets */; };
@@ -47,7 +63,23 @@
 		6210D3882BFC6789007C6F99 /* CalorieCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieCondition.swift; sourceTree = "<group>"; };
 		6210D3A42BFCBCB3007C6F99 /* SpeechBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechBubble.swift; sourceTree = "<group>"; };
 		6210D3A62BFCE850007C6F99 /* SpeechBubble2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechBubble2.swift; sourceTree = "<group>"; };
+		6210D3A82BFDA570007C6F99 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
+		6210D3AA2BFDA63C007C6F99 /* NutritionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionType.swift; sourceTree = "<group>"; };
+		6210D3AC2BFDA6DF007C6F99 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		6210D3AE2BFDA70A007C6F99 /* ActivityLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLevel.swift; sourceTree = "<group>"; };
+		6210D3B62BFDA972007C6F99 /* ingredientData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ingredientData.json; sourceTree = "<group>"; };
+		6210D3B82BFDD1A6007C6F99 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		6210D3BA2BFDD22A007C6F99 /* IngredientPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientPart.swift; sourceTree = "<group>"; };
+		6210D3BC2BFDD260007C6F99 /* Nutrition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrition.swift; sourceTree = "<group>"; };
+		6210D3BE2BFDD30A007C6F99 /* NutritionDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionDetail.swift; sourceTree = "<group>"; };
+		6210D3C02BFDD34E007C6F99 /* NutritionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionInfo.swift; sourceTree = "<group>"; };
+		6210D3C22BFDD3AB007C6F99 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		6268EA962BF746FC001B5A99 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		62B8DDFB2BFEEB4800FF3DFB /* FoodUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodUnit.swift; sourceTree = "<group>"; };
+		62B8DE022BFEED7900FF3DFB /* IntakeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntakeViewModel.swift; sourceTree = "<group>"; };
+		62B8DE042C003C0B00FF3DFB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		62B8DE082C003DEA00FF3DFB /* UserDefaultKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKey.swift; sourceTree = "<group>"; };
+		62B8DE0A2C00457F00FF3DFB /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		A4832A4A2BE4DC7300C726AE /* MiniKita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniKita.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4832A4D2BE4DC7300C726AE /* MiniKitaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniKitaApp.swift; sourceTree = "<group>"; };
 		A4832A4F2BE4DC7300C726AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,10 +110,9 @@
 			isa = PBXGroup;
 			children = (
 				586E75F52BFB84DA000C9295 /* IngredientsPage.swift */,
-				586E75FB2BFB962C000C9295 /* ProcessingPage.swift */,
 				586E75FD2BFB9BC9000C9295 /* IngredientPartPage.swift */,
+				586E75FB2BFB962C000C9295 /* ProcessingPage.swift */,
 				586E75FF2BFBB2A6000C9295 /* IngredientAmountPage.swift */,
-				586E760B2BFBE1F0000C9295 /* FoodUnitsPicker.swift */,
 			);
 			path = "Challenge Flow";
 			sourceTree = "<group>";
@@ -98,8 +129,34 @@
 			isa = PBXGroup;
 			children = (
 				6210D3882BFC6789007C6F99 /* CalorieCondition.swift */,
+				6210D3A82BFDA570007C6F99 /* Unit.swift */,
+				6210D3AA2BFDA63C007C6F99 /* NutritionType.swift */,
+				6210D3AC2BFDA6DF007C6F99 /* Gender.swift */,
+				6210D3AE2BFDA70A007C6F99 /* ActivityLevel.swift */,
 			);
 			path = Enum;
+			sourceTree = "<group>";
+		};
+		6210D3B02BFDA794007C6F99 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6210D3B82BFDD1A6007C6F99 /* Ingredient.swift */,
+				6210D3BA2BFDD22A007C6F99 /* IngredientPart.swift */,
+				6210D3BC2BFDD260007C6F99 /* Nutrition.swift */,
+				6210D3BE2BFDD30A007C6F99 /* NutritionDetail.swift */,
+				6210D3C02BFDD34E007C6F99 /* NutritionInfo.swift */,
+				6210D3C22BFDD3AB007C6F99 /* ModelData.swift */,
+				62B8DDFB2BFEEB4800FF3DFB /* FoodUnit.swift */,
+				62B8DE042C003C0B00FF3DFB /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6210D3B12BFDA799007C6F99 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		6268EA912BF73F89001B5A99 /* Helper */ = {
@@ -108,16 +165,20 @@
 				6268EA952BF746FC001B5A99 /* Localizable.strings */,
 				6210D37F2BFB9AFB007C6F99 /* Util.swift */,
 				586E75F92BFB8D41000C9295 /* ViewExtension.swift */,
+				62B8DE0A2C00457F00FF3DFB /* DateExtension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		6268EA922BF7411F001B5A99 /* Model */ = {
+		6268EA922BF7411F001B5A99 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				62B8DE062C003DB000FF3DFB /* UserDefault */,
+				6210D3B12BFDA799007C6F99 /* Entity */,
+				6210D3B02BFDA794007C6F99 /* Model */,
 				6210D3872BFC6778007C6F99 /* Enum */,
 			);
-			path = Model;
+			path = Data;
 			sourceTree = "<group>";
 		};
 		6268EA932BF74129001B5A99 /* View */ = {
@@ -134,6 +195,7 @@
 		6268EA942BF746D1001B5A99 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				586E760B2BFBE1F0000C9295 /* FoodUnitsPicker.swift */,
 				6210D3812BFBB84D007C6F99 /* WaterWave.swift */,
 				6210D3832BFBBCCE007C6F99 /* ProgressBar.swift */,
 				6210D3852BFC445F007C6F99 /* NutritionButton.swift */,
@@ -142,6 +204,22 @@
 				6210D3A62BFCE850007C6F99 /* SpeechBubble2.swift */,
 			);
 			path = Reusable;
+			sourceTree = "<group>";
+		};
+		62B8DE002BFEED6000FF3DFB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				62B8DE022BFEED7900FF3DFB /* IntakeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		62B8DE062C003DB000FF3DFB /* UserDefault */ = {
+			isa = PBXGroup;
+			children = (
+				62B8DE082C003DEA00FF3DFB /* UserDefaultKey.swift */,
+			);
+			path = UserDefault;
 			sourceTree = "<group>";
 		};
 		A4832A412BE4DC7300C726AE = {
@@ -163,10 +241,12 @@
 		A4832A4C2BE4DC7300C726AE /* MiniKita */ = {
 			isa = PBXGroup;
 			children = (
-				6268EA932BF74129001B5A99 /* View */,
-				6268EA922BF7411F001B5A99 /* Model */,
+				6268EA922BF7411F001B5A99 /* Data */,
 				6268EA912BF73F89001B5A99 /* Helper */,
+				6268EA932BF74129001B5A99 /* View */,
+				62B8DE002BFEED6000FF3DFB /* ViewModel */,
 				A4832A4D2BE4DC7300C726AE /* MiniKitaApp.swift */,
+				6210D3B62BFDA972007C6F99 /* ingredientData.json */,
 				A4832A4F2BE4DC7300C726AE /* ContentView.swift */,
 				A4832A512BE4DC7400C726AE /* Assets.xcassets */,
 				A4832A532BE4DC7400C726AE /* Preview Content */,
@@ -241,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4832A552BE4DC7400C726AE /* Preview Assets.xcassets in Resources */,
+				6210D3B72BFDA972007C6F99 /* ingredientData.json in Resources */,
 				6268EA972BF746FC001B5A99 /* Localizable.strings in Resources */,
 				A4832A522BE4DC7400C726AE /* Assets.xcassets in Resources */,
 			);
@@ -253,24 +334,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6210D3AB2BFDA63C007C6F99 /* NutritionType.swift in Sources */,
 				6210D3A72BFCE850007C6F99 /* SpeechBubble2.swift in Sources */,
 				6210D3862BFC445F007C6F99 /* NutritionButton.swift in Sources */,
 				6210D3822BFBB84D007C6F99 /* WaterWave.swift in Sources */,
+				62B8DE052C003C0B00FF3DFB /* User.swift in Sources */,
+				6210D3B92BFDD1A6007C6F99 /* Ingredient.swift in Sources */,
 				586E75FA2BFB8D41000C9295 /* ViewExtension.swift in Sources */,
+				62B8DDFC2BFEEB4800FF3DFB /* FoodUnit.swift in Sources */,
 				586E75F32BFB5A15000C9295 /* SplashScreen.swift in Sources */,
+				6210D3AD2BFDA6DF007C6F99 /* Gender.swift in Sources */,
 				A4832A502BE4DC7300C726AE /* ContentView.swift in Sources */,
+				6210D3A92BFDA570007C6F99 /* Unit.swift in Sources */,
 				6210D3892BFC6789007C6F99 /* CalorieCondition.swift in Sources */,
 				6210D3802BFB9AFB007C6F99 /* Util.swift in Sources */,
 				6210D37E2BFB95E4007C6F99 /* Dashboard.swift in Sources */,
+				6210D3C32BFDD3AB007C6F99 /* ModelData.swift in Sources */,
+				62B8DE092C003DEA00FF3DFB /* UserDefaultKey.swift in Sources */,
 				586E75F82BFB8D18000C9295 /* LongButton.swift in Sources */,
 				586E75FC2BFB962C000C9295 /* ProcessingPage.swift in Sources */,
 				586E75F62BFB84DA000C9295 /* IngredientsPage.swift in Sources */,
 				586E75FE2BFB9BC9000C9295 /* IngredientPartPage.swift in Sources */,
+				6210D3BF2BFDD30A007C6F99 /* NutritionDetail.swift in Sources */,
 				586E760C2BFBE1F0000C9295 /* FoodUnitsPicker.swift in Sources */,
 				A4832A4E2BE4DC7300C726AE /* MiniKitaApp.swift in Sources */,
 				6210D3A52BFCBCB3007C6F99 /* SpeechBubble.swift in Sources */,
+				6210D3AF2BFDA70A007C6F99 /* ActivityLevel.swift in Sources */,
 				6210D3842BFBBCCE007C6F99 /* ProgressBar.swift in Sources */,
+				6210D3BD2BFDD260007C6F99 /* Nutrition.swift in Sources */,
+				62B8DE0B2C00457F00FF3DFB /* DateExtension.swift in Sources */,
+				62B8DE032BFEED7900FF3DFB /* IntakeViewModel.swift in Sources */,
+				6210D3C12BFDD34E007C6F99 /* NutritionInfo.swift in Sources */,
 				586E76002BFBB2A6000C9295 /* IngredientAmountPage.swift in Sources */,
+				6210D3BB2BFDD22A007C6F99 /* IngredientPart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

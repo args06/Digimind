@@ -1,0 +1,1787 @@
+[
+    {
+        "ingredient_name" : "Rice",
+        "nutrition_type" : "Carb",
+        "available_unit" : [
+            "Gram", "Table Spoon"
+        ],
+        "ingredient_part" : [
+            {
+                "part_name" : "General",
+                "nutrition" : [
+                    {
+                        "cooking_type" : "Raw",
+                        "nutrition_detail" : {
+                            "in_gram" : {
+                                "calorie" : 0.823,
+                                "protein" : 20.017,
+                                "fat" : 0.002,
+                                "carb" : 0.178,
+                                "fiber" : 0.003,
+                                "weight" : 158
+                            },
+                            "in_portion" : {
+                                "calorie" : 130,
+                                "protein" : 2.69,
+                                "fat" : 0.28,
+                                "carb" : 28.17,
+                                "fiber" : 0.4,
+                                "weight" : 158
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Potato",
+        "nutrition_type": "Carb",
+        "available_unit": [
+            "Gram", "Piece"
+        ],
+        "ingredient_part": [
+            {
+                "part_name": "General",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_gram": {
+                                "calorie": 1.527,
+                                "protein": 0.068,
+                                "fat": 0.003,
+                                "carb": 0.327,
+                                "fiber": 0.066,
+                                "weight": 1
+                            },
+                            "in_portion": {
+                                "calorie": 229.12,
+                                "protein": 10.14,
+                                "fat": 0.39,
+                                "carb": 49.08,
+                                "fiber": 9.86,
+                                "weight": 150
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Corn",
+        "nutrition_type": "Carb",
+        "available_unit": [
+            "Gram", "Piece", "Table Spoon"
+        ],
+        "ingredient_part": [
+            {
+                "part_name": "General",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_gram": {
+                                "calorie": 0.568,
+                                "protein": 0.021,
+                                "fat": 0.008,
+                                "carb": 0.123,
+                                "fiber": 0.017,
+                                "weight": 1
+                            },
+                            "in_portion": {
+                                "calorie": 36.89,
+                                "protein": 1.35,
+                                "fat": 0.49,
+                                "carb": 8.02,
+                                "fiber": 1.13,
+                                "weight": 65
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Oats",
+        "nutrition_type": "Carb",
+        "available_unit": [
+            "Gram", "Table Spoon"
+        ],
+        "ingredient_part": [
+            {
+                "part_name": "General",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_gram": {
+                                "calorie": 11.66,
+                                "protein": 0.309,
+                                "fat": 0.137,
+                                "carb": 2.432,
+                                "fiber": 0.206,
+                                "weight": 1
+                            },
+                            "in_portion": {
+                                "calorie": 373,
+                                "protein": 9.89,
+                                "fat": 4.39,
+                                "carb": 77.81,
+                                "fiber": 6.59,
+                                "weight": 32
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Blueberry",
+        "nutrition_type": "Protein",
+        "available_unit": [
+            "Gram", "Piece", "Table Spoon"
+        ],
+        "ingredient_part": [
+            {
+                "part_name": "General",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_gram": {
+                                "calorie": 0.39,
+                                "protein": 0.005,
+                                "fat": 0.002,
+                                "carb": 0.1,
+                                "fiber": 0.02,
+                                "weight": 1
+                            },
+                            "in_portion": {
+                                "calorie": 0.39,
+                                "protein": 0.005,
+                                "fat": 0.002,
+                                "carb": 0.1,
+                                "fiber": 0.02,
+                                "weight": 1
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Strawberry",
+        "nutrition_type": "Protein",
+        "available_unit": [
+            "Gram", "Piece"
+        ],
+        "ingredient_part": [
+            {
+                "part_name": "General",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_gram": {
+                                "calorie": 0.211,
+                                "protein": 0.004,
+                                "fat": 0.002,
+                                "carb": 0.051,
+                                "fiber": 0.013,
+                                "weight": 1
+                            },
+                            "in_portion": {
+                                "calorie": 2.95,
+                                "protein": 0.06,
+                                "fat": 0.03,
+                                "carb": 0.71,
+                                "fiber": 0.18,
+                                "weight": 14
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Sweet Potato",
+        "nutrition_type": "Carb",
+        "available_unit": [
+            "Gram"
+        ],
+        "ingredient_part": [
+            {
+                "part_name": "General",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_gram": {
+                                "calorie": 0.647,
+                                "protein": 0.012,
+                                "fat": 0.0004,
+                                "carb": 0.151,
+                                "fiber": 0.023,
+                                "weight": 1
+                            },
+                            "in_portion": {
+                                "calorie": 86,
+                                "protein": 1.57,
+                                "fat": 0.05,
+                                "carb": 20.12,
+                                "fiber": 3,
+                                "weight": 133
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Banana",
+        "nutrition_type": "Carb",
+        "available_unit": [
+            "Gram", "Piece"
+        ],
+        "ingredient_part": [
+            {
+                "part_name": "General",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_gram": {
+                                "calorie": 0.393,
+                                "protein": 0.005,
+                                "fat": 0.0015,
+                                "carb": 0.102,
+                                "fiber": 0.0115,
+                                "weight": 1
+                            },
+                            "in_portion": {
+                                "calorie": 47.2,
+                                "protein": 0.58,
+                                "fat": 0.18,
+                                "carb": 12.21,
+                                "fiber": 1.38,
+                                "weight": 120
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Apple",
+        "nutrition_type": "Carb",
+        "available_unit": [
+            "Gram", "Piece"
+        ],
+        "ingredient_part": [
+            {
+                "part_name": "General",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_gram": {
+                                "calorie": 0.416,
+                                "protein": 0.0021,
+                                "fat": 0.0014,
+                                "carb": 0.111,
+                                "fiber": 0.0192,
+                                "weight": 1
+                            },
+                            "in_portion": {
+                                "calorie": 52,
+                                "protein": 0.26,
+                                "fat": 0.17,
+                                "carb": 13.81,
+                                "fiber": 2.4,
+                                "weight": 125
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Orange",
+        "nutrition_type": "Carb",
+        "available_unit": [
+            "Gram", "Piece"
+        ],
+        "ingredient_part": [
+            {
+                "part_name": "General",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_gram": {
+                                "calorie": 0.261,
+                                "protein": 0.0052,
+                                "fat": 0.0007,
+                                "carb": 0.0653,
+                                "fiber": 0.0133,
+                                "weight": 1
+                            },
+                            "in_portion": {
+                                "calorie": 47,
+                                "protein": 0.94,
+                                "fat": 0.12,
+                                "carb": 11.75,
+                                "fiber": 2.4,
+                                "weight": 180
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Carrot",
+        "nutrition_type": "Carb",
+        "available_unit": [
+            "Gram", "Piece"
+        ],
+        "ingredient_part": [
+            {
+                "part_name": "General",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_gram": {
+                                "calorie": 0.320,
+                                "protein": 0.0072,
+                                "fat": 0.0019,
+                                "carb": 0.0748,
+                                "fiber": 0.0217,
+                                "weight": 1
+                            },
+                            "in_portion": {
+                                "calorie": 24.01,
+                                "protein": 0.54,
+                                "fat": 0.14,
+                                "carb": 5.61,
+                                "fiber": 1.63,
+                                "weight": 75
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Egg",
+        "nutrition_type": "Protein",
+        "available_unit": ["Gram", "Piece"],
+        "ingredient_part": [
+            {
+                "part_name": "Whole",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 78.28,
+                                "protein": 5.91,
+                                "fat": 4.89,
+                                "carb": 0.52,
+                                "fiber": 0,
+                                "weight": 60
+                            },
+                            "in_gram": {
+                                "calorie": 130.47,
+                                "protein": 9.85,
+                                "fat": 8.15,
+                                "carb": 0.87,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    },
+                    {
+                        "cooking_type": "Fried",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 101.12,
+                                "protein": 6.13,
+                                "fat": 7.21,
+                                "carb": 0.5,
+                                "fiber": 0,
+                                "weight": 46
+                            },
+                            "in_gram": {
+                                "calorie": 219.17,
+                                "protein": 13.35,
+                                "fat": 15.67,
+                                "carb": 1.09,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    },
+                    {
+                        "cooking_type": "Boiled",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 78.71,
+                                "protein": 5.55,
+                                "fat": 4.68,
+                                "carb": 0.49,
+                                "fiber": 0,
+                                "weight": 60
+                            },
+                            "in_gram": {
+                                "calorie": 131.18,
+                                "protein": 9.25,
+                                "fat": 7.8,
+                                "carb": 0.82,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "part_name": "White",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 17.03,
+                                "protein": 3.62,
+                                "fat": 0.18,
+                                "carb": 0.16,
+                                "fiber": 0,
+                                "weight": 38
+                            },
+                            "in_gram": {
+                                "calorie": 44.78,
+                                "protein": 9.53,
+                                "fat": 0.47,
+                                "carb": 0.42,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "part_name": "Yolk",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 55.13,
+                                "protein": 2.78,
+                                "fat": 4.51,
+                                "carb": 0.21,
+                                "fiber": 0,
+                                "weight": 21
+                            },
+                            "in_gram": {
+                                "calorie": 262.52,
+                                "protein": 13.24,
+                                "fat": 21.48,
+                                "carb": 1,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Almond",
+        "nutrition_type": "Fat",
+        "available_unit": ["Gram", "Piece"],
+        "ingredient_part": [
+            {
+                "part_name": "General",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 8.64,
+                                "protein": 0.32,
+                                "fat": 0.76,
+                                "carb": 0.28,
+                                "fiber": 0.17,
+                                "weight": 2
+                            },
+                            "in_gram": {
+                                "calorie": 432,
+                                "protein": 16,
+                                "fat": 38,
+                                "carb": 14,
+                                "fiber": 8.5,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Tuna",
+        "nutrition_type": "Protein",
+        "available_unit": ["Gram"],
+        "ingredient_part": [
+            {
+                "part_name": "Bluefin",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 144,
+                                "protein": 23.33,
+                                "fat": 4.9,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 85
+                            },
+                            "in_gram": {
+                                "calorie": 169.41,
+                                "protein": 29.39,
+                                "fat": 6.5,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Salmon",
+        "nutrition_type": "Protein",
+        "available_unit": ["Gram"],
+        "ingredient_part": [
+            {
+                "part_name": "General",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 116,
+                                "protein": 19.94,
+                                "fat": 3.45,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 159
+                            },
+                            "in_gram": {
+                                "calorie": 72.96,
+                                "protein": 12.54,
+                                "fat": 1.87,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Cheese",
+        "nutrition_type": "Protein",
+        "available_unit": ["Gram"],
+        "ingredient_part": [
+            {
+                "part_name": "Cheddar",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 403,
+                                "protein": 24.9,
+                                "fat": 33.14,
+                                "carb": 1.28,
+                                "fiber": 0,
+                                "weight": 132
+                            },
+                            "in_gram": {
+                                "calorie": 305.3,
+                                "protein": 18.86,
+                                "fat": 25.1,
+                                "carb": 0.97,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "part_name": "Mozzarella",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 300,
+                                "protein": 22.17,
+                                "fat": 22.35,
+                                "carb": 2.19,
+                                "fiber": 0,
+                                "weight": 112
+                            },
+                            "in_gram": {
+                                "calorie": 267.86,
+                                "protein": 19.81,
+                                "fat": 19.96,
+                                "carb": 1.95,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "part_name": "Parmesan",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 431,
+                                "protein": 38.46,
+                                "fat": 28.61,
+                                "carb": 4.06,
+                                "fiber": 0,
+                                "weight": 100
+                            },
+                            "in_gram": {
+                                "calorie": 431,
+                                "protein": 38.46,
+                                "fat": 28.61,
+                                "carb": 4.06,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "part_name": "Feta",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 264,
+                                "protein": 14.21,
+                                "fat": 21.28,
+                                "carb": 4.09,
+                                "fiber": 0,
+                                "weight": 150
+                            },
+                            "in_gram": {
+                                "calorie": 176,
+                                "protein": 9.47,
+                                "fat": 14.19,
+                                "carb": 2.73,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Shrimp",
+        "nutrition_type": "Protein",
+        "available_unit": ["Gram", "Piece"],
+        "ingredient_part": [
+            {
+                "part_name": "General",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 21,
+                                "protein": 4.53,
+                                "fat": 0.26,
+                                "carb": 0.51,
+                                "fiber": 0,
+                                "weight": 25
+                            },
+                            "in_gram": {
+                                "calorie": 84,
+                                "protein": 18.12,
+                                "fat": 1.04,
+                                "carb": 2.04,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    },
+                    {
+                        "cooking_type": "Fried",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 56,
+                                "protein": 5.92,
+                                "fat": 3.42,
+                                "carb": 0.46,
+                                "fiber": 0,
+                                "weight": 25
+                            },
+                            "in_gram": {
+                                "calorie": 224,
+                                "protein": 23.68,
+                                "fat": 13.68,
+                                "carb": 1.84,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Sunflower Seed",
+        "nutrition_type": "Fat",
+        "available_unit": ["Gram", "Piece"],
+        "ingredient_part": [
+            {
+                "part_name": "General",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 2.27,
+                                "protein": 0.08,
+                                "fat": 0.19,
+                                "carb": 0.09,
+                                "fiber": 0.22,
+                                "weight": 0.5
+                            },
+                            "in_gram": {
+                                "calorie": 454,
+                                "protein": 16,
+                                "fat": 38,
+                                "carb": 18,
+                                "fiber": 44,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Tempeh",
+        "nutrition_type": "Protein",
+        "available_unit": ["Gram", "Piece"],
+        "ingredient_part": [
+            {
+                "part_name": "General",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 219,
+                                "protein": 18.54,
+                                "fat": 11.8,
+                                "carb": 12.39,
+                                "fiber": 6.83,
+                                "weight": 151
+                            },
+                            "in_gram": {
+                                "calorie": 144.7,
+                                "protein": 12.28,
+                                "fat": 7.81,
+                                "carb": 8.21,
+                                "fiber": 4.52,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Tofu",
+        "nutrition_type": "Protein",
+        "available_unit": ["Gram", "Piece"],
+        "ingredient_part": [
+            {
+                "part_name": "General",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 101,
+                                "protein": 10.23,
+                                "fat": 5.28,
+                                "carb": 2.89,
+                                "fiber": 0.51,
+                                "weight": 151
+                            },
+                            "in_gram": {
+                                "calorie": 66.89,
+                                "protein": 6.64,
+                                "fat": 3.49,
+                                "carb": 1.91,
+                                "fiber": 0.34,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Chocolate",
+        "nutrition_type": "Fat",
+        "available_unit": ["Gram"],
+        "ingredient_part": [
+            {
+                "part_name": "Dark (45-59)%",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 543,
+                                "protein": 4.88,
+                                "fat": 30.64,
+                                "carb": 61.81,
+                                "fiber": 7,
+                                "weight": 28.35
+                            },
+                            "in_gram": {
+                                "calorie": 1914.45,
+                                "protein": 17.23,
+                                "fat": 120.68,
+                                "carb": 277.37,
+                                "fiber": 31.15,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "part_name": "Dark (60-69)%",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 578,
+                                "protein": 6.12,
+                                "fat": 38.14,
+                                "carb": 52.59,
+                                "fiber": 8,
+                                "weight": 28.35
+                            },
+                            "in_gram": {
+                                "calorie": 2037.76,
+                                "protein": 21.55,
+                                "fat": 134.54,
+                                "carb": 186.04,
+                                "fiber": 26.99,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "part_name": "Dark (70-85)%",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 599,
+                                "protein": 7.79,
+                                "fat": 42.72,
+                                "carb": 45.81,
+                                "fiber": 10.89,
+                                "weight": 28.35
+                            },
+                            "in_gram": {
+                                "calorie": 2110.24,
+                                "protein": 27.15,
+                                "fat": 150.72,
+                                "carb": 162.03,
+                                "fiber": 30.67,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Chia Seed",
+        "nutrition_type": "Fiber",
+        "available_unit": ["Gram", "Table Spoon"],
+        "ingredient_part": [
+            {
+                "part_name": "General",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 490,
+                                "protein": 15.62,
+                                "fat": 30.75,
+                                "carb": 43.85,
+                                "fiber": 37.7,
+                                "weight": 28.35
+                            },
+                            "in_gram": {
+                                "calorie": 1726.29,
+                                "protein": 55.07,
+                                "fat": 108.49,
+                                "carb": 154.8,
+                                "fiber": 106.2,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Pistachio",
+        "nutrition_type": "Fiber",
+        "available_unit": ["Gram", "Piece"],
+        "ingredient_part": [
+            {
+                "part_name": "General",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 4.66,
+                                "protein": 0.174,
+                                "fat": 0.37,
+                                "carb": 0.22,
+                                "fiber": 0.08,
+                                "weight": 1
+                            },
+                            "in_gram": {
+                                "calorie": 4.66,
+                                "protein": 0.174,
+                                "fat": 0.37,
+                                "carb": 0.22,
+                                "fiber": 0.08,
+                                "weight": 1
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Cashew",
+        "nutrition_type": "Fat",
+        "available_unit": ["Gram", "Piece"],
+        "ingredient_part": [
+            {
+                "part_name": "General",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 4.16,
+                                "protein": 0.156,
+                                "fat": 0.33,
+                                "carb": 0.2,
+                                "fiber": 0.07,
+                                "weight": 1
+                            },
+                            "in_gram": {
+                                "calorie": 416,
+                                "protein": 15.6,
+                                "fat": 33,
+                                "carb": 20,
+                                "fiber": 7,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Avocado",
+        "nutrition_type": "Fat",
+        "available_unit": ["Gram", "Piece"],
+        "ingredient_part": [
+            {
+                "part_name": "General",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 160,
+                                "protein": 2,
+                                "fat": 14.66,
+                                "carb": 8.53,
+                                "fiber": 6.69,
+                                "weight": 150
+                            },
+                            "in_gram": {
+                                "calorie": 106.67,
+                                "protein": 1.33,
+                                "fat": 9.77,
+                                "carb": 5.69,
+                                "fiber": 4.46,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Mackerel",
+        "nutrition_type": "Protein",
+        "available_unit": ["Gram"],
+        "ingredient_part": [
+            {
+                "part_name": "General",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 205,
+                                "protein": 18.6,
+                                "fat": 13.89,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 112
+                            },
+                            "in_gram": {
+                                "calorie": 183.04,
+                                "protein": 16.61,
+                                "fat": 12.38,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    },
+                    {
+                        "cooking_type": "Smoked",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 262,
+                                "protein": 23.85,
+                                "fat": 17.81,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 88
+                            },
+                            "in_gram": {
+                                "calorie": 297.73,
+                                "protein": 27.15,
+                                "fat": 20.23,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Broccoli",
+        "nutrition_type": "Protein",
+        "available_unit": ["Gram", "Piece"],
+        "ingredient_part": [
+            {
+                "part_name": "General",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 34,
+                                "protein": 2.82,
+                                "fat": 0.37,
+                                "carb": 6.64,
+                                "fiber": 2.59,
+                                "weight": 90.93
+                            },
+                            "in_gram": {
+                                "calorie": 37.36,
+                                "protein": 3.09,
+                                "fat": 0.41,
+                                "carb": 7.29,
+                                "fiber": 2.85,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Spinach",
+        "nutrition_type": "Protein",
+        "available_unit": ["Gram", "Table Spoon"],
+        "ingredient_part": [
+            {
+                "part_name": "General",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 23,
+                                "protein": 2.86,
+                                "fat": 0.39,
+                                "carb": 3.63,
+                                "fiber": 2.2,
+                                "weight": 30
+                            },
+                            "in_gram": {
+                                "calorie": 76.67,
+                                "protein": 9.53,
+                                "fat": 1.3,
+                                "carb": 12.1,
+                                "fiber": 7.33,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Kale",
+        "nutrition_type": "Fiber",
+        "available_unit": ["Gram", "Table Spoon"],
+        "ingredient_part": [
+            {
+                "part_name": "General",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 42,
+                                "protein": 2.8,
+                                "fat": 0.6,
+                                "carb": 8.32,
+                                "fiber": 1.7,
+                                "weight": 67
+                            },
+                            "in_gram": {
+                                "calorie": 62.69,
+                                "protein": 4.18,
+                                "fat": 0.89,
+                                "carb": 12.42,
+                                "fiber": 2.54,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Squash",
+        "nutrition_type": "Fiber",
+        "available_unit": ["Gram", "Table Spoon"],
+        "ingredient_part": [
+            {
+                "part_name": "General",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 16,
+                                "protein": 1.21,
+                                "fat": 0.18,
+                                "carb": 3.35,
+                                "fiber": 1.1,
+                                "weight": 113
+                            },
+                            "in_gram": {
+                                "calorie": 14.16,
+                                "protein": 1.07,
+                                "fat": 0.16,
+                                "carb": 2.97,
+                                "fiber": 0.97,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Chicken",
+        "nutrition_type": "Protein",
+        "available_unit": ["Gram", "Piece"],
+        "ingredient_part": [
+            {
+                "part_name": "Breast",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 185.55,
+                                "protein": 39.85,
+                                "fat": 7.9,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 150
+                            },
+                            "in_gram": {
+                                "calorie": 123.7,
+                                "protein": 26.57,
+                                "fat": 5.27,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    },
+                    {
+                        "cooking_type": "Fried",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 364.25,
+                                "protein": 35.4,
+                                "fat": 17.55,
+                                "carb": 22.05,
+                                "fiber": 0,
+                                "weight": 150
+                            },
+                            "in_gram": {
+                                "calorie": 242.83,
+                                "protein": 23.6,
+                                "fat": 11.7,
+                                "carb": 14.7,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    },
+                    {
+                        "cooking_type": "Roast",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 270.05,
+                                "protein": 39.51,
+                                "fat": 12.4,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 150
+                            },
+                            "in_gram": {
+                                "calorie": 180.03,
+                                "protein": 26.34,
+                                "fat": 8.27,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    },
+                    {
+                        "cooking_type": "Stewed",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 230.32,
+                                "protein": 29.7,
+                                "fat": 7.2,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 150
+                            },
+                            "in_gram": {
+                                "calorie": 153.55,
+                                "protein": 19.8,
+                                "fat": 4.8,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "part_name": "Drumstick",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 129.14,
+                                "protein": 13.52,
+                                "fat": 7.6,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 90
+                            },
+                            "in_gram": {
+                                "calorie": 143.49,
+                                "protein": 15.02,
+                                "fat": 8.44,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    },
+                    {
+                        "cooking_type": "Fried",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 221.72,
+                                "protein": 13.2,
+                                "fat": 12.34,
+                                "carb": 13.29,
+                                "fiber": 0,
+                                "weight": 90
+                            },
+                            "in_gram": {
+                                "calorie": 246.36,
+                                "protein": 14.67,
+                                "fat": 13.71,
+                                "carb": 14.77,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    },
+                    {
+                        "cooking_type": "Roast",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 178.35,
+                                "protein": 13.48,
+                                "fat": 7.4,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 90
+                            },
+                            "in_gram": {
+                                "calorie": 198.17,
+                                "protein": 15.09,
+                                "fat": 8.22,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    },
+                    {
+                        "cooking_type": "Stewed",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 138.28,
+                                "protein": 13.16,
+                                "fat": 6.1,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 90
+                            },
+                            "in_gram": {
+                                "calorie": 153.64,
+                                "protein": 14.62,
+                                "fat": 6.78,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "part_name": "Thigh",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 181.55,
+                                "protein": 24.85,
+                                "fat": 8.1,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 110
+                            },
+                            "in_gram": {
+                                "calorie": 165.05,
+                                "protein": 22.59,
+                                "fat": 7.36,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    },
+                    {
+                        "cooking_type": "Fried",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 278.25,
+                                "protein": 21.4,
+                                "fat": 18.95,
+                                "carb": 13.05,
+                                "fiber": 0,
+                                "weight": 110
+                            },
+                            "in_gram": {
+                                "calorie": 252.95,
+                                "protein": 19.45,
+                                "fat": 17.23,
+                                "carb": 11.86,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    },
+                    {
+                        "cooking_type": "Roast",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 233.05,
+                                "protein": 23.62,
+                                "fat": 13.8,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 110
+                            },
+                            "in_gram": {
+                                "calorie": 211.86,
+                                "protein": 21.47,
+                                "fat": 12.55,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    },
+                    {
+                        "cooking_type": "Stewed",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 174.32,
+                                "protein": 22.36,
+                                "fat": 6.61,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 110
+                            },
+                            "in_gram": {
+                                "calorie": 158.47,
+                                "protein": 20.32,
+                                "fat": 6.01,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "part_name": "Wing",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 84.73,
+                                "protein": 8.34,
+                                "fat": 5.12,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 55
+                            },
+                            "in_gram": {
+                                "calorie": 153.96,
+                                "protein": 15.16,
+                                "fat": 9.31,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    },
+                    {
+                        "cooking_type": "Fried",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 136.92,
+                                "protein": 8.12,
+                                "fat": 8.42,
+                                "carb": 7.39,
+                                "fiber": 0,
+                                "weight": 55
+                            },
+                            "in_gram": {
+                                "calorie": 248.95,
+                                "protein": 14.73,
+                                "fat": 15.31,
+                                "carb": 13.44,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    },
+                    {
+                        "cooking_type": "Roast",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 114.61,
+                                "protein": 8.29,
+                                "fat": 7.82,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 55
+                            },
+                            "in_gram": {
+                                "calorie": 208.38,
+                                "protein": 15.07,
+                                "fat": 14.24,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    },
+                    {
+                        "cooking_type": "Stewed",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 78.61,
+                                "protein": 8.05,
+                                "fat": 4.92,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 55
+                            },
+                            "in_gram": {
+                                "calorie": 142.93,
+                                "protein": 14.56,
+                                "fat": 8.95,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ingredient_name": "Beef",
+        "nutrition_type": "Protein",
+        "available_unit": ["Gram"],
+        "ingredient_part": [
+            {
+                "part_name": "Tenderloin",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 246,
+                                "protein": 19.82,
+                                "fat": 17.88,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 176.56
+                            },
+                            "in_gram": {
+                                "calorie": 139.32,
+                                "protein": 11.24,
+                                "fat": 10.13,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    },
+                    {
+                        "cooking_type": "Broiled",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 273,
+                                "protein": 26.43,
+                                "fat": 17.78,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 140.47
+                            },
+                            "in_gram": {
+                                "calorie": 194.31,
+                                "protein": 18.74,
+                                "fat": 12.66,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    },
+                    {
+                        "cooking_type": "Pan-Fried",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 331,
+                                "protein": 23.9,
+                                "fat": 25.39,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 329
+                            },
+                            "in_gram": {
+                                "calorie": 100.61,
+                                "protein": 7.28,
+                                "fat": 7.71,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "part_name": "Sirloin",
+                "nutrition": [
+                    {
+                        "cooking_type": "Raw",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 214,
+                                "protein": 19.92,
+                                "fat": 14.48,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 306
+                            },
+                            "in_gram": {
+                                "calorie": 69.93,
+                                "protein": 6.5,
+                                "fat": 4.73,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    },
+                    {
+                        "cooking_type": "Broiled",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 257,
+                                "protein": 26.8,
+                                "fat": 15.75,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 306
+                            },
+                            "in_gram": {
+                                "calorie": 83.99,
+                                "protein": 8.75,
+                                "fat": 5.14,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    },
+                    {
+                        "cooking_type": "Pan-Fried",
+                        "nutrition_detail": {
+                            "in_portion": {
+                                "calorie": 313,
+                                "protein": 28.77,
+                                "fat": 21.06,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 306
+                            },
+                            "in_gram": {
+                                "calorie": 102.29,
+                                "protein": 9.4,
+                                "fat": 6.88,
+                                "carb": 0,
+                                "fiber": 0,
+                                "weight": 100
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]
+ 

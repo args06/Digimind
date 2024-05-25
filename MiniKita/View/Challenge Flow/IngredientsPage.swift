@@ -4,12 +4,12 @@ struct IngredientsPage: View {
     
     var selectedNutrient = ""
     
-    var ingredients: [String] = [
-        "🍗Chicken", "🥚Egg", "🫘Tempeh", "🫘Tofu", "🥩Beef", "🍣Salmon", "🍣Tuna", "🍤Prawn", "🧀Cheese", "🌻Sunflower Seed","🫘Soya Bean", "🥜Almond", "🍶Yoghurt"
-    ]
+    @State var nutritionIngredients: [Ingredient] = []
     
-    @State private var selectedIngredient = ""
+    @State private var selectedIngredient = Ingredient()
     @State private var navigateToNextPage = false
+    
+    @ObservedObject var intakeViewModel : IntakeViewModel
     
     var body: some View {
         NavigationStack {
@@ -26,17 +26,18 @@ struct IngredientsPage: View {
                             ],
                             spacing: 12
                         ) {
-                            ForEach(ingredients, id: \.self) { ingredient in
+                            ForEach(nutritionIngredients, id: \.self) { ingredient in
                                 
                                 LongButton(
-                                    label: ingredient,
+                                    label: ingredient.ingredientName,
                                     buttonColor: (ingredient == selectedIngredient) ?
                                     Color("CarrotOrange") : Color("GhostWhite"),
                                     textColor: (ingredient == selectedIngredient) ?
                                     Color("AntiFlashWhite") : Color("RaisinBlack"),
                                     action: {
                                         selectedIngredient = ingredient
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                                        intakeViewModel.selectedIngredient = selectedIngredient
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                                             navigateToNextPage = true
                                         }
                                     }
@@ -45,7 +46,7 @@ struct IngredientsPage: View {
                             .navigationDestination(
                                 isPresented: $navigateToNextPage
                             ) {
-                                ProcessingPage()
+                                IngredientPartPage(intakeViewModel: intakeViewModel)
                             }
                         }
                         .padding(.top, 24)
@@ -65,7 +66,7 @@ struct IngredientsPage: View {
                             SpeechBubble()
                                 .fill(.ghostWhite)
                                 .stroke(.platinum, lineWidth: 1.5)
-                                .shadow(color : .platinum,radius: 2,x : 0, y:5.22)
+                                .shadow(color : .platinum,radius: 2, x : 0, y:5.22)
                             
                             Text("When choosing which protein to eat, ensure that the foods you pick provide you with the best all-around nutrition possible.")
                                 .padding(10)
@@ -83,12 +84,20 @@ struct IngredientsPage: View {
             .navigationBarTitleDisplayMode(.inline)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(.antiFlashWhite)
+            .onAppear {
+                nutritionIngredients = ingredients.filter {
+                    $0.nutritionType.rawValue == selectedNutrient
+                }
+            }
         }
     }
 }
 
 #Preview {
     NavigationStack {
-        IngredientsPage(selectedNutrient: "Protein")
+        IngredientsPage(
+            selectedNutrient: NutritionType.protein.rawValue,
+            intakeViewModel: IntakeViewModel()
+        )
     }
 }
