@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum NutritionType: String, CaseIterable, Codable {
+enum NutritionType: String, CaseIterable, Codable, Hashable {
     case protein = "Protein"
     case fat = "Fat"
     case carb = "Carb"

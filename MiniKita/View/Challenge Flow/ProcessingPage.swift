@@ -10,12 +10,10 @@ import SwiftUI
 
 struct ProcessingPage: View {
     
-    var process: [String] = [
-        "Fried", "Stew", "Roast"
-    ]
-    
-    @State private var selectedProcessing = ""
+    @State private var selectedNutrition = Nutrition()
     @State private var navigateToNextPage = false
+    
+    @ObservedObject var intakeViewModel : IntakeViewModel
     
     var body: some View {
         NavigationStack {
@@ -26,15 +24,16 @@ struct ProcessingPage: View {
                         .padding(.bottom, 24)
                     
                     VStack {
-                        ForEach(process, id: \.self) { process in
+                        ForEach(intakeViewModel.selectedPart.nutrition, id: \.self) { nutrition in
                             LongButton(
-                                label: process,
-                                buttonColor: (process == selectedProcessing) ?
+                                label: nutrition.cookingType,
+                                buttonColor: (nutrition == selectedNutrition) ?
                                 Color("CarrotOrange") : Color("GhostWhite"),
-                                textColor: (process == selectedProcessing) ?
+                                textColor: (nutrition == selectedNutrition) ?
                                 Color("AntiFlashWhite") : Color("RaisinBlack"),
                                 action: {
-                                    selectedProcessing = process
+                                    selectedNutrition = nutrition
+                                    intakeViewModel.selectedNutrition = selectedNutrition
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                                         navigateToNextPage = true
                                     }
@@ -43,7 +42,7 @@ struct ProcessingPage: View {
                             .navigationDestination(
                                 isPresented: $navigateToNextPage
                             ) {
-                                IngredientPartPage()
+                                IngredientAmountPage(intakeViewModel: intakeViewModel)
                             }
                         }
                     }
@@ -67,7 +66,7 @@ struct ProcessingPage: View {
                 }
                 .padding(16)
             }
-            .navigationTitle("Chicken")
+            .navigationTitle(intakeViewModel.selectedIngredient.ingredientName)
             .navigationBarTitleDisplayMode(.inline)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(.antiFlashWhite)
@@ -78,6 +77,8 @@ struct ProcessingPage: View {
 
 #Preview {
     NavigationStack {
-        ProcessingPage()
+        ProcessingPage(
+            intakeViewModel: IntakeViewModel()
+        )
     }
 }

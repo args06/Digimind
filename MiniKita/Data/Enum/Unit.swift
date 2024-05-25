@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum Unit: String, CaseIterable, Codable {
+enum Unit: String, CaseIterable, Codable, Hashable {
     case gram = "Gram"
     case piece = "Piece"
     case tablespoon = "Table Spoon"

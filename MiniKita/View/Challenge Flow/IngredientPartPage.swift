@@ -14,28 +14,31 @@ struct IngredientPartPage: View {
         "Breast", "Wings", "Thigh", "Fillet", "Drumstick"
     ]
     
-    @State private var selectedPart = ""
+    @State private var selectedPart = IngredientPart()
     @State private var navigateToNextPage = false
+    
+    @ObservedObject var intakeViewModel : IntakeViewModel
     
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack {
                     
-                    Text("Which part of Chicken do you eat?")
+                    Text("Which part of \(intakeViewModel.selectedIngredient.ingredientName) do you eat?")
                         .font(.headline)
                         .padding(.bottom, 24)
                     
                     VStack {
-                        ForEach(parts, id: \.self) { part in
+                        ForEach(intakeViewModel.selectedIngredient.ingredientPart, id: \.self) { part in
                             LongButton(
-                                label: part,
+                                label: part.partName,
                                 buttonColor: (part == selectedPart) ?
                                 Color("CarrotOrange") : Color("GhostWhite"),
                                 textColor: (part == selectedPart) ?
                                 Color("AntiFlashWhite") : Color("RaisinBlack"),
                                 action: {
                                     selectedPart = part
+                                    intakeViewModel.selectedPart = selectedPart
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                                         navigateToNextPage = true
                                     }
@@ -44,7 +47,7 @@ struct IngredientPartPage: View {
                             .navigationDestination(
                                 isPresented: $navigateToNextPage
                             ) {
-                                IngredientAmountPage()
+                                ProcessingPage(intakeViewModel: intakeViewModel)
                             }
                         }
                     }
@@ -57,7 +60,7 @@ struct IngredientPartPage: View {
                 }
                 .padding(16)
             }
-            .navigationTitle("Stew")
+            .navigationTitle(intakeViewModel.selectedIngredient.ingredientName)
             .navigationBarTitleDisplayMode(.inline)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(.antiFlashWhite)
@@ -67,6 +70,8 @@ struct IngredientPartPage: View {
 
 #Preview {
     NavigationStack {
-        IngredientPartPage()
+        IngredientPartPage(
+            intakeViewModel: IntakeViewModel()
+        )
     }
 }

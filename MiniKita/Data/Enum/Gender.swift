@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum Gender: String, CaseIterable {
-    case male, female
+enum Gender: String, CaseIterable, Codable {
+    case male = "Male"
+    case female = "Female"
 }

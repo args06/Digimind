@@ -8,9 +8,9 @@
 import Foundation
 import SwiftUI
 
-struct IngredientPart: Codable {
-    let partName: String
-    let nutrition: [Nutrition]
+struct IngredientPart: Codable, Hashable {
+    var partName: String = ""
+    var nutrition: [Nutrition] = [Nutrition()]
 
     enum CodingKeys: String, CodingKey {
         case partName = "part_name"

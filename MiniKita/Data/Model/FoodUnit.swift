@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct FoodUnits {
+struct FoodUnits: Codable, Hashable {
     let value: Int
     let unit: Unit
 }

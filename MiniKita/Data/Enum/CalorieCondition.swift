@@ -12,4 +12,5 @@ enum CalorieCondition: String, CaseIterable {
     case under = "Under"
     case full = "Full"
     case over = "Over"
+    case complete = "Complete"
 }

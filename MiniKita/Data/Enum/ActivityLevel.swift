@@ -8,11 +8,11 @@
 import Foundation
 import SwiftUI
 
-enum ActivityLevel: String, CaseIterable {
+enum ActivityLevel: String, CaseIterable, Codable {
     case sedentary = "Sedentary"
-    case mildlyActive = "Mildly Active"
+    case lightlyActive = "Lightly Active"
     case moderatelyActive = "Moderately Active"
-    case heavilyActive = "Heavily Active"
-    case extreamlyActive = "Extreamly Active"
+    case veryActive = "Very Active"
+    case extraActive = "Extra Active"
 }
 

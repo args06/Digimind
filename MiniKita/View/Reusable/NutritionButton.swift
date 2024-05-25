@@ -9,16 +9,21 @@ import SwiftUI
 
 struct NutritionButton: View {
     
-    @Binding var progress: CGFloat
+    @Binding var consumedNutritionCalorie: Double
+    @State var progress: CGFloat = 0
     @State var startAnimation: CGFloat = 0
     
-    var nutritionName: String = "Carb"
+    var nutritionType: NutritionType = .carb
+    
+    var totalNutritionCalorie: Double = 0.0
+    
+    @State var totalMinimumCalorieLimit = (minimumCalorie: 0.0, minimumPercentage: 0.0)
+    
+    @State var calorieCondition: CalorieCondition = .under
     
     var body: some View {
         
         VStack {
-            Text(nutritionName)
-            
             GeometryReader { proxy in
                 let size = proxy.size
                 
@@ -28,7 +33,9 @@ struct NutritionButton: View {
                         .frame(width: 76, height: 76)
                         
                     RoundedRectangle(cornerRadius: 10)
-                        .foregroundColor(.maximumBlueGreen)
+                        .fill(
+                            backgroundColorEachCalorie(condition: calorieCondition)
+                        )
                         .mask {
                             WaterWave(progress: progress, waveHeight: 0.015, offset: startAnimation)
                                 .frame(width: 80)
@@ -36,7 +43,7 @@ struct NutritionButton: View {
                     
                     
                     VStack {
-                        Image(nutritionName.lowercased())
+                        Image(nutritionType.rawValue.lowercased())
                             .resizable()
                             .frame(width: 53, height: 53)
                     }
@@ -44,20 +51,67 @@ struct NutritionButton: View {
                 }
                 .frame(width: size.width, height: size.height, alignment: .center)
                 .onAppear {
-                    withAnimation(.linear(duration: 1).repeatForever(autoreverses: false)) {
-                        startAnimation = size.width + 275
+                    totalMinimumCalorieLimit = getTotalMinimumCalorieLimit(
+                        totalCalorie: totalNutritionCalorie,
+                        nutritionType: nutritionType
+                    )
+                    
+                    progress = CGFloat(consumedNutritionCalorie) / CGFloat(totalMinimumCalorieLimit.minimumCalorie)
+                    
+                    print("\(nutritionType.rawValue) : Total Min : \(totalMinimumCalorieLimit)")
+                    print("\(nutritionType.rawValue) : Total Calorie : \(totalNutritionCalorie)")
+                    print("\(nutritionType.rawValue) : Progress : \(progress)")
+                    
+                    if nutritionType.rawValue == NutritionType.fiber.rawValue {
+                        if consumedNutritionCalorie > 0 {
+                            progress = 0.9
+                        }
                     }
+                    
+                    if !(progress == 0.0 || progress >= 1.0) {
+                        withAnimation(.linear(duration: TimeInterval(1)).repeatForever(autoreverses: false)) {
+                            startAnimation = size.width + 275
+                        }
+                    } else {
+                        withAnimation(.linear(duration: TimeInterval(0)).repeatForever(autoreverses: false)) {
+                            startAnimation = 0
+                        }
+                    }
+                    
+                    checkCalorieCondition()
                 }
             }
             .frame(width: 76, height: 76)
+            
+            Text("\(Int(consumedNutritionCalorie)) kCal")
         }
         .frame(maxWidth: .infinity)
+    }
+    
+    private func checkCalorieCondition() {
+        let newProgress = CGFloat(consumedNutritionCalorie) / CGFloat(totalNutritionCalorie)
+        
+        if newProgress > 1 {
+            calorieCondition = .over
+        } else {
+            calorieCondition = .under
+        }
+        
+        if nutritionType.rawValue == NutritionType.fiber.rawValue {
+            if consumedNutritionCalorie > 0 {
+                progress = 0.9
+                calorieCondition = .under
+            }
+        }
+        
+        print("\(nutritionType.rawValue) : NewProgress : \(newProgress)")
     }
 }
 
 #Preview {
     NutritionButton(
-        progress: .constant(0.35),
-        nutritionName: "Protein"
+        consumedNutritionCalorie: .constant(365),
+        nutritionType: .carb,
+        totalNutritionCalorie: 2250
     )
 }

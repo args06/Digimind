@@ -8,9 +8,9 @@
 import Foundation
 import SwiftUI
 
-struct Nutrition: Codable {
-    let cookingType: String
-    let nutritionDetail: NutritionDetail
+struct Nutrition: Codable, Hashable {
+    var cookingType: String = ""
+    var nutritionDetail: NutritionDetail = NutritionDetail()
 
     enum CodingKeys: String, CodingKey {
         case cookingType = "cooking_type"
