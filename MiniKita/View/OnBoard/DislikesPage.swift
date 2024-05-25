@@ -11,7 +11,7 @@ struct DislikesPage: View {
     var body: some View {
         ScrollView {
             VStack {
-                Text("desc_ask_allergies")
+                Text("")
                     .font(.subheadline)
                     .fontWeight(.regular)
                 
@@ -32,23 +32,23 @@ struct DislikesPage: View {
                 .padding(.top, 18)
             }
         }
-        .navigationTitle("title_dislikes")
+//        .navigationTitle("title_dislikes")
         .navigationBarTitleDisplayMode(.inline)
         .padding(12)
-        .safeAreaInset(edge: .bottom) {
-            NavigationLink {
-                // TODO: Connect to Groceries Page
-            } label: {
-                Text("action_generate")
-                    .foregroundStyle(.white)
-                    .font(.headline)
-                    .hSpacing()
-                    .frame(height: 50)
-                    .background(Color("IguanaGreen"), in: .rect(cornerRadius: 12))
-            }
-            .buttonStyle(.plain)
-            .padding(.horizontal, 16)
-        }
+//        .safeAreaInset(edge: .bottom) {
+//            NavigationLink {
+//                // TODO: Connect to Groceries Page
+//            } label: {
+//                Text("action_generate")
+//                    .foregroundStyle(.white)
+//                    .font(.headline)
+//                    .hSpacing()
+//                    .frame(height: 50)
+//                    .background(Color("IguanaGreen"), in: .rect(cornerRadius: 12))
+//            }
+//            .buttonStyle(.plain)
+//            .padding(.horizontal, 16)
+//        }
     }
 }
 

@@ -12,7 +12,7 @@ struct AllergiesPage: View {
         NavigationStack {
             ScrollView {
                 VStack {
-                    Text("desc_ask_allergies")
+                    Text("")
                         .font(.subheadline)
                         .fontWeight(.regular)
                     
@@ -26,23 +26,23 @@ struct AllergiesPage: View {
                     .padding(.top, 18)
                 }
             }
-            .navigationTitle("title_allergies")
+//            .navigationTitle("title_allergies")
             .navigationBarTitleDisplayMode(.inline)
             .padding(12)
-            .safeAreaInset(edge: .bottom) {
-                NavigationLink {
-                    DislikesPage()
-                } label: {
-                    Text("action_next")
-                        .foregroundStyle(.white)
-                        .font(.headline)
-                        .hSpacing()
-                        .frame(height: 50)
-                        .background(Color("IguanaGreen"), in: .rect(cornerRadius: 12))
-                }
-                .buttonStyle(.plain)
-                .padding(.horizontal, 16)
-            }
+//            .safeAreaInset(edge: .bottom) {
+//                NavigationLink {
+//                    DislikesPage()
+//                } label: {
+//                    Text("action_next")
+//                        .foregroundStyle(.white)
+//                        .font(.headline)
+//                        .hSpacing()
+//                        .frame(height: 50)
+//                        .background(Color("IguanaGreen"), in: .rect(cornerRadius: 12))
+//                }
+//                .buttonStyle(.plain)
+//                .padding(.horizontal, 16)
+//            }
         }
     }
 }
