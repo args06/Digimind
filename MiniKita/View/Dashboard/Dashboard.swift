@@ -98,7 +98,6 @@ struct Dashboard: View {
                             .antiFlashWhite,
                             in: .rect(cornerRadius: 24)
                         )
-                        
                     }
                     
                     Text("\(Int(intakeViewModel.consumedDailyCalorie)) kCal")
