@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5831F50E2C0315AD003D2A81 /* WelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5831F50D2C0315AD003D2A81 /* WelcomePage.swift */; };
+		5831F5102C03160C003D2A81 /* PersonalInfoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5831F50F2C03160C003D2A81 /* PersonalInfoPage.swift */; };
+		5831F5122C031B2B003D2A81 /* ActivityLevelPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5831F5112C031B2B003D2A81 /* ActivityLevelPage.swift */; };
+		5831F5142C031E7F003D2A81 /* ActivityLevelPage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5831F5132C031E7F003D2A81 /* ActivityLevelPage2.swift */; };
+		5831F5162C03279E003D2A81 /* ActivityMinute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5831F5152C03279E003D2A81 /* ActivityMinute.swift */; };
+		5831F51C2C032907003D2A81 /* ActivityLevelPage3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5831F51B2C032907003D2A81 /* ActivityLevelPage3.swift */; };
+		5831F51E2C0329C2003D2A81 /* AllergiesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5831F51D2C0329C2003D2A81 /* AllergiesPage.swift */; };
+		5831F5202C032D41003D2A81 /* DislikePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5831F51F2C032D41003D2A81 /* DislikePage.swift */; };
+		5831F5222C032FC4003D2A81 /* ProcessingInfoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5831F5212C032FC4003D2A81 /* ProcessingInfoPage.swift */; };
+		5831F5242C033274003D2A81 /* SummaryPersonalInfoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5831F5232C033274003D2A81 /* SummaryPersonalInfoPage.swift */; };
 		586E75F32BFB5A15000C9295 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586E75F22BFB5A15000C9295 /* SplashScreen.swift */; };
 		586E75F62BFB84DA000C9295 /* IngredientsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586E75F52BFB84DA000C9295 /* IngredientsPage.swift */; };
 		586E75F82BFB8D18000C9295 /* LongButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586E75F72BFB8D18000C9295 /* LongButton.swift */; };
@@ -57,6 +67,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5831F50D2C0315AD003D2A81 /* WelcomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePage.swift; sourceTree = "<group>"; };
+		5831F50F2C03160C003D2A81 /* PersonalInfoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoPage.swift; sourceTree = "<group>"; };
+		5831F5112C031B2B003D2A81 /* ActivityLevelPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLevelPage.swift; sourceTree = "<group>"; };
+		5831F5132C031E7F003D2A81 /* ActivityLevelPage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLevelPage2.swift; sourceTree = "<group>"; };
+		5831F5152C03279E003D2A81 /* ActivityMinute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityMinute.swift; sourceTree = "<group>"; };
+		5831F51B2C032907003D2A81 /* ActivityLevelPage3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLevelPage3.swift; sourceTree = "<group>"; };
+		5831F51D2C0329C2003D2A81 /* AllergiesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergiesPage.swift; sourceTree = "<group>"; };
+		5831F51F2C032D41003D2A81 /* DislikePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DislikePage.swift; sourceTree = "<group>"; };
+		5831F5212C032FC4003D2A81 /* ProcessingInfoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingInfoPage.swift; sourceTree = "<group>"; };
+		5831F5232C033274003D2A81 /* SummaryPersonalInfoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryPersonalInfoPage.swift; sourceTree = "<group>"; };
 		586E75F22BFB5A15000C9295 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		586E75F52BFB84DA000C9295 /* IngredientsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsPage.swift; sourceTree = "<group>"; };
 		586E75F72BFB8D18000C9295 /* LongButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongButton.swift; sourceTree = "<group>"; };
@@ -118,6 +138,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5831F50C2C03157D003D2A81 /* OnBoard */ = {
+			isa = PBXGroup;
+			children = (
+				5831F50D2C0315AD003D2A81 /* WelcomePage.swift */,
+				5831F50F2C03160C003D2A81 /* PersonalInfoPage.swift */,
+				5831F5112C031B2B003D2A81 /* ActivityLevelPage.swift */,
+				5831F5132C031E7F003D2A81 /* ActivityLevelPage2.swift */,
+				5831F51B2C032907003D2A81 /* ActivityLevelPage3.swift */,
+				5831F51D2C0329C2003D2A81 /* AllergiesPage.swift */,
+				5831F51F2C032D41003D2A81 /* DislikePage.swift */,
+				5831F5212C032FC4003D2A81 /* ProcessingInfoPage.swift */,
+				5831F5232C033274003D2A81 /* SummaryPersonalInfoPage.swift */,
+			);
+			path = OnBoard;
+			sourceTree = "<group>";
+		};
 		586E75F12BFB5A09000C9295 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +194,7 @@
 				6210D3AC2BFDA6DF007C6F99 /* Gender.swift */,
 				6210D3AE2BFDA70A007C6F99 /* ActivityLevel.swift */,
 				62FE04F62C0269B2009752BD /* InformationType.swift */,
+				5831F5152C03279E003D2A81 /* ActivityMinute.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -209,6 +246,7 @@
 		6268EA932BF74129001B5A99 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5831F50C2C03157D003D2A81 /* OnBoard */,
 				6210D37C2BFB95C6007C6F99 /* Dashboard */,
 				586E75F42BFB84C9000C9295 /* Challenge Flow */,
 				586E75F12BFB5A09000C9295 /* Splash */,
@@ -365,6 +403,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6210D3AB2BFDA63C007C6F99 /* NutritionType.swift in Sources */,
+				5831F51C2C032907003D2A81 /* ActivityLevelPage3.swift in Sources */,
+				5831F5242C033274003D2A81 /* SummaryPersonalInfoPage.swift in Sources */,
 				6210D3A72BFCE850007C6F99 /* SpeechBubble2.swift in Sources */,
 				62FE05052C0288A3009752BD /* HistoryCard.swift in Sources */,
 				6210D3862BFC445F007C6F99 /* NutritionButton.swift in Sources */,
@@ -372,6 +412,7 @@
 				62B8DE052C003C0B00FF3DFB /* User.swift in Sources */,
 				6210D3B92BFDD1A6007C6F99 /* Ingredient.swift in Sources */,
 				586E75FA2BFB8D41000C9295 /* ViewExtension.swift in Sources */,
+				5831F5102C03160C003D2A81 /* PersonalInfoPage.swift in Sources */,
 				62B8DDFC2BFEEB4800FF3DFB /* FoodUnit.swift in Sources */,
 				586E75F32BFB5A15000C9295 /* SplashScreen.swift in Sources */,
 				6210D3AD2BFDA6DF007C6F99 /* Gender.swift in Sources */,
@@ -379,6 +420,7 @@
 				62FE04F52C026940009752BD /* ProfilePage.swift in Sources */,
 				A4832A502BE4DC7300C726AE /* ContentView.swift in Sources */,
 				6210D3A92BFDA570007C6F99 /* Unit.swift in Sources */,
+				5831F5222C032FC4003D2A81 /* ProcessingInfoPage.swift in Sources */,
 				6210D3892BFC6789007C6F99 /* CalorieCondition.swift in Sources */,
 				6210D3802BFB9AFB007C6F99 /* Util.swift in Sources */,
 				6210D37E2BFB95E4007C6F99 /* Dashboard.swift in Sources */,
@@ -393,19 +435,25 @@
 				586E760C2BFBE1F0000C9295 /* FoodUnitsPicker.swift in Sources */,
 				A4832A4E2BE4DC7300C726AE /* MiniKitaApp.swift in Sources */,
 				62FE05012C02822A009752BD /* RecapDetailPage.swift in Sources */,
+				5831F51E2C0329C2003D2A81 /* AllergiesPage.swift in Sources */,
 				6210D3A52BFCBCB3007C6F99 /* SpeechBubble.swift in Sources */,
+				5831F5142C031E7F003D2A81 /* ActivityLevelPage2.swift in Sources */,
 				6210D3AF2BFDA70A007C6F99 /* ActivityLevel.swift in Sources */,
 				62FE04FD2C027EFE009752BD /* RecapPage.swift in Sources */,
 				6210D3842BFBBCCE007C6F99 /* ProgressBar.swift in Sources */,
+				5831F5122C031B2B003D2A81 /* ActivityLevelPage.swift in Sources */,
 				62FE05072C02DEA0009752BD /* CustomDialog.swift in Sources */,
 				6210D3BD2BFDD260007C6F99 /* Nutrition.swift in Sources */,
 				62FE04F72C0269B2009752BD /* InformationType.swift in Sources */,
 				62B8DE0B2C00457F00FF3DFB /* DateExtension.swift in Sources */,
+				5831F50E2C0315AD003D2A81 /* WelcomePage.swift in Sources */,
 				62B8DE032BFEED7900FF3DFB /* IntakeViewModel.swift in Sources */,
 				62FE05032C028517009752BD /* RecapHistory.swift in Sources */,
 				6210D3C12BFDD34E007C6F99 /* NutritionInfo.swift in Sources */,
 				586E76002BFBB2A6000C9295 /* IngredientAmountPage.swift in Sources */,
 				6210D3BB2BFDD22A007C6F99 /* IngredientPart.swift in Sources */,
+				5831F5202C032D41003D2A81 /* DislikePage.swift in Sources */,
+				5831F5162C03279E003D2A81 /* ActivityMinute.swift in Sources */,
 				62FE04F92C0269D5009752BD /* DetailInformation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -551,7 +599,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MiniKita/Preview Content\"";
-				DEVELOPMENT_TEAM = WTU6YK528U;
+				DEVELOPMENT_TEAM = 9227UY749D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -580,7 +628,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MiniKita/Preview Content\"";
-				DEVELOPMENT_TEAM = WTU6YK528U;
+				DEVELOPMENT_TEAM = 9227UY749D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

@@ -165,3 +165,14 @@ func getIngredientCalorie(selectedAmount: FoodUnits, selectedNutrition: Nutritio
     let fiber = valueDouble * (selectedNutritionInfo.fiber ?? 0)
     return (calorie: calorie, protein: protein, fat: fat, carb: carb, fiber: fiber)
 }
+
+func filterIngredients(query : String) -> [Ingredient] {
+    return if query.isEmpty {
+        ingredients
+    }else
+    {
+        ingredients.filter{
+            $0.ingredientName.contains(query)
+        }
+    }
+}

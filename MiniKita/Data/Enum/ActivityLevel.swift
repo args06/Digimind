@@ -14,5 +14,6 @@ enum ActivityLevel: String, CaseIterable, Codable {
     case moderatelyActive = "Moderately Active"
     case veryActive = "Very Active"
     case extraActive = "Extra Active"
+    case other
 }
 
