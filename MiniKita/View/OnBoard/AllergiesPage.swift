@@ -73,7 +73,7 @@ struct AllergiesPage: View {
             .background(.antiFlashWhite)
             .safeAreaInset(edge: .bottom) {
                 NavigationLink {
-                    ActivityLevelPage2()
+                    DislikePage()
                 } label: {
                     Text("Next")
                         .foregroundStyle(.white)

@@ -67,6 +67,7 @@ struct ProcessingInfoPage: View {
                 SummaryPersonalInfoPage()
             }
         }
+        .navigationBarBackButtonHidden()
     }
 }
 

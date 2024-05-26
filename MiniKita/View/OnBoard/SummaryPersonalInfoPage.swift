@@ -215,6 +215,7 @@ struct SummaryPersonalInfoPage: View {
             }
             .allSpacing()
             .background(Color.maximumBlueGreen)
+            .navigationBarBackButtonHidden()
         }
     }
 }

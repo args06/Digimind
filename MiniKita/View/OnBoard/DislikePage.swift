@@ -71,7 +71,7 @@ struct DislikePage: View {
             .background(.antiFlashWhite)
             .safeAreaInset(edge: .bottom) {
                 NavigationLink {
-                    ActivityLevelPage2()
+                    ProcessingInfoPage()
                 } label: {
                     Text("Next")
                         .foregroundStyle(.white)
