@@ -53,6 +53,8 @@ struct Dashboard: View {
     
     @State var isShowInformationPage = false
     
+    @State var isShowPopup = false
+    
     var day = CGFloat(6)
     
     var body: some View {
@@ -200,24 +202,6 @@ struct Dashboard: View {
                     .padding(.trailing, 16)
                     .padding(.bottom, 8)
                     
-//                    NavigationLink {
-//                        InformationPage()
-//                    } label: {
-//                        Image(systemName: "info.circle")
-//                            .resizable()
-//                            .frame(width: 22, height: 22)
-//                    }
-//                    .foregroundStyle(.blue)
-//                    .frame(width: 34, height: 34)
-//                    .padding(6)
-//                    .background(
-//                        .antiFlashWhite,
-//                        in: .rect(cornerRadius: 24)
-//                    )
-//                    .hSpacing(.bottomTrailing)
-//                    .padding(.trailing, 16)
-//                    .padding(.bottom, 8)
-                    
                     HStack {
                         NutritionButton(
                             consumedNutritionCalorie: $intakeViewModel.consumedProtein,
@@ -297,8 +281,26 @@ struct Dashboard: View {
                         .antiFlashWhite,
                         in: .rect(cornerRadius: 16)
                     )
+                    
+                    
                 }
                 .ignoresSafeArea()
+                
+                if isShowPopup {
+                    CustomDialog(
+                        isActive: $isShowPopup,
+                        calorieCondition: .complete,
+                        message: "Congrats on completing the challenge. You’ve boosted your gut health. Now, for an even better balance, don’t forget to meet your daily calorie needs!",
+                        buttonTitle: "That’s for Today",
+                        isMovePage : true
+                    ) {
+                        RecapPage(
+                            isChallengeComplete: isChallengeComplete()
+                        )
+                    }
+                    .zIndex(999999)
+                    
+                }
                 
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
@@ -332,6 +334,10 @@ struct Dashboard: View {
             
             if isChallengeComplete() {
                 calorieCondition = .complete
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    isShowPopup.toggle()
+                }
             } else {
                 calorieCondition = .full
             }

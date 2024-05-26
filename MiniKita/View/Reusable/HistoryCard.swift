@@ -13,6 +13,8 @@ struct HistoryCard: View {
     var consumedCalorie : Double = 0.0
     var totalCalorie : Double = 0.0
     
+    var isFiber = false
+    
     @State var calorieProgress : Double = 0.0
     
     var body: some View {
@@ -34,30 +36,32 @@ struct HistoryCard: View {
                     .fontWeight(.medium)
                     .foregroundStyle(.black)
                 
-                ProgressBar(
-                    progress: calorieProgress,
-                    height: 4,
-                    foregroundColor: .jungleGreen
-                )
-                .frame(height: 4)
+                if !isFiber {
+                    ProgressBar(
+                        progress: calorieProgress,
+                        height: 4,
+                        foregroundColor: .jungleGreen
+                    )
+                    .frame(height: 4)
+                }
             }
             
-            Text("\(Int(calorieProgress * 100))% of your daily \(nutritionType) (\(Int(consumedCalorie)) kCal)")
-                .foregroundStyle(.black)
+            if !isFiber {
+                Text("\(Int(calorieProgress * 100))% of your daily \(nutritionType) (\(Int(consumedCalorie)) kCal)")
+                    .foregroundStyle(.black)
+            }
         }
         .padding(16)
         .hSpacing(.leading)
         .background(.ghostWhite, in: .rect(cornerRadius: 10))
-        .onAppear {
-            calorieProgress = consumedCalorie / totalCalorie
-        }
     }
 }
 
 #Preview {
     HistoryCard(
-        nutritionType: .protein,
+        nutritionType: .fiber,
         consumedCalorie: 345,
-        totalCalorie: 1200
+        totalCalorie: 1200,
+        isFiber: true
     )
 }
