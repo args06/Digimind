@@ -6,30 +6,41 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct SummaryPersonalInfoPage: View {
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.modelContext) private var context
+    
+    @AppStorage(KEY_ONBOARD)
+    var isOnBoardDone: Bool = false
+    
     @AppStorage(KEY_USERNAME)
-    var userName: String = "Anjar"
+    var userName: String = ""
     
     @AppStorage(KEY_BIRTHDATE)
     var storedBirthDate = Date.now.timeIntervalSinceReferenceDate
     
     @AppStorage(KEY_AGE)
-    var age: Int = 20
+    var age: Int = 0
     
     @AppStorage(KEY_WEIGHT)
-    var weight: Int = 20
+    var weight: Int = 0
     
     @AppStorage(KEY_HEIGHT)
-    var height: Int = 20
+    var height: Int = 0
     
     @AppStorage(KEY_GENDER)
-    var gender: Gender = .female
+    var gender: Gender = .male
     
     @AppStorage(KEY_ACTIVITY_LEVEL)
     var activityLevel: ActivityLevel = .sedentary
     
-    @StateObject var intakeViewModel = IntakeViewModel()
+    @ObservedObject var intakeViewModel: IntakeViewModel
+    
+    @State var totalCalorie = 0.0
+    
     @State var dailyNutrient = (protein: 0.0, fat: 0.0, carb: 0.0, fiber: 0.0)
     
     @State var carbsLimit = (minimumCalorie: 0.0, minimumPercentage: 0.0)
@@ -80,7 +91,7 @@ struct SummaryPersonalInfoPage: View {
                             .foregroundColor(.carrotOrange)
                             .font(.largeTitle)
                             .fontWeight(.semibold)
-                        Text("\(Int(intakeViewModel.totalCalorie)) kCal")
+                        Text("\(Int(totalCalorie)) kCal")
                             .fontWeight(.semibold)
                             .font(.largeTitle)
                             .foregroundStyle(.antiFlashWhite)
@@ -178,9 +189,9 @@ struct SummaryPersonalInfoPage: View {
                     .padding(.bottom,32)
                 }
                 .onAppear{
-                    intakeViewModel.totalCalorie = calculateTotalCalorie(weight: weight, height: height, age: age, gender: gender, activityLevel: activityLevel)
+                    totalCalorie = calculateTotalCalorie(weight: weight, height: height, age: age, gender: gender, activityLevel: activityLevel)
                     
-                    dailyNutrient = calculateDailyNutrient(totalCalorie: Double(intakeViewModel.totalCalorie))
+                    dailyNutrient = calculateDailyNutrient(totalCalorie: Double(totalCalorie))
                     
                     proteinLimit = getTotalMinimumCalorieLimit(
                         totalCalorie: dailyNutrient.protein,
@@ -196,18 +207,41 @@ struct SummaryPersonalInfoPage: View {
                         totalCalorie: dailyNutrient.fat,
                         nutritionType: .fat
                     )
-
                 }
                 .safeAreaInset(edge: .bottom) {
-                    NavigationLink {
-                        Dashboard()
-                    } label: {
-                        Text("Start Challenge")
-                            .foregroundStyle(.raisinBlack)
-                            .font(.headline)
-                            .hSpacing()
-                            .frame(height: 50)
-                            .background(.peachOrange, in: .rect(cornerRadius: 12))
+                    
+                    LongButton(
+                        label: "Start Challenge",
+                        buttonColor: .peachOrange,
+                        textColor: .raisinBlack
+                    ) {
+                        isOnBoardDone = true
+                        
+                        let newChallenge = Challenge(
+                            identifier: UUID().uuidString,
+                            challengeDate: Date(),
+                            day: 1,
+                            dailyNutrition: NutritionInfo(
+                                calorie: totalCalorie,
+                                protein: dailyNutrient.protein,
+                                fat: dailyNutrient.fat,
+                                carb: dailyNutrient.carb,
+                                fiber: 1
+                            ),
+                            dailyNutritionLimit: NutritionInfo(
+                                calorie: totalCalorie,
+                                protein: proteinLimit.minimumCalorie,
+                                fat: fatLimit.minimumCalorie,
+                                carb: carbsLimit.minimumCalorie,
+                                fiber: 1
+                            ),
+                            isComplete: false
+                        )
+                        
+                        context.insert(newChallenge)
+                        try? context.save()
+                        
+                        self.presentationMode.wrappedValue.dismiss()
                     }
                     .buttonStyle(.plain)
                     .padding(.horizontal, 16)
@@ -221,5 +255,5 @@ struct SummaryPersonalInfoPage: View {
 }
 
 #Preview {
-    SummaryPersonalInfoPage()
+    SummaryPersonalInfoPage(intakeViewModel: IntakeViewModel())
 }

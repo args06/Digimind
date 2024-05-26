@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct FoodUnits: Codable, Hashable {
-    let value: Int
-    let unit: Unit
+    var value: Int = 0
+    var unit: Unit = .gram
+    
 }

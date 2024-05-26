@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct MiniKitaApp: App {
@@ -13,6 +14,10 @@ struct MiniKitaApp: App {
         WindowGroup {
             SplashScreen()
                 .preferredColorScheme(.light)
+                .modelContainer(for: [
+                    Challenge.self,
+                    DailyIntake.self
+                ])
         }
     }
 }

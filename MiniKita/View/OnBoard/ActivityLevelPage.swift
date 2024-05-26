@@ -8,18 +8,29 @@
 import SwiftUI
 
 struct ActivityLevelPage: View {
-    @State private var selectedActivity : ActivityLevel = .other
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    @State private var selectedOften : ActivityOften = .other
+    
+    var isFromProfile: Bool = false
+    
+    @State var exitToProfile: Bool = false
+    
+    @ObservedObject var intakeViewModel: IntakeViewModel
     
     var body: some View {
         VStack {
-            ProgressBar(
-                progress: 2/6,
-                height: 4,
-                foregroundColor: .maximumBlueGreen
-            )
-            .padding(.horizontal, 16)
-            .padding(.top, 1)
-            .frame(height: 1)
+            
+            if !isFromProfile {
+                ProgressBar(
+                    progress: 2/6,
+                    height: 4,
+                    foregroundColor: .maximumBlueGreen
+                )
+                .padding(.horizontal, 16)
+                .padding(.top, 1)
+                .frame(height: 1)
+            }
             
             VStack{
                 Text("How often do you actively move or break a sweat?")
@@ -32,17 +43,17 @@ struct ActivityLevelPage: View {
                     ],
                     spacing: 12
                 ) {
-                    ForEach(ActivityLevel.allCases, id: \.self) { activity in
+                    ForEach(ActivityOften.allCases, id: \.self) { activity in
                         
                         if !(activity == .other) {
                             LongButtonHighlight(
                                 label: activity.rawValue,
-                                buttonColor: (activity == selectedActivity) ?
+                                buttonColor: (activity == selectedOften) ?
                                 Color("CarrotOrange") : Color("GhostWhite"),
-                                textColor: (activity == selectedActivity) ?
+                                textColor: (activity == selectedOften) ?
                                 Color("AntiFlashWhite") : Color("RaisinBlack"),
                                 action: {
-                                    selectedActivity = activity
+                                    selectedOften = activity
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                                     }
                                 }
@@ -56,12 +67,17 @@ struct ActivityLevelPage: View {
             
             Spacer()
         }
-        .navigationTitle("Personal Info")
+        .navigationTitle("Activity Level")
         .navigationBarTitleDisplayMode(.inline)
         .background(.antiFlashWhite)
         .safeAreaInset(edge: .bottom) {
             NavigationLink {
-                ActivityLevelPage2()
+                ActivityLevelPage2(
+                    selectedOften: selectedOften,
+                    isFromProfile: isFromProfile,
+                    exitToProfile: $exitToProfile,
+                    intakeViewModel: intakeViewModel
+                )
             } label: {
                 Text("Next")
                     .foregroundStyle(.white)
@@ -74,15 +90,18 @@ struct ActivityLevelPage: View {
             .padding(.horizontal, 16)
             .disabled(formValidation())
         }
+        .onChange(of: exitToProfile) {
+            self.presentationMode.wrappedValue.dismiss()
+        }
     }
     
     func formValidation() -> Bool {
-        return selectedActivity == .other
+        return selectedOften == .other
     }
 }
 
 #Preview {
     NavigationStack {
-        ActivityLevelPage()
+        ActivityLevelPage(intakeViewModel: IntakeViewModel())
     }
 }

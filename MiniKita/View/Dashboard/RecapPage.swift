@@ -39,7 +39,7 @@ struct RecapPage: View {
                     .font(.system(size: 40))
                     .fontWeight(.medium)
                 
-                Text("\(Int(intakeViewModel.calorieProgress * 100))% of your daily calories (\(Int(intakeViewModel.totalCalorie)) kCal)")
+                Text("\(Int(intakeViewModel.calorieProgress * 100))% of your daily calories (\(Int(intakeViewModel.latestChallenge.dailyNutrition.calorie)) kCal)")
                     .font(.caption)
                 
                 Divider()
@@ -54,7 +54,7 @@ struct RecapPage: View {
                     HistoryCard(
                         nutritionType: .protein,
                         consumedCalorie: intakeViewModel.consumedProtein,
-                        totalCalorie: intakeViewModel.dailyNutrientLimit.protein,
+                        totalCalorie: intakeViewModel.latestChallenge.dailyNutritionLimit.protein,
                         calorieProgress: intakeViewModel.proteinProgress
                     )
                 }
@@ -68,7 +68,7 @@ struct RecapPage: View {
                     HistoryCard(
                         nutritionType: .fat,
                         consumedCalorie: intakeViewModel.consumedFat,
-                        totalCalorie: intakeViewModel.dailyNutrientLimit.fat,
+                        totalCalorie: intakeViewModel.latestChallenge.dailyNutritionLimit.fat,
                         calorieProgress: intakeViewModel.fatProgress
                     )
                     .padding(.top, 12)
@@ -83,7 +83,7 @@ struct RecapPage: View {
                     HistoryCard(
                         nutritionType: .carb,
                         consumedCalorie: intakeViewModel.consumedCarb,
-                        totalCalorie: intakeViewModel.dailyNutrientLimit.carb,
+                        totalCalorie: intakeViewModel.latestChallenge.dailyNutritionLimit.carb,
                         calorieProgress: intakeViewModel.carbProgress
                     )
                     .padding(.top, 12)
@@ -98,8 +98,8 @@ struct RecapPage: View {
                     HistoryCard(
                         nutritionType: .fiber,
                         consumedCalorie: intakeViewModel.consumedFiber,
-                        totalCalorie: intakeViewModel.dailyNutrientLimit.fiber,
-                        isFiber: true, 
+                        totalCalorie: intakeViewModel.latestChallenge.dailyNutritionLimit.fiber,
+                        isFiber: true,
                         calorieProgress: intakeViewModel.fiberProgress
                     )
                     .padding(.top, 12)
@@ -109,10 +109,11 @@ struct RecapPage: View {
         }
         .background(.antiFlashWhite)
         .onAppear {
-            if intakeViewModel.totalCalorie == .zero {
+            
+            if intakeViewModel.latestChallenge.dailyNutrition.calorie == .zero {
                 calorieProgress = 0
             } else {
-                calorieProgress = CGFloat(intakeViewModel.consumedDailyCalorie) / CGFloat(intakeViewModel.totalCalorie)
+                calorieProgress = CGFloat(intakeViewModel.consumedDailyCalorie) / CGFloat(intakeViewModel.latestChallenge.dailyNutrition.calorie)
             }
             intakeViewModel.calorieProgress = calorieProgress
         }

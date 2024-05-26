@@ -13,6 +13,8 @@ struct ProcessingInfoPage: View {
     @State private var moveClockwise = false
     @State var isActive = false
     
+    @ObservedObject var intakeViewModel: IntakeViewModel
+    
     var body: some View {
         VStack {
             if (!isActive){
@@ -56,7 +58,7 @@ struct ProcessingInfoPage: View {
                 }
                 .onAppear {
                     moveClockwise.toggle()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                         withAnimation {
                             isActive = true
                         }
@@ -64,7 +66,7 @@ struct ProcessingInfoPage: View {
                 }
             }
             else{
-                SummaryPersonalInfoPage()
+                SummaryPersonalInfoPage(intakeViewModel: intakeViewModel)
             }
         }
         .navigationBarBackButtonHidden()
@@ -72,5 +74,5 @@ struct ProcessingInfoPage: View {
 }
 
 #Preview {
-    ProcessingInfoPage()
+    ProcessingInfoPage(intakeViewModel: IntakeViewModel())
 }

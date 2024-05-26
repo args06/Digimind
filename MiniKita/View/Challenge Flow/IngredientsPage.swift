@@ -85,7 +85,7 @@ struct IngredientsPage: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(.antiFlashWhite)
             .onAppear {
-                nutritionIngredients = ingredients.filter {
+                nutritionIngredients = intakeViewModel.filteredIngredients.filter {
                     $0.nutritionType.rawValue == selectedNutrient
                 }
             }

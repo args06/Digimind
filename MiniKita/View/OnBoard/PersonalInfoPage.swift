@@ -25,12 +25,11 @@ struct PersonalInfoPage: View {
     var height: Int = 0
     
     @AppStorage(KEY_GENDER)
-    var gender: Gender = .female
-    
-    @AppStorage(KEY_ACTIVITY_LEVEL)
-    var activityLevel: ActivityLevel = .sedentary
+    var gender: Gender = .male
     
     @State var isFormFilled = true
+    
+    @ObservedObject var intakeViewModel: IntakeViewModel
     
     var body: some View {
         var birthDate: Date {
@@ -112,7 +111,7 @@ struct PersonalInfoPage: View {
                         .stroke(.platinum, lineWidth: 1.5)
                         .shadow(color : .platinum,radius: 2, x : 0, y:5.22)
                     
-                    Text("don’t worry, your data will never leave this device")
+                    Text("Don’t worry, your data will never leave this device")
                         .padding(5)
                         .foregroundColor(.graniteGray)
                     
@@ -130,8 +129,7 @@ struct PersonalInfoPage: View {
         .background(.antiFlashWhite)
         .safeAreaInset(edge: .bottom) {
             NavigationLink {
-                ActivityLevelPage()
-                
+                ActivityLevelPage(intakeViewModel: intakeViewModel)
             } label: {
                 Text("Next")
                     .foregroundStyle(.white)
@@ -145,11 +143,17 @@ struct PersonalInfoPage: View {
             .padding(.horizontal, 16)
         }
         .onAppear {
+            dateOfBirth = birthDate
+            age = calculateAge(birthDate: birthDate)
             isFormFilled = formValidation()
         }
         .onChange(of: userName)
         {
             isFormFilled = formValidation()
+        }
+        .onChange(of: dateOfBirth) {
+            birthDate = dateOfBirth
+            age = calculateAge(birthDate: birthDate)
         }
     }
     
@@ -160,7 +164,7 @@ struct PersonalInfoPage: View {
 
 #Preview {
     NavigationStack {
-        PersonalInfoPage()
+        PersonalInfoPage(intakeViewModel: IntakeViewModel())
     }
 }
 

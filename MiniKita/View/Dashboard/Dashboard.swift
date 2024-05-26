@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct Dashboard: View {
     
+    @Environment(\.modelContext) private var context
+    
     @AppStorage(KEY_USERNAME)
-    var userName: String = "Anjar"
+    var userName: String = ""
     
     @AppStorage(KEY_BIRTHDATE)
     var storedBirthDate = Date.now.timeIntervalSinceReferenceDate
@@ -21,19 +24,27 @@ struct Dashboard: View {
     }
     
     @AppStorage(KEY_AGE)
-    var age: Int = 22
+    var age: Int = 0
     
     @AppStorage(KEY_WEIGHT)
-    var weight: Int = 20
+    var weight: Int = 0
     
     @AppStorage(KEY_HEIGHT)
-    var height: Int = 20
+    var height: Int = 0
     
     @AppStorage(KEY_GENDER)
-    var gender: Gender = .female
+    var gender: Gender = .male
     
     @AppStorage(KEY_ACTIVITY_LEVEL)
     var activityLevel: ActivityLevel = .sedentary
+    
+    @AppStorage(KEY_ALLERGIES)
+    var allergies: [Ingredient] = []
+    
+    @AppStorage(KEY_DISLIKES)
+    var dislikes: [Ingredient] = []
+    
+    @State var removedIngredients: [Ingredient] = []
     
     @State var calorieProgress: CGFloat = 0.9
     @State var startAnimation: CGFloat = 0
@@ -45,15 +56,19 @@ struct Dashboard: View {
     @State var moveToCarbPage: Bool = false
     @State var moveToFiberPage: Bool = false
     
-    @State var dailyNutrient = (protein: 0.0, fat: 0.0, carb: 0.0, fiber: 0.0)
-    
-    @StateObject var intakeViewModel = IntakeViewModel()
+    @ObservedObject var intakeViewModel: IntakeViewModel
     
     @State var isShowInformationPage = false
     
     @State var isShowPopup = false
     
-    var day = CGFloat(6)
+    var day = CGFloat(1)
+    
+    @Query var challenges: [Challenge]
+    
+    @Query var dailyIntakes: [DailyIntake]
+    
+    @State var todaysIntake: [DailyIntake] = []
     
     var body: some View {
         NavigationStack {
@@ -77,11 +92,11 @@ struct Dashboard: View {
                         
                         NavigationLink {
                             RecapPage(
-                                isChallengeComplete: false,
+                                isChallengeComplete: isChallengeComplete(),
                                 intakeViewModel: intakeViewModel
                             )
                         } label: {
-                            Text("Day \(Int(day))")
+                            Text("Day \(Int(intakeViewModel.latestChallenge.day))")
                                 .foregroundStyle(.raisinBlack)
                                 .frame(width: 116)
                                 .padding(6)
@@ -94,7 +109,9 @@ struct Dashboard: View {
                         Spacer()
                         
                         NavigationLink {
-                            ProfilePage()
+                            ProfilePage(
+                                intakeViewModel: intakeViewModel
+                            )
                         } label: {
                             Image(systemName: "person.fill")
                                 .resizable()
@@ -117,7 +134,7 @@ struct Dashboard: View {
                         .shadow(color: .raisinBlack, radius: 5, y: 3)
                         .padding(.top, 24)
                     
-                    Text("\(Int(calorieProgress * 100))% of your daily calories (\(Int(intakeViewModel.totalCalorie)) kCal)")
+                    Text("\(Int(calorieProgress * 100))% of your daily calories (\(Int(intakeViewModel.latestChallenge.dailyNutrition.calorie)) kCal)")
                         .font(.callout)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
@@ -207,7 +224,7 @@ struct Dashboard: View {
                         NutritionButton(
                             consumedNutritionCalorie: $intakeViewModel.consumedProtein,
                             nutritionType: NutritionType.protein,
-                            totalNutritionCalorie: dailyNutrient.protein,
+                            totalNutritionCalorie: intakeViewModel.latestChallenge.dailyNutrition.protein,
                             intakeViewModel: intakeViewModel
                         )
                         .onTapGesture {
@@ -224,7 +241,7 @@ struct Dashboard: View {
                         NutritionButton(
                             consumedNutritionCalorie: $intakeViewModel.consumedFat,
                             nutritionType: NutritionType.fat,
-                            totalNutritionCalorie: dailyNutrient.fat,
+                            totalNutritionCalorie: intakeViewModel.latestChallenge.dailyNutrition.fat,
                             intakeViewModel: intakeViewModel
                         )
                         .onTapGesture {
@@ -241,7 +258,7 @@ struct Dashboard: View {
                         NutritionButton(
                             consumedNutritionCalorie: $intakeViewModel.consumedCarb,
                             nutritionType: NutritionType.carb,
-                            totalNutritionCalorie: dailyNutrient.carb,
+                            totalNutritionCalorie: intakeViewModel.latestChallenge.dailyNutrition.carb,
                             intakeViewModel: intakeViewModel
                         )
                         .onTapGesture {
@@ -297,7 +314,6 @@ struct Dashboard: View {
                         )
                     }
                     .zIndex(999999)
-                    
                 }
                 
             }
@@ -307,14 +323,66 @@ struct Dashboard: View {
             )
         }
         .onAppear {
-            intakeViewModel.totalCalorie = calculateTotalCalorie(weight: weight, height: height, age: age, gender: gender, activityLevel: activityLevel)
-            
-            dailyNutrient = calculateDailyNutrient(totalCalorie: Double(intakeViewModel.totalCalorie))
+            if !challenges.isEmpty {
+                let latestStoredChallenge = challenges.last!
+                
+                let difference = differeceDay(from: latestStoredChallenge.challengeDate)
+                
+                if difference == 0 {
+                    intakeViewModel.latestChallenge = latestStoredChallenge
+                    
+                    todaysIntake = dailyIntakes.filter {
+                        $0.challenge?.identifier == latestStoredChallenge.identifier
+                    }
+                    
+                    for intake in todaysIntake {
+                        intakeViewModel.consumedDailyCalorie += intake.consumableNutrition.calorie
+                        intakeViewModel.consumedProtein += intake.consumableNutrition.protein
+                        intakeViewModel.consumedFat += intake.consumableNutrition.fat
+                        intakeViewModel.consumedCarb += intake.consumableNutrition.carb
+                        intakeViewModel.consumedFiber += intake.consumableNutrition.fiber
+                    }
+                    
+                } else if difference == 1 {
+                    if latestStoredChallenge.isComplete {
+                        let newChallenge = Challenge(
+                            identifier: UUID().uuidString,
+                            challengeDate: Date(),
+                            day: latestStoredChallenge.day + 1,
+                            dailyNutrition: latestStoredChallenge.dailyNutrition,
+                            dailyNutritionLimit: latestStoredChallenge.dailyNutritionLimit,
+                            isComplete: false
+                        )
+                        
+                        context.insert(newChallenge)
+                        intakeViewModel.latestChallenge = challenges.last!
+                    } else {
+                        resetStreak(latestStoredChallenge: latestStoredChallenge)
+                    }
+                    try? context.save()
+                    
+                } else {
+                    resetStreak(latestStoredChallenge: latestStoredChallenge)
+                }
+            }
             
             checkCalorieCondition()
+            
+            removedIngredients = allergies + dislikes
+            
+            intakeViewModel.filteredIngredients = intakeViewModel.filteredIngredients
+                .filter { !removedIngredients.contains($0) }
+        }
+        .onChange(of: dailyIntakes) {
+            todaysIntake = dailyIntakes.filter {
+                $0.challenge?.identifier == intakeViewModel.latestChallenge.identifier
+            }
         }
         .onChange(of: intakeViewModel.consumedDailyCalorie) {
             checkCalorieCondition()
+        }
+        .onChange(of: intakeViewModel.calorieProgress) {
+            self.calorieProgress = intakeViewModel.calorieProgress
         }
         .sheet(isPresented: $isShowInformationPage) {
             InformationPage()
@@ -323,7 +391,11 @@ struct Dashboard: View {
     }
     
     private func checkCalorieCondition() {
-        calorieProgress = CGFloat(intakeViewModel.consumedDailyCalorie) / CGFloat(intakeViewModel.totalCalorie)
+        if intakeViewModel.latestChallenge.dailyNutrition.calorie == .zero {
+            calorieProgress = 0.0
+        } else {
+            calorieProgress = CGFloat(intakeViewModel.consumedDailyCalorie) / CGFloat(intakeViewModel.latestChallenge.dailyNutrition.calorie)
+        }
         
         if calorieProgress > 1 {
             calorieCondition = .over
@@ -331,6 +403,9 @@ struct Dashboard: View {
             
             if isChallengeComplete() {
                 calorieCondition = .complete
+                
+                intakeViewModel.latestChallenge.isComplete = true
+                try? context.save()
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     isShowPopup.toggle()
@@ -353,26 +428,49 @@ struct Dashboard: View {
             ),
             minimumCalorie: (
                 protein: getTotalMinimumCalorieLimit(
-                    totalCalorie: dailyNutrient.protein,
+                    totalCalorie: intakeViewModel.latestChallenge.dailyNutritionLimit.protein,
                     nutritionType: .protein
                 ).minimumCalorie,
                 fat: getTotalMinimumCalorieLimit(
-                    totalCalorie: dailyNutrient.fat,
+                    totalCalorie: intakeViewModel.latestChallenge.dailyNutritionLimit.fat,
                     nutritionType: .fat
                 ).minimumCalorie,
                 carb: getTotalMinimumCalorieLimit(
-                    totalCalorie: dailyNutrient.carb,
+                    totalCalorie: intakeViewModel.latestChallenge.dailyNutritionLimit.carb,
                     nutritionType: .carb
                 ).minimumCalorie,
                 fiber: getTotalMinimumCalorieLimit(
-                    totalCalorie: dailyNutrient.fiber,
+                    totalCalorie: intakeViewModel.latestChallenge.dailyNutritionLimit.fiber,
                     nutritionType: .fiber
                 ).minimumCalorie
             )
         )
     }
+    
+    private func resetStreak(latestStoredChallenge: Challenge) {
+        do {
+            try context.delete(model: Challenge.self)
+            try context.delete(model: DailyIntake.self)
+            
+            let newChallenge = Challenge(
+                identifier: UUID().uuidString,
+                challengeDate: Date(),
+                day: 1,
+                dailyNutrition: latestStoredChallenge.dailyNutrition,
+                dailyNutritionLimit: latestStoredChallenge.dailyNutritionLimit,
+                isComplete: false
+            )
+            
+            context.insert(newChallenge)
+            try? context.save()
+            
+            intakeViewModel.latestChallenge = challenges.last!
+        } catch {
+            print("Failed to clear all Country and City data.")
+        }
+    }
 }
 
 #Preview {
-    Dashboard()
+    Dashboard(intakeViewModel: IntakeViewModel())
 }

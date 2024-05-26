@@ -9,38 +9,21 @@ import SwiftUI
 
 struct SplashScreen: View {
     
-    @AppStorage(KEY_USERNAME)
-    var userName: String = ""
-    
-    @AppStorage(KEY_BIRTHDATE)
-    var storedBirthDate = Date.now.timeIntervalSinceReferenceDate
-    
-    @AppStorage(KEY_AGE)
-    var age: Int = 0
-    
-    @AppStorage(KEY_WEIGHT)
-    var weight: Int = 0
-    
-    @AppStorage(KEY_HEIGHT)
-    var height: Int = 0
-    
-    @AppStorage(KEY_GENDER)
-    var gender: Gender = .female
-    
-    @AppStorage(KEY_ACTIVITY_LEVEL)
-    var activityLevel: ActivityLevel = .sedentary
+    @AppStorage(KEY_ONBOARD)
+    var isOnBoardDone: Bool = false
     
     @State var isActive = false
     
-    var body: some View {
-        var birthDate: Date {
-            set {storedBirthDate = newValue.timeIntervalSinceReferenceDate}
-            get {Date(timeIntervalSinceReferenceDate: storedBirthDate)}
-        }
-        
+    @StateObject var intakeViewModel = IntakeViewModel()
+    
+    var body: some View {        
         VStack {
             if isActive {
-                WelcomePage()
+                if isOnBoardDone {
+                    Dashboard(intakeViewModel: intakeViewModel)
+                } else {
+                    WelcomePage(intakeViewModel: intakeViewModel)
+                }
             } else {
                 VStack {
                     Image("splash")
@@ -52,14 +35,6 @@ struct SplashScreen: View {
             }
         }
         .onAppear {
-//            userName = "Anjar Harimurti"
-//            birthDate = Date.from(year: 2001, month: 06, day: 26)
-//            
-//            age = calculateAge(birthDate: birthDate)
-//            weight = 51
-//            height = 168
-//            gender = .male
-//            activityLevel = defineActivityLevel(often: 3, minute: 2)
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
                 withAnimation {
