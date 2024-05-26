@@ -6,8 +6,12 @@
 //
 
 import Foundation
+import SwiftData
+import Observation
 
 class IntakeViewModel: ObservableObject {
+    
+    @Published var filteredIngredients : [Ingredient] = ingredients
     
     @Published var selectedIngredient = Ingredient()
     @Published var selectedPart = IngredientPart()
@@ -27,7 +31,5 @@ class IntakeViewModel: ObservableObject {
     @Published var carbProgress: CGFloat = 0
     @Published var fiberProgress: CGFloat = 0
     
-    @Published var totalCalorie: Double = 0
-    @Published var dailyNutrient = (protein: 0.0, fat: 0.0, carb: 0.0, fiber: 0.0)
-    @Published var dailyNutrientLimit = (protein: 0.0, fat: 0.0, carb: 0.0, fiber: 0.0)
+    @Published var latestChallenge = Challenge()
 }

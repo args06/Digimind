@@ -37,7 +37,6 @@
 		6210D3AB2BFDA63C007C6F99 /* NutritionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6210D3AA2BFDA63C007C6F99 /* NutritionType.swift */; };
 		6210D3AD2BFDA6DF007C6F99 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6210D3AC2BFDA6DF007C6F99 /* Gender.swift */; };
 		6210D3AF2BFDA70A007C6F99 /* ActivityLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6210D3AE2BFDA70A007C6F99 /* ActivityLevel.swift */; };
-		6210D3B72BFDA972007C6F99 /* ingredientData.json in Resources */ = {isa = PBXBuildFile; fileRef = 6210D3B62BFDA972007C6F99 /* ingredientData.json */; };
 		6210D3B92BFDD1A6007C6F99 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6210D3B82BFDD1A6007C6F99 /* Ingredient.swift */; };
 		6210D3BB2BFDD22A007C6F99 /* IngredientPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6210D3BA2BFDD22A007C6F99 /* IngredientPart.swift */; };
 		6210D3BD2BFDD260007C6F99 /* Nutrition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6210D3BC2BFDD260007C6F99 /* Nutrition.swift */; };
@@ -50,6 +49,11 @@
 		62B8DE052C003C0B00FF3DFB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B8DE042C003C0B00FF3DFB /* User.swift */; };
 		62B8DE092C003DEA00FF3DFB /* UserDefaultKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B8DE082C003DEA00FF3DFB /* UserDefaultKey.swift */; };
 		62B8DE0B2C00457F00FF3DFB /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B8DE0A2C00457F00FF3DFB /* DateExtension.swift */; };
+		62F99A602C03736D00B455E1 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F99A5F2C03736D00B455E1 /* Challenge.swift */; };
+		62F99A622C03738500B455E1 /* DailyIntake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F99A612C03738500B455E1 /* DailyIntake.swift */; };
+		62F99A642C0381E500B455E1 /* ActivityOften.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F99A632C0381E500B455E1 /* ActivityOften.swift */; };
+		62F99A662C03869E00B455E1 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F99A652C03869E00B455E1 /* ArrayExtension.swift */; };
+		62F99A682C0391F800B455E1 /* ingredientData.json in Resources */ = {isa = PBXBuildFile; fileRef = 62F99A672C0391F800B455E1 /* ingredientData.json */; };
 		62FE04F52C026940009752BD /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FE04F42C026940009752BD /* ProfilePage.swift */; };
 		62FE04F72C0269B2009752BD /* InformationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FE04F62C0269B2009752BD /* InformationType.swift */; };
 		62FE04F92C0269D5009752BD /* DetailInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FE04F82C0269D5009752BD /* DetailInformation.swift */; };
@@ -97,7 +101,6 @@
 		6210D3AA2BFDA63C007C6F99 /* NutritionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionType.swift; sourceTree = "<group>"; };
 		6210D3AC2BFDA6DF007C6F99 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		6210D3AE2BFDA70A007C6F99 /* ActivityLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLevel.swift; sourceTree = "<group>"; };
-		6210D3B62BFDA972007C6F99 /* ingredientData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ingredientData.json; sourceTree = "<group>"; };
 		6210D3B82BFDD1A6007C6F99 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		6210D3BA2BFDD22A007C6F99 /* IngredientPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientPart.swift; sourceTree = "<group>"; };
 		6210D3BC2BFDD260007C6F99 /* Nutrition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrition.swift; sourceTree = "<group>"; };
@@ -110,6 +113,11 @@
 		62B8DE042C003C0B00FF3DFB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		62B8DE082C003DEA00FF3DFB /* UserDefaultKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKey.swift; sourceTree = "<group>"; };
 		62B8DE0A2C00457F00FF3DFB /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		62F99A5F2C03736D00B455E1 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
+		62F99A612C03738500B455E1 /* DailyIntake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyIntake.swift; sourceTree = "<group>"; };
+		62F99A632C0381E500B455E1 /* ActivityOften.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityOften.swift; sourceTree = "<group>"; };
+		62F99A652C03869E00B455E1 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		62F99A672C0391F800B455E1 /* ingredientData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ingredientData.json; sourceTree = "<group>"; };
 		62FE04F42C026940009752BD /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
 		62FE04F62C0269B2009752BD /* InformationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationType.swift; sourceTree = "<group>"; };
 		62FE04F82C0269D5009752BD /* DetailInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInformation.swift; sourceTree = "<group>"; };
@@ -195,6 +203,7 @@
 				6210D3AE2BFDA70A007C6F99 /* ActivityLevel.swift */,
 				62FE04F62C0269B2009752BD /* InformationType.swift */,
 				5831F5152C03279E003D2A81 /* ActivityMinute.swift */,
+				62F99A632C0381E500B455E1 /* ActivityOften.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -214,13 +223,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		6210D3B12BFDA799007C6F99 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
 		6268EA912BF73F89001B5A99 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +230,7 @@
 				6210D37F2BFB9AFB007C6F99 /* Util.swift */,
 				586E75F92BFB8D41000C9295 /* ViewExtension.swift */,
 				62B8DE0A2C00457F00FF3DFB /* DateExtension.swift */,
+				62F99A652C03869E00B455E1 /* ArrayExtension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -235,8 +238,8 @@
 		6268EA922BF7411F001B5A99 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				62F99A5E2C03735D00B455E1 /* Entity */,
 				62B8DE062C003DB000FF3DFB /* UserDefault */,
-				6210D3B12BFDA799007C6F99 /* Entity */,
 				6210D3B02BFDA794007C6F99 /* Model */,
 				6210D3872BFC6778007C6F99 /* Enum */,
 			);
@@ -290,6 +293,15 @@
 			path = UserDefault;
 			sourceTree = "<group>";
 		};
+		62F99A5E2C03735D00B455E1 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				62F99A5F2C03736D00B455E1 /* Challenge.swift */,
+				62F99A612C03738500B455E1 /* DailyIntake.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		A4832A412BE4DC7300C726AE = {
 			isa = PBXGroup;
 			children = (
@@ -314,7 +326,7 @@
 				6268EA932BF74129001B5A99 /* View */,
 				62B8DE002BFEED6000FF3DFB /* ViewModel */,
 				A4832A4D2BE4DC7300C726AE /* MiniKitaApp.swift */,
-				6210D3B62BFDA972007C6F99 /* ingredientData.json */,
+				62F99A672C0391F800B455E1 /* ingredientData.json */,
 				A4832A4F2BE4DC7300C726AE /* ContentView.swift */,
 				A4832A512BE4DC7400C726AE /* Assets.xcassets */,
 				A4832A532BE4DC7400C726AE /* Preview Content */,
@@ -389,8 +401,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4832A552BE4DC7400C726AE /* Preview Assets.xcassets in Resources */,
-				6210D3B72BFDA972007C6F99 /* ingredientData.json in Resources */,
 				6268EA972BF746FC001B5A99 /* Localizable.strings in Resources */,
+				62F99A682C0391F800B455E1 /* ingredientData.json in Resources */,
 				A4832A522BE4DC7400C726AE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6210D3AB2BFDA63C007C6F99 /* NutritionType.swift in Sources */,
+				62F99A602C03736D00B455E1 /* Challenge.swift in Sources */,
 				5831F51C2C032907003D2A81 /* ActivityLevelPage3.swift in Sources */,
 				5831F5242C033274003D2A81 /* SummaryPersonalInfoPage.swift in Sources */,
 				6210D3A72BFCE850007C6F99 /* SpeechBubble2.swift in Sources */,
@@ -418,6 +431,8 @@
 				6210D3AD2BFDA6DF007C6F99 /* Gender.swift in Sources */,
 				62FE04FF2C027F51009752BD /* RecapBadge.swift in Sources */,
 				62FE04F52C026940009752BD /* ProfilePage.swift in Sources */,
+				62F99A622C03738500B455E1 /* DailyIntake.swift in Sources */,
+				62F99A662C03869E00B455E1 /* ArrayExtension.swift in Sources */,
 				A4832A502BE4DC7300C726AE /* ContentView.swift in Sources */,
 				6210D3A92BFDA570007C6F99 /* Unit.swift in Sources */,
 				5831F5222C032FC4003D2A81 /* ProcessingInfoPage.swift in Sources */,
@@ -447,6 +462,7 @@
 				62FE04F72C0269B2009752BD /* InformationType.swift in Sources */,
 				62B8DE0B2C00457F00FF3DFB /* DateExtension.swift in Sources */,
 				5831F50E2C0315AD003D2A81 /* WelcomePage.swift in Sources */,
+				62F99A642C0381E500B455E1 /* ActivityOften.swift in Sources */,
 				62B8DE032BFEED7900FF3DFB /* IntakeViewModel.swift in Sources */,
 				62FE05032C028517009752BD /* RecapHistory.swift in Sources */,
 				6210D3C12BFDD34E007C6F99 /* NutritionInfo.swift in Sources */,
@@ -599,14 +615,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MiniKita/Preview Content\"";
-				DEVELOPMENT_TEAM = 9227UY749D;
+				DEVELOPMENT_TEAM = WTU6YK528U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = NgeMeal;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -628,14 +644,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MiniKita/Preview Content\"";
-				DEVELOPMENT_TEAM = 9227UY749D;
+				DEVELOPMENT_TEAM = WTU6YK528U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = NgeMeal;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

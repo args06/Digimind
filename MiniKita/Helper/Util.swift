@@ -43,32 +43,39 @@ func calculateAge(birthDate: Date) -> Int {
     return age
 }
 
-func defineActivityLevel(often: Int, minute: Int) -> ActivityLevel {
-    return if often < 4 {
-        if minute == 1 {
+func differeceDay(from: Date) -> Int {
+    let calendar = Calendar.current
+    let dayComponents = calendar.dateComponents([.day], from: from, to: Date())
+    let difference = dayComponents.day!
+    return difference
+}
+
+func defineActivityLevel(often: ActivityOften, minute: ActivityMinute) -> ActivityLevel {
+    return if often == .everyday {
+        if minute == .zerominutes {
             ActivityLevel.sedentary
-        } else if minute == 2 {
+        } else if minute == .twentyminutes {
             ActivityLevel.lightlyActive
+        } else if minute == .sixtyminutes {
+            ActivityLevel.veryActive
         } else {
-            ActivityLevel.moderatelyActive
+            ActivityLevel.extraActive
         }
-    } else if often == 4 {
-        if minute == 1 {
+    } else if often == .dedicate {
+        if minute == .zerominutes {
             ActivityLevel.sedentary
-        } else if minute == 2 {
+        } else if minute == .twentyminutes {
             ActivityLevel.lightlyActive
         } else {
             ActivityLevel.veryActive
         }
     } else {
-        if minute == 1 {
+        if minute == .zerominutes {
             ActivityLevel.sedentary
-        } else if minute == 2 {
+        } else if minute == .twentyminutes {
             ActivityLevel.lightlyActive
-        } else if minute == 3 {
-            ActivityLevel.veryActive
         } else {
-            ActivityLevel.extraActive
+            ActivityLevel.moderatelyActive
         }
     }
 }
@@ -156,13 +163,18 @@ func getIngredientCalorie(selectedAmount: FoodUnits, selectedNutrition: Nutritio
         selectedNutrition.nutritionDetail.inGram
     }
     
-    let valueDouble = Double(selectedAmount.value)
+    
+    var valueDouble = Double(selectedAmount.value)
+    
+    if selectedAmount.unit == .tablespoon {
+        valueDouble = valueDouble * 14.75
+    }
     
     let calorie = valueDouble * selectedNutritionInfo.calorie
-    let protein = valueDouble * (selectedNutritionInfo.protein ?? 0.0)
-    let fat = valueDouble * (selectedNutritionInfo.fat ?? 0.0)
-    let carb = valueDouble * (selectedNutritionInfo.carb ?? 0.0)
-    let fiber = valueDouble * (selectedNutritionInfo.fiber ?? 0)
+    let protein = valueDouble * (selectedNutritionInfo.protein)
+    let fat = valueDouble * (selectedNutritionInfo.fat)
+    let carb = valueDouble * (selectedNutritionInfo.carb)
+    let fiber = valueDouble * (selectedNutritionInfo.fiber)
     return (calorie: calorie, protein: protein, fat: fat, carb: carb, fiber: fiber)
 }
 

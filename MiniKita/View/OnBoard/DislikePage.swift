@@ -8,21 +8,33 @@
 import SwiftUI
 
 struct DislikePage: View {
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    @AppStorage(KEY_DISLIKES)
+    var dislikes: [Ingredient] = []
+    
     @State private var selectedDislike : [Ingredient] = []
     @State private var search : String = ""
+    
+    var isFromProfile: Bool = false
+    
+    @ObservedObject var intakeViewModel: IntakeViewModel
     
     var body: some View {
         ScrollView{
             VStack {
                 
-                ProgressBar(
-                    progress: 6/6,
-                    height: 4,
-                    foregroundColor: .maximumBlueGreen
-                )
-                .padding(.horizontal, 16)
-                .padding(.top, 1)
-                .frame(height: 1)
+                if !isFromProfile {
+                    ProgressBar(
+                        progress: 6/6,
+                        height: 4,
+                        foregroundColor: .maximumBlueGreen
+                    )
+                    .padding(.horizontal, 16)
+                    .padding(.top, 1)
+                    .frame(height: 1)
+                }
                 
                 VStack{
                     Text("Got dislikes? Let us know to make your experience even better!")
@@ -38,7 +50,12 @@ struct DislikePage: View {
                         ],
                         spacing: 12
                     ) {
-                        ForEach(filterIngredients(query: search), id: \.self) { dislike in
+                        ForEach(
+                            filterIngredients(
+                                query: search
+                            ),
+                            id: \.self
+                        ) { dislike in
                             LongButtonHighlight(
                                 label: dislike.ingredientName,
                                 buttonColor: (selectedDislike.contains(dislike)) ?
@@ -52,6 +69,8 @@ struct DislikePage: View {
                                     } else {
                                         selectedDislike.append(dislike)
                                     }
+                                    
+                                    dislikes = selectedDislike
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                                     }
                                 }
@@ -66,31 +85,48 @@ struct DislikePage: View {
                 
                 Spacer()
             }
-            .navigationTitle("Personal Info")
+            .navigationTitle("Dislikes")
             .navigationBarTitleDisplayMode(.inline)
-            .background(.antiFlashWhite)
             .safeAreaInset(edge: .bottom) {
-                NavigationLink {
-                    ProcessingInfoPage()
-                } label: {
-                    Text("Next")
-                        .foregroundStyle(.white)
-                        .font(.headline)
-                        .hSpacing()
-                        .frame(height: 50)
-                        .background(Color("MaximumBlueGreen"), in: .rect(cornerRadius: 12))
+                if !isFromProfile {
+                    NavigationLink {
+                        ProcessingInfoPage(intakeViewModel: intakeViewModel)
+                    } label: {
+                        Text("Next")
+                            .foregroundStyle(.white)
+                            .font(.headline)
+                            .hSpacing()
+                            .frame(height: 50)
+                            .background(Color("MaximumBlueGreen"), in: .rect(cornerRadius: 12))
+                    }
+                    .buttonStyle(.plain)
+                    .padding(.horizontal, 16)
+                } else {
+                    LongButton(
+                        label: "Save",
+                        buttonColor: .maximumBlueGreen,
+                        textColor: .white) {
+                            intakeViewModel.filteredIngredients = intakeViewModel.filteredIngredients
+                                .filter {
+                                    !selectedDislike.contains($0)
+                                }
+                            
+                            self.presentationMode.wrappedValue.dismiss()
+                        }
+                        .padding(.horizontal, 16)
                 }
-                .buttonStyle(.plain)
-                .padding(.horizontal, 16)
             }
             .searchable(text: $search)
+            .onAppear {
+                selectedDislike = dislikes
+            }
         }
-        
+        .background(.antiFlashWhite)
     }
 }
 
 #Preview {
     NavigationStack {
-        DislikePage()
+        DislikePage(intakeViewModel: IntakeViewModel())
     }
 }

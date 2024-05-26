@@ -12,6 +12,8 @@ struct WelcomePage: View {
     @State var startAnimation: CGFloat = 0
     @State private var moveClockwise = false
     
+    @ObservedObject var intakeViewModel: IntakeViewModel
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -69,7 +71,7 @@ struct WelcomePage: View {
                         .frame(width: UIScreen.main.bounds.size.width * 0.75)
                     
                     NavigationLink {
-                        PersonalInfoPage()
+                        PersonalInfoPage(intakeViewModel: intakeViewModel)
                     } label: {
                         Text("Yes, totally!")
                             .foregroundStyle(.white)
@@ -94,5 +96,5 @@ struct WelcomePage: View {
 }
 
 #Preview {
-    WelcomePage()
+    WelcomePage(intakeViewModel: IntakeViewModel())
 }

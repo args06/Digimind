@@ -9,8 +9,11 @@ import SwiftUI
 
 struct ProfilePage: View {
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.modelContext) private var context
+    
     @AppStorage(KEY_USERNAME)
-    var userName: String = "Anjar"
+    var userName: String = ""
     
     @AppStorage(KEY_BIRTHDATE)
     var storedBirthDate = Date.now.timeIntervalSinceReferenceDate
@@ -18,19 +21,27 @@ struct ProfilePage: View {
     @State var dateOfBirth: Date = Date()
     
     @AppStorage(KEY_AGE)
-    var age: Int = 22
+    var age: Int = 0
     
     @AppStorage(KEY_WEIGHT)
-    var weight: Int = 20
+    var weight: Int = 0
     
     @AppStorage(KEY_HEIGHT)
-    var height: Int = 20
+    var height: Int = 0
     
     @AppStorage(KEY_GENDER)
     var gender: Gender = .female
     
     @AppStorage(KEY_ACTIVITY_LEVEL)
     var activityLevel: ActivityLevel = .sedentary
+    
+    @AppStorage(KEY_ALLERGIES)
+    var allergies: [Ingredient] = []
+    
+    @AppStorage(KEY_DISLIKES)
+    var dislikes: [Ingredient] = []
+    
+    @ObservedObject var intakeViewModel: IntakeViewModel
     
     var body: some View {
         
@@ -79,14 +90,17 @@ struct ProfilePage: View {
                     }
                     
                     NavigationLink {
-                        
+                        ActivityLevelPage(
+                            isFromProfile: true,
+                            intakeViewModel: intakeViewModel
+                        )
                     } label: {
                         DetailInformation(
                             informationType: .text,
                             informationName: "Activity Level",
                             informationValue: .constant(""),
                             informationValueInt: .constant(0),
-                            additionalInformation: "Edit"
+                            additionalInformation: activityLevel.rawValue
                         )
                     }
                     
@@ -97,7 +111,10 @@ struct ProfilePage: View {
                 
                 Section {
                     NavigationLink {
-                        
+                        AllergiesPage(
+                            isFromProfile: true, 
+                            intakeViewModel: intakeViewModel
+                        )
                     } label: {
                         DetailInformation(
                             informationType: .text,
@@ -106,12 +123,15 @@ struct ProfilePage: View {
                             informationValueInt: .constant(0),
                             additionalInformation: "Edit",
                             isHaveDetail: true,
-                            detailInformation: []
+                            detailInformation: allergies.map {$0.ingredientName}
                         )
                     }
                     
                     NavigationLink {
-                        
+                        DislikePage(
+                            isFromProfile: true,
+                            intakeViewModel: intakeViewModel
+                        )
                     } label: {
                         DetailInformation(
                             informationType: .text,
@@ -120,7 +140,7 @@ struct ProfilePage: View {
                             informationValueInt: .constant(0),
                             additionalInformation: "Edit",
                             isHaveDetail: true,
-                            detailInformation: ["Dairy", "Fish"]
+                            detailInformation: dislikes.map {$0.ingredientName}
                         )
                     }
                     
@@ -145,9 +165,10 @@ struct ProfilePage: View {
                     }
                     
                 } header: {
-                    Text("Apple Health")
+                    Text("Apple Health (Next Development)")
                         .textCase(nil)
                 }
+                .disabled(true)
             }
         }
         .navigationTitle("Personal Info")
@@ -157,12 +178,56 @@ struct ProfilePage: View {
         }
         .onChange(of: dateOfBirth) {
             birthDate = dateOfBirth
+            age = calculateAge(birthDate: birthDate)
+        }
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                
+                Button("Done") {
+                    let totalCalorie = calculateTotalCalorie(weight: weight, height: height, age: age, gender: gender, activityLevel: activityLevel)
+                    
+                    let dailyNutrient = calculateDailyNutrient(totalCalorie: Double(totalCalorie))
+                    
+                    let proteinLimit = getTotalMinimumCalorieLimit(
+                        totalCalorie: dailyNutrient.protein,
+                        nutritionType: .protein
+                    )
+                    
+                    let carbsLimit = getTotalMinimumCalorieLimit(
+                        totalCalorie: dailyNutrient.carb,
+                        nutritionType: .carb
+                    )
+                    
+                    let fatLimit = getTotalMinimumCalorieLimit(
+                        totalCalorie: dailyNutrient.fat,
+                        nutritionType: .fat
+                    )
+                    
+                    intakeViewModel.latestChallenge.dailyNutrition.calorie = totalCalorie
+                    intakeViewModel.latestChallenge.dailyNutrition.protein = dailyNutrient.protein
+                    intakeViewModel.latestChallenge.dailyNutrition.fat = dailyNutrient.fat
+                    intakeViewModel.latestChallenge.dailyNutrition.carb = dailyNutrient.carb
+                    intakeViewModel.latestChallenge.dailyNutrition.fiber = dailyNutrient.fiber
+                    
+                    intakeViewModel.latestChallenge.dailyNutritionLimit.calorie = totalCalorie
+                    intakeViewModel.latestChallenge.dailyNutritionLimit.protein = proteinLimit.minimumCalorie
+                    intakeViewModel.latestChallenge.dailyNutritionLimit.fat = fatLimit.minimumCalorie
+                    intakeViewModel.latestChallenge.dailyNutritionLimit.carb = carbsLimit.minimumCalorie
+                    intakeViewModel.latestChallenge.dailyNutritionLimit.fiber = 1
+                    
+                    intakeViewModel.calorieProgress = CGFloat(intakeViewModel.consumedDailyCalorie) / CGFloat(intakeViewModel.latestChallenge.dailyNutrition.calorie)
+                    
+                    try? context.save()
+                    
+                    self.presentationMode.wrappedValue.dismiss()
+                }
+            }
         }
     }
 }
 
 #Preview {
     NavigationStack {
-        ProfilePage()
+        ProfilePage(intakeViewModel: IntakeViewModel())
     }
 }

@@ -10,6 +10,8 @@ import SwiftUI
 struct ActivityLevelPage3: View {
     @State private var selectedActivityMinute : ActivityMinute = .other
     
+    @ObservedObject var intakeViewModel: IntakeViewModel
+    
     var body: some View {
         VStack{
             ProgressBar(
@@ -78,7 +80,7 @@ struct ActivityLevelPage3: View {
         .background(.antiFlashWhite)
         .safeAreaInset(edge: .bottom) {
             NavigationLink {
-                AllergiesPage()
+                AllergiesPage(intakeViewModel: intakeViewModel)
             } label: {
                 Text("Got it!")
                     .foregroundStyle(.white)
@@ -95,6 +97,6 @@ struct ActivityLevelPage3: View {
 
 #Preview {
     NavigationStack {
-        ActivityLevelPage3()
+        ActivityLevelPage3(intakeViewModel: IntakeViewModel())
     }
 }

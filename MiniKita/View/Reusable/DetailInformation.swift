@@ -56,6 +56,7 @@ struct DetailInformation: View {
                         formatter: NumberFormatter()
                     )
                     .multilineTextAlignment(inputTextPosition)
+                    .keyboardType(.numberPad)
                 } else {
                     TextField(
                         informationName,

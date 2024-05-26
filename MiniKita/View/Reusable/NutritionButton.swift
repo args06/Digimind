@@ -17,8 +17,6 @@ struct NutritionButton: View {
     
     var totalNutritionCalorie: Double = 0.0
     
-    @State var totalMinimumCalorieLimit = (minimumCalorie: 0.0, minimumPercentage: 0.0)
-    
     @State var calorieCondition: CalorieCondition = .under
     
     @ObservedObject var intakeViewModel : IntakeViewModel
@@ -33,7 +31,7 @@ struct NutritionButton: View {
                     RoundedRectangle(cornerRadius: 10)
                         .foregroundStyle(.platinum)
                         .frame(width: 76, height: 76)
-                        
+                    
                     RoundedRectangle(cornerRadius: 10)
                         .fill(
                             backgroundColorEachCalorie(condition: calorieCondition)
@@ -53,26 +51,24 @@ struct NutritionButton: View {
                 }
                 .frame(width: size.width, height: size.height, alignment: .center)
                 .onAppear {
-                    totalMinimumCalorieLimit = getTotalMinimumCalorieLimit(
-                        totalCalorie: totalNutritionCalorie,
-                        nutritionType: nutritionType
-                    )
-                    
-                    progress = CGFloat(consumedNutritionCalorie) / CGFloat(totalMinimumCalorieLimit.minimumCalorie)
                     
                     switch nutritionType {
                     case .protein:
+                        progress = CGFloat(consumedNutritionCalorie) / CGFloat(intakeViewModel.latestChallenge.dailyNutritionLimit.protein)
                         intakeViewModel.proteinProgress = progress
-                        intakeViewModel.dailyNutrientLimit.protein = totalMinimumCalorieLimit.minimumCalorie
+                        
                     case .fat:
+                        progress = CGFloat(consumedNutritionCalorie) / CGFloat(intakeViewModel.latestChallenge.dailyNutritionLimit.fat)
                         intakeViewModel.fatProgress = progress
-                        intakeViewModel.dailyNutrientLimit.fat = totalMinimumCalorieLimit.minimumCalorie
+                        
                     case .carb:
+                        progress = CGFloat(consumedNutritionCalorie) / CGFloat(intakeViewModel.latestChallenge.dailyNutritionLimit.carb)
                         intakeViewModel.carbProgress = progress
-                        intakeViewModel.dailyNutrientLimit.carb = totalMinimumCalorieLimit.minimumCalorie
+                        
                     case .fiber:
+                        progress = CGFloat(consumedNutritionCalorie) / CGFloat(intakeViewModel.latestChallenge.dailyNutritionLimit.fiber)
                         intakeViewModel.fiberProgress = progress
-                        intakeViewModel.dailyNutrientLimit.fiber = totalMinimumCalorieLimit.minimumCalorie
+                        
                     case .calorie: break
                         
                     }
@@ -104,7 +100,13 @@ struct NutritionButton: View {
     }
     
     private func checkCalorieCondition() {
-        let newProgress = CGFloat(consumedNutritionCalorie) / CGFloat(totalNutritionCalorie)
+        var newProgress = 0.0
+        
+        if totalNutritionCalorie == .zero {
+            newProgress = 0.0
+        } else {
+            newProgress = CGFloat(consumedNutritionCalorie) / CGFloat(totalNutritionCalorie)
+        }
         
         if newProgress > 1 {
             calorieCondition = .over

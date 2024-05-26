@@ -10,9 +10,9 @@ import SwiftUI
 struct RecapHistory: View {
     
     var ingredientName: String
-    var ingredientType: String
+    var ingredientPart: String
     var coockingType: String
-    var amount: String
+    var amount: FoodUnits
     var calorie: Int
     var time: Date
     
@@ -43,17 +43,16 @@ struct RecapHistory: View {
             
         }
         .onAppear {
-            if !ingredientType.isEmpty {
-                detailIngredient.append(ingredientType)
+            if !ingredientPart.isEmpty {
+                detailIngredient.append(ingredientPart)
             }
             
             if !coockingType.isEmpty {
                 detailIngredient.append(coockingType)
             }
             
-            if !amount.isEmpty {
-                detailIngredient.append(amount)
-            }
+            let amounts = "\(amount.value) \(amount.unit)"
+            detailIngredient.append(amounts)
         }
     }
 }
@@ -61,9 +60,9 @@ struct RecapHistory: View {
 #Preview {
     RecapHistory(
         ingredientName: "Chicken",
-        ingredientType: "Breast",
+        ingredientPart: "Breast",
         coockingType: "Fried",
-        amount: "150 gram",
+        amount: FoodUnits(value: 2, unit: .gram),
         calorie: 159,
         time: Date()
     )

@@ -6,15 +6,8 @@
 //
 
 import SwiftUI
+import SwiftData
 
-struct DailyIntake: Hashable {
-    let ingredientName: String
-    let ingredientType: String
-    let coockingType: String
-    let amount: String
-    let calorie: Int
-    let time: Date
-}
 
 struct RecapDetailPage: View {
     
@@ -25,32 +18,9 @@ struct RecapDetailPage: View {
     @State var totalCalorie = 0.0
     @State var calorieProgress = 0.0
     
-    var datas = [
-        DailyIntake(
-            ingredientName: "Chicken",
-            ingredientType: "Breast",
-            coockingType: "Fried",
-            amount: "150 gram",
-            calorie: 159,
-            time: Date()
-        ),
-        DailyIntake(
-            ingredientName: "Chicken",
-            ingredientType: "Drumstick",
-            coockingType: "Roast",
-            amount: "2 pcs",
-            calorie: 159,
-            time: Date()
-        ),
-        DailyIntake(
-            ingredientName: "Salmon",
-            ingredientType: "",
-            coockingType: "Roast",
-            amount: "125 gram",
-            calorie: 159,
-            time: Date()
-        ),
-    ]
+    @Query var dailyIntakes: [DailyIntake]
+    
+    @State var todaysIntake : [DailyIntake] = []
     
     var body: some View {
         ScrollView {
@@ -73,13 +43,13 @@ struct RecapDetailPage: View {
                         .font(.caption)
                 }
                 
-                ForEach(datas, id: \.self) { data in
+                ForEach(todaysIntake, id: \.self) { data in
                     RecapHistory(
                         ingredientName: data.ingredientName,
-                        ingredientType: data.ingredientType,
-                        coockingType: data.coockingType,
-                        amount: data.amount,
-                        calorie: data.calorie,
+                        ingredientPart: data.ingredientPart,
+                        coockingType: data.cookingType,
+                        amount: data.consumableAmount,
+                        calorie: Int(data.consumableNutrition.calorie),
                         time: data.time
                     )
                 }
@@ -89,22 +59,35 @@ struct RecapDetailPage: View {
                 switch nutritionType {
                 case .protein:
                     consumedCalorie = intakeViewModel.consumedProtein
-                    totalCalorie = intakeViewModel.dailyNutrientLimit.protein
+                    totalCalorie = intakeViewModel.latestChallenge.dailyNutritionLimit.protein
                     calorieProgress = intakeViewModel.proteinProgress
                 case .fat:
                     consumedCalorie = intakeViewModel.consumedFat
-                    totalCalorie = intakeViewModel.dailyNutrientLimit.fat
+                    totalCalorie = intakeViewModel.latestChallenge.dailyNutritionLimit.fat
                     calorieProgress = intakeViewModel.fatProgress
                 case .carb:
-                    consumedCalorie = intakeViewModel.carbProgress
-                    totalCalorie = intakeViewModel.dailyNutrientLimit.carb
+                    consumedCalorie = intakeViewModel.consumedCarb
+                    totalCalorie = intakeViewModel.latestChallenge.dailyNutritionLimit.carb
                     calorieProgress = intakeViewModel.carbProgress
                 case .fiber:
                     consumedCalorie = intakeViewModel.fiberProgress
-                    totalCalorie = intakeViewModel.dailyNutrientLimit.fiber
+                    totalCalorie = intakeViewModel.latestChallenge.dailyNutritionLimit.fiber
                     calorieProgress = intakeViewModel.fiberProgress
                 case .calorie: break
                     
+                }
+                
+                todaysIntake = dailyIntakes.filter {
+                    $0.challenge?.identifier == intakeViewModel.latestChallenge.identifier
+                }.filter {
+                    $0.nutritionType == self.nutritionType
+                }
+            }
+            .onChange(of: dailyIntakes) {
+                todaysIntake = dailyIntakes.filter {
+                    $0.challenge?.identifier == intakeViewModel.latestChallenge.identifier
+                }.filter {
+                    $0.nutritionType == self.nutritionType
                 }
             }
         }
