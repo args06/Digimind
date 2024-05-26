@@ -21,6 +21,8 @@ struct NutritionButton: View {
     
     @State var calorieCondition: CalorieCondition = .under
     
+    @ObservedObject var intakeViewModel : IntakeViewModel
+    
     var body: some View {
         
         VStack {
@@ -58,9 +60,22 @@ struct NutritionButton: View {
                     
                     progress = CGFloat(consumedNutritionCalorie) / CGFloat(totalMinimumCalorieLimit.minimumCalorie)
                     
-                    print("\(nutritionType.rawValue) : Total Min : \(totalMinimumCalorieLimit)")
-                    print("\(nutritionType.rawValue) : Total Calorie : \(totalNutritionCalorie)")
-                    print("\(nutritionType.rawValue) : Progress : \(progress)")
+                    switch nutritionType {
+                    case .protein:
+                        intakeViewModel.proteinProgress = progress
+                        intakeViewModel.dailyNutrientLimit.protein = totalMinimumCalorieLimit.minimumCalorie
+                    case .fat:
+                        intakeViewModel.fatProgress = progress
+                        intakeViewModel.dailyNutrientLimit.fat = totalMinimumCalorieLimit.minimumCalorie
+                    case .carb:
+                        intakeViewModel.carbProgress = progress
+                        intakeViewModel.dailyNutrientLimit.carb = totalMinimumCalorieLimit.minimumCalorie
+                    case .fiber:
+                        intakeViewModel.fiberProgress = progress
+                        intakeViewModel.dailyNutrientLimit.fiber = totalMinimumCalorieLimit.minimumCalorie
+                    case .calorie: break
+                        
+                    }
                     
                     if nutritionType.rawValue == NutritionType.fiber.rawValue {
                         if consumedNutritionCalorie > 0 {
@@ -103,8 +118,6 @@ struct NutritionButton: View {
                 calorieCondition = .under
             }
         }
-        
-        print("\(nutritionType.rawValue) : NewProgress : \(newProgress)")
     }
 }
 
@@ -112,6 +125,7 @@ struct NutritionButton: View {
     NutritionButton(
         consumedNutritionCalorie: .constant(365),
         nutritionType: .carb,
-        totalNutritionCalorie: 2250
+        totalNutritionCalorie: 2250,
+        intakeViewModel: IntakeViewModel()
     )
 }

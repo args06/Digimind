@@ -25,7 +25,7 @@ struct ProcessingPage: View {
                     
                     VStack {
                         ForEach(intakeViewModel.selectedPart.nutrition, id: \.self) { nutrition in
-                            LongButton(
+                            LongButtonHighlight(
                                 label: nutrition.cookingType,
                                 buttonColor: (nutrition == selectedNutrition) ?
                                 Color("CarrotOrange") : Color("GhostWhite"),

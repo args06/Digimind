@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct LongButton: View {
+struct LongButtonHighlight: View {
     
     var label: String
     var buttonColor: Color = Color("CarrotOrange")
-    var textColor: Color = .white
+    var textColor: Color = .antiFlashWhite
     var action: () -> Void
     
     var body: some View {
@@ -26,6 +26,26 @@ struct LongButton: View {
         .cornerRadius(12)
         .shadow(color: .platinum, radius: 5, y: 3)
         
+    }
+}
+
+struct LongButton: View {
+    
+    var label: String
+    var buttonColor: Color = Color("CarrotOrange")
+    var textColor: Color = .antiFlashWhite
+    var action: () -> Void
+    
+    var body: some View {
+        Button(action: action, label: {
+            Text(LocalizedStringKey(label))
+                .foregroundStyle(textColor)
+                .font(.headline)
+                .hSpacing()
+                .frame(height: 50)
+                .background(buttonColor, in: .rect(cornerRadius: 12))
+        })
+        .cornerRadius(12)
     }
 }
 

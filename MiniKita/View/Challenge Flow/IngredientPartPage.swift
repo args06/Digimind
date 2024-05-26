@@ -30,7 +30,7 @@ struct IngredientPartPage: View {
                     
                     VStack {
                         ForEach(intakeViewModel.selectedIngredient.ingredientPart, id: \.self) { part in
-                            LongButton(
+                            LongButtonHighlight(
                                 label: part.partName,
                                 buttonColor: (part == selectedPart) ?
                                 Color("CarrotOrange") : Color("GhostWhite"),

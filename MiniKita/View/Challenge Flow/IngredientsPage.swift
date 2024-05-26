@@ -28,7 +28,7 @@ struct IngredientsPage: View {
                         ) {
                             ForEach(nutritionIngredients, id: \.self) { ingredient in
                                 
-                                LongButton(
+                                LongButtonHighlight(
                                     label: ingredient.ingredientName,
                                     buttonColor: (ingredient == selectedIngredient) ?
                                     Color("CarrotOrange") : Color("GhostWhite"),
