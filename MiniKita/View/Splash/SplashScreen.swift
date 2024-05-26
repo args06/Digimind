@@ -10,19 +10,19 @@ import SwiftUI
 struct SplashScreen: View {
     
     @AppStorage(KEY_USERNAME)
-    var userName: String = "Anjar"
+    var userName: String = ""
     
     @AppStorage(KEY_BIRTHDATE)
     var storedBirthDate = Date.now.timeIntervalSinceReferenceDate
     
     @AppStorage(KEY_AGE)
-    var age: Int = 20
+    var age: Int = 0
     
     @AppStorage(KEY_WEIGHT)
-    var weight: Int = 20
+    var weight: Int = 0
     
     @AppStorage(KEY_HEIGHT)
-    var height: Int = 20
+    var height: Int = 0
     
     @AppStorage(KEY_GENDER)
     var gender: Gender = .female
@@ -40,7 +40,7 @@ struct SplashScreen: View {
         
         VStack {
             if isActive {
-                Dashboard()
+                WelcomePage()
             } else {
                 VStack {
                     Image("splash")
@@ -52,14 +52,14 @@ struct SplashScreen: View {
             }
         }
         .onAppear {
-            userName = "Anjar Harimurti"
-            birthDate = Date.from(year: 2001, month: 06, day: 26)
-            
-            age = calculateAge(birthDate: birthDate)
-            weight = 51
-            height = 168
-            gender = .male
-            activityLevel = defineActivityLevel(often: 3, minute: 2)
+//            userName = "Anjar Harimurti"
+//            birthDate = Date.from(year: 2001, month: 06, day: 26)
+//            
+//            age = calculateAge(birthDate: birthDate)
+//            weight = 51
+//            height = 168
+//            gender = .male
+//            activityLevel = defineActivityLevel(often: 3, minute: 2)
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
                 withAnimation {

@@ -9,21 +9,20 @@ import SwiftUI
 
 struct PersonalInfoPage: View {
     @AppStorage(KEY_USERNAME)
-    var userName: String = "Anjar"
+    var userName: String = ""
     
     @AppStorage(KEY_BIRTHDATE)
     var storedBirthDate = Date.now.timeIntervalSinceReferenceDate
-    
     @State var dateOfBirth: Date = Date()
     
     @AppStorage(KEY_AGE)
-    var age: Int = 22
+    var age: Int = 0
     
     @AppStorage(KEY_WEIGHT)
-    var weight: Int = 20
+    var weight: Int = 0
     
     @AppStorage(KEY_HEIGHT)
-    var height: Int = 20
+    var height: Int = 0
     
     @AppStorage(KEY_GENDER)
     var gender: Gender = .female
@@ -31,7 +30,13 @@ struct PersonalInfoPage: View {
     @AppStorage(KEY_ACTIVITY_LEVEL)
     var activityLevel: ActivityLevel = .sedentary
     
+    @State var isFormFilled = true
+    
     var body: some View {
+        var birthDate: Date {
+            set {storedBirthDate = newValue.timeIntervalSinceReferenceDate}
+            get {Date(timeIntervalSinceReferenceDate: storedBirthDate)}
+        }
         VStack {
             ProgressBar(
                 progress: 1/6,
@@ -136,8 +141,20 @@ struct PersonalInfoPage: View {
                     .background(Color("MaximumBlueGreen"), in: .rect(cornerRadius: 12))
             }
             .buttonStyle(.plain)
+            .disabled(isFormFilled)
             .padding(.horizontal, 16)
         }
+        .onAppear {
+            isFormFilled = formValidation()
+        }
+        .onChange(of: userName)
+        {
+            isFormFilled = formValidation()
+        }
+    }
+    
+    func formValidation() -> Bool {
+        return userName.isEmpty
     }
 }
 
@@ -146,3 +163,4 @@ struct PersonalInfoPage: View {
         PersonalInfoPage()
     }
 }
+

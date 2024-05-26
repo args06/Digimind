@@ -68,12 +68,18 @@ struct WelcomePage: View {
                         .shadow(color: .raisinBlack, radius: 5, y: 3)
                         .frame(width: UIScreen.main.bounds.size.width * 0.75)
                     
-                    LongButton(
-                        label: "Yes, totally!",
-                        buttonColor: .maximumBlueGreen
-                    ) {
-                        
+                    NavigationLink {
+                        PersonalInfoPage()
+                    } label: {
+                        Text("Yes, totally!")
+                            .foregroundStyle(.white)
+                            .font(.headline)
+                            .hSpacing()
+                            .frame(height: 50)
+                            .background(Color("MaximumBlueGreen"), in: .rect(cornerRadius: 12))
                     }
+                    .buttonStyle(.plain)
+                    .padding(.horizontal, 8)
                     
                     
                 }

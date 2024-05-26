@@ -319,6 +319,7 @@ struct Dashboard: View {
         .sheet(isPresented: $isShowInformationPage) {
             InformationPage()
         }
+        
     }
     
     private func checkCalorieCondition() {

@@ -61,7 +61,7 @@ struct ActivityLevelPage2: View {
         .background(.antiFlashWhite)
         .safeAreaInset(edge: .bottom) {
             NavigationLink {
-                ActivityLevelPage2()
+                ActivityLevelPage3()
             } label: {
                 Text("Next")
                     .foregroundStyle(.white)
@@ -72,7 +72,12 @@ struct ActivityLevelPage2: View {
             }
             .buttonStyle(.plain)
             .padding(.horizontal, 16)
+            .disabled(formValidation())
         }
+    }
+    
+    func formValidation() -> Bool {
+        return selectedActivityMinute == .other
     }
 }
 

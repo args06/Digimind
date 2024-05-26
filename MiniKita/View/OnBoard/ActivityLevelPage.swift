@@ -72,7 +72,12 @@ struct ActivityLevelPage: View {
             }
             .buttonStyle(.plain)
             .padding(.horizontal, 16)
+            .disabled(formValidation())
         }
+    }
+    
+    func formValidation() -> Bool {
+        return selectedActivity == .other
     }
 }
 
