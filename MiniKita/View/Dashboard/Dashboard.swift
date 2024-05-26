@@ -35,8 +35,6 @@ struct Dashboard: View {
     @AppStorage(KEY_ACTIVITY_LEVEL)
     var activityLevel: ActivityLevel = .sedentary
     
-    @State var totalCalorie: Double = 0
-    
     @State var calorieProgress: CGFloat = 0.9
     @State var startAnimation: CGFloat = 0
     
@@ -78,7 +76,10 @@ struct Dashboard: View {
                     HStack(alignment: .center) {
                         
                         NavigationLink {
-                            RecapPage(isChallengeComplete: false)
+                            RecapPage(
+                                isChallengeComplete: false,
+                                intakeViewModel: intakeViewModel
+                            )
                         } label: {
                             Text("Day \(Int(day))")
                                 .foregroundStyle(.raisinBlack)
@@ -116,7 +117,7 @@ struct Dashboard: View {
                         .shadow(color: .raisinBlack, radius: 5, y: 3)
                         .padding(.top, 24)
                     
-                    Text("\(Int(calorieProgress * 100))% of your daily calories (\(Int(totalCalorie)) kCal)")
+                    Text("\(Int(calorieProgress * 100))% of your daily calories (\(Int(intakeViewModel.totalCalorie)) kCal)")
                         .font(.callout)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
@@ -206,11 +207,10 @@ struct Dashboard: View {
                         NutritionButton(
                             consumedNutritionCalorie: $intakeViewModel.consumedProtein,
                             nutritionType: NutritionType.protein,
-                            totalNutritionCalorie: dailyNutrient.protein
+                            totalNutritionCalorie: dailyNutrient.protein,
+                            intakeViewModel: intakeViewModel
                         )
                         .onTapGesture {
-                            calorieProgress = CGFloat(intakeViewModel.consumedDailyCalorie) / CGFloat(totalCalorie)
-                            
                             checkCalorieCondition()
                             moveToProteinPage.toggle()
                         }
@@ -224,11 +224,10 @@ struct Dashboard: View {
                         NutritionButton(
                             consumedNutritionCalorie: $intakeViewModel.consumedFat,
                             nutritionType: NutritionType.fat,
-                            totalNutritionCalorie: dailyNutrient.fat
+                            totalNutritionCalorie: dailyNutrient.fat,
+                            intakeViewModel: intakeViewModel
                         )
                         .onTapGesture {
-                            calorieProgress = CGFloat(intakeViewModel.consumedDailyCalorie) / CGFloat(totalCalorie)
-                            
                             checkCalorieCondition()
                             moveToFatPage.toggle()
                         }
@@ -242,11 +241,10 @@ struct Dashboard: View {
                         NutritionButton(
                             consumedNutritionCalorie: $intakeViewModel.consumedCarb,
                             nutritionType: NutritionType.carb,
-                            totalNutritionCalorie: dailyNutrient.carb
+                            totalNutritionCalorie: dailyNutrient.carb,
+                            intakeViewModel: intakeViewModel
                         )
                         .onTapGesture {
-                            calorieProgress = CGFloat(intakeViewModel.consumedDailyCalorie) / CGFloat(totalCalorie)
-                            
                             checkCalorieCondition()
                             moveToCarbPage.toggle()
                         }
@@ -260,11 +258,10 @@ struct Dashboard: View {
                         NutritionButton(
                             consumedNutritionCalorie: $intakeViewModel.consumedFiber,
                             nutritionType: NutritionType.fiber,
-                            totalNutritionCalorie: 1
+                            totalNutritionCalorie: 1,
+                            intakeViewModel: intakeViewModel
                         )
                         .onTapGesture {
-                            calorieProgress = CGFloat(intakeViewModel.consumedDailyCalorie) / CGFloat(totalCalorie)
-                            
                             checkCalorieCondition()
                             moveToFiberPage.toggle()
                         }
@@ -295,7 +292,8 @@ struct Dashboard: View {
                         isMovePage : true
                     ) {
                         RecapPage(
-                            isChallengeComplete: isChallengeComplete()
+                            isChallengeComplete: isChallengeComplete(),
+                            intakeViewModel: intakeViewModel
                         )
                     }
                     .zIndex(999999)
@@ -309,17 +307,13 @@ struct Dashboard: View {
             )
         }
         .onAppear {
-            totalCalorie = calculateTotalCalorie(weight: weight, height: height, age: age, gender: gender, activityLevel: activityLevel)
+            intakeViewModel.totalCalorie = calculateTotalCalorie(weight: weight, height: height, age: age, gender: gender, activityLevel: activityLevel)
             
-            dailyNutrient = calculateDailyNutrient(totalCalorie: Double(totalCalorie))
-            
-            calorieProgress = CGFloat(intakeViewModel.consumedDailyCalorie) / CGFloat(totalCalorie)
+            dailyNutrient = calculateDailyNutrient(totalCalorie: Double(intakeViewModel.totalCalorie))
             
             checkCalorieCondition()
         }
         .onChange(of: intakeViewModel.consumedDailyCalorie) {
-            calorieProgress = CGFloat(intakeViewModel.consumedDailyCalorie) / CGFloat(totalCalorie)
-            
             checkCalorieCondition()
         }
         .sheet(isPresented: $isShowInformationPage) {
@@ -328,6 +322,8 @@ struct Dashboard: View {
     }
     
     private func checkCalorieCondition() {
+        calorieProgress = CGFloat(intakeViewModel.consumedDailyCalorie) / CGFloat(intakeViewModel.totalCalorie)
+        
         if calorieProgress > 1 {
             calorieCondition = .over
         } else if calorieProgress >= 0.75 {

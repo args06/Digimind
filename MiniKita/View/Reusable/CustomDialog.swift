@@ -135,7 +135,10 @@ struct CustomDialog<Destination: View>: View {
             print("Hi")
         },
         destination: {
-            RecapPage(isChallengeComplete: true)
+            RecapPage(
+                isChallengeComplete: true,
+                intakeViewModel: IntakeViewModel()
+            )
         }
     )
     .previewLayout(.sizeThatFits)

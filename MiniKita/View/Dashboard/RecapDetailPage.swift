@@ -19,6 +19,11 @@ struct DailyIntake: Hashable {
 struct RecapDetailPage: View {
     
     var nutritionType : NutritionType = .protein
+    @ObservedObject var intakeViewModel : IntakeViewModel
+    
+    @State var consumedCalorie = 0.0
+    @State var totalCalorie = 0.0
+    @State var calorieProgress = 0.0
     
     var datas = [
         DailyIntake(
@@ -59,12 +64,14 @@ struct RecapDetailPage: View {
                     .scaledToFit()
                     .frame(height: 57)
                 
-                Text("2.149 kCal")
+                Text("\(Int(consumedCalorie)) kCal")
                     .font(.system(size: 40))
                     .fontWeight(.medium)
                 
-                Text("99% of your daily \(nutritionType) (2.150 kCal)")
-                    .font(.caption)
+                if !(nutritionType == .fiber) {
+                    Text("\(Int(calorieProgress * 100))% of your daily \(nutritionType) (\(Int(totalCalorie)) kCal)")
+                        .font(.caption)
+                }
                 
                 ForEach(datas, id: \.self) { data in
                     RecapHistory(
@@ -78,12 +85,34 @@ struct RecapDetailPage: View {
                 }
                 .padding(.horizontal, 16)
             }
+            .onAppear {
+                switch nutritionType {
+                case .protein:
+                    consumedCalorie = intakeViewModel.consumedProtein
+                    totalCalorie = intakeViewModel.dailyNutrientLimit.protein
+                    calorieProgress = intakeViewModel.proteinProgress
+                case .fat:
+                    consumedCalorie = intakeViewModel.consumedFat
+                    totalCalorie = intakeViewModel.dailyNutrientLimit.fat
+                    calorieProgress = intakeViewModel.fatProgress
+                case .carb:
+                    consumedCalorie = intakeViewModel.carbProgress
+                    totalCalorie = intakeViewModel.dailyNutrientLimit.carb
+                    calorieProgress = intakeViewModel.carbProgress
+                case .fiber:
+                    consumedCalorie = intakeViewModel.fiberProgress
+                    totalCalorie = intakeViewModel.dailyNutrientLimit.fiber
+                    calorieProgress = intakeViewModel.fiberProgress
+                case .calorie: break
+                    
+                }
+            }
         }
     }
 }
 
 #Preview {
     NavigationStack {
-        RecapDetailPage()
+        RecapDetailPage(intakeViewModel: IntakeViewModel())
     }
 }

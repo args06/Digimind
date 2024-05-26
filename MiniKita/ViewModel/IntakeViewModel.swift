@@ -21,7 +21,13 @@ class IntakeViewModel: ObservableObject {
     @Published var consumedCarb: Double = 0
     @Published var consumedFiber: Double = 0
     
-//    func calculateDailyNutrition() -> Double {
-//
-//    }
+    @Published var calorieProgress: CGFloat = 0
+    @Published var proteinProgress: CGFloat = 0
+    @Published var fatProgress: CGFloat = 0
+    @Published var carbProgress: CGFloat = 0
+    @Published var fiberProgress: CGFloat = 0
+    
+    @Published var totalCalorie: Double = 0
+    @Published var dailyNutrient = (protein: 0.0, fat: 0.0, carb: 0.0, fiber: 0.0)
+    @Published var dailyNutrientLimit = (protein: 0.0, fat: 0.0, carb: 0.0, fiber: 0.0)
 }

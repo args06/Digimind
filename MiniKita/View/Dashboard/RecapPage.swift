@@ -11,6 +11,10 @@ struct RecapPage: View {
     
     @State var isChallengeComplete = true
     
+    @ObservedObject var intakeViewModel : IntakeViewModel
+    
+    @State var calorieProgress : Double = 0.0
+    
     var body: some View {
         ScrollView {
             VStack {
@@ -31,55 +35,72 @@ struct RecapPage: View {
                     .scaledToFit()
                     .frame(height: 57)
                 
-                Text("2.149 kCal")
+                Text("\(Int(intakeViewModel.consumedDailyCalorie)) kCal")
                     .font(.system(size: 40))
                     .fontWeight(.medium)
                 
-                Text("99% of your daily calories (2.150 kCal)")
+                Text("\(Int(intakeViewModel.calorieProgress * 100))% of your daily calories (\(Int(intakeViewModel.totalCalorie)) kCal)")
                     .font(.caption)
                 
                 Divider()
                     .padding(16)
                 
                 NavigationLink {
-                    RecapDetailPage(nutritionType: .protein)
+                    RecapDetailPage(
+                        nutritionType: .protein,
+                        intakeViewModel: intakeViewModel
+                    )
                 } label: {
                     HistoryCard(
                         nutritionType: .protein,
-                        consumedCalorie: 345,
-                        totalCalorie: 1200
+                        consumedCalorie: intakeViewModel.consumedProtein,
+                        totalCalorie: intakeViewModel.dailyNutrientLimit.protein,
+                        calorieProgress: intakeViewModel.proteinProgress
                     )
                 }
                 
                 NavigationLink {
-                    RecapDetailPage(nutritionType: .fat)
+                    RecapDetailPage(
+                        nutritionType: .fat,
+                        intakeViewModel: intakeViewModel
+                    )
                 } label: {
                     HistoryCard(
                         nutritionType: .fat,
-                        consumedCalorie: 345,
-                        totalCalorie: 1200
+                        consumedCalorie: intakeViewModel.consumedFat,
+                        totalCalorie: intakeViewModel.dailyNutrientLimit.fat,
+                        calorieProgress: intakeViewModel.fatProgress
                     )
                     .padding(.top, 12)
                 }
                 
                 NavigationLink {
-                    RecapDetailPage(nutritionType: .carb)
+                    RecapDetailPage(
+                        nutritionType: .carb,
+                        intakeViewModel: intakeViewModel
+                    )
                 } label: {
                     HistoryCard(
                         nutritionType: .carb,
-                        consumedCalorie: 345,
-                        totalCalorie: 1200
+                        consumedCalorie: intakeViewModel.consumedCarb,
+                        totalCalorie: intakeViewModel.dailyNutrientLimit.carb,
+                        calorieProgress: intakeViewModel.carbProgress
                     )
                     .padding(.top, 12)
                 }
                 
                 NavigationLink {
-                    RecapDetailPage(nutritionType: .fiber)
+                    RecapDetailPage(
+                        nutritionType: .fiber,
+                        intakeViewModel: intakeViewModel
+                    )
                 } label: {
                     HistoryCard(
                         nutritionType: .fiber,
-                        consumedCalorie: 345,
-                        totalCalorie: 1200
+                        consumedCalorie: intakeViewModel.consumedFiber,
+                        totalCalorie: intakeViewModel.dailyNutrientLimit.fiber,
+                        isFiber: true, 
+                        calorieProgress: intakeViewModel.fiberProgress
                     )
                     .padding(.top, 12)
                 }
@@ -87,11 +108,19 @@ struct RecapPage: View {
             .padding(16)
         }
         .background(.antiFlashWhite)
+        .onAppear {
+            if intakeViewModel.totalCalorie == .zero {
+                calorieProgress = 0
+            } else {
+                calorieProgress = CGFloat(intakeViewModel.consumedDailyCalorie) / CGFloat(intakeViewModel.totalCalorie)
+            }
+            intakeViewModel.calorieProgress = calorieProgress
+        }
     }
 }
 
 #Preview {
     NavigationStack {
-        RecapPage()
+        RecapPage(intakeViewModel: IntakeViewModel())
     }
 }

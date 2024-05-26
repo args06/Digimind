@@ -15,7 +15,7 @@ struct HistoryCard: View {
     
     var isFiber = false
     
-    @State var calorieProgress : Double = 0.0
+    var calorieProgress : Double = 0.0
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -47,7 +47,7 @@ struct HistoryCard: View {
             }
             
             if !isFiber {
-                Text("\(Int(calorieProgress * 100))% of your daily \(nutritionType) (\(Int(consumedCalorie)) kCal)")
+                Text("\(Int(calorieProgress * 100))% of your daily \(nutritionType) (\(Int(totalCalorie)) kCal)")
                     .foregroundStyle(.black)
             }
         }
@@ -59,9 +59,9 @@ struct HistoryCard: View {
 
 #Preview {
     HistoryCard(
-        nutritionType: .fiber,
+        nutritionType: .carb,
         consumedCalorie: 345,
         totalCalorie: 1200,
-        isFiber: true
+        isFiber: false
     )
 }
