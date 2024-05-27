@@ -16,7 +16,7 @@ struct IngredientsPage: View {
             ScrollView {
                 VStack {
                     VStack {
-                        Text("What's your pick to charge your day? 🥩🍗🍳")
+                        Text("What's your pick to charge your day?")
                             .font(.headline)
                         
                         LazyVGrid(

@@ -11,6 +11,8 @@ struct CustomDialog<Destination: View>: View {
     
     @Binding var isActive: Bool
     
+    @Binding var isStopShow: Bool
+    
     let calorieCondition: CalorieCondition
     let message: String
     let buttonTitle: String
@@ -120,6 +122,7 @@ struct CustomDialog<Destination: View>: View {
         withAnimation(.spring()) {
             offset = 1000
             isActive = false
+            isStopShow = false
         }
     }
 }
@@ -127,6 +130,7 @@ struct CustomDialog<Destination: View>: View {
 #Preview {
     CustomDialog(
         isActive: .constant(true),
+        isStopShow: .constant(true),
         calorieCondition: .complete,
         message: "Congrats on completing the challenge. You’ve boosted your gut health. Now, for an even better balance, don’t forget to meet your daily calorie needs!",
         buttonTitle: "That’s for Today",
