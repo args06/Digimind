@@ -62,6 +62,8 @@ struct Dashboard: View {
     
     @State var isShowPopup = false
     
+    @State var isStopShow = true
+    
     var day = CGFloat(1)
     
     @Query var challenges: [Challenge]
@@ -300,9 +302,10 @@ struct Dashboard: View {
                 }
                 .ignoresSafeArea()
                 
-                if isShowPopup {
+                if isShowPopup && isStopShow {
                     CustomDialog(
                         isActive: $isShowPopup,
+                        isStopShow: $isStopShow,
                         calorieCondition: .complete,
                         message: "Congrats on completing the challenge. You’ve boosted your gut health. Now, for an even better balance, don’t forget to meet your daily calorie needs!",
                         buttonTitle: "That’s for Today",
@@ -397,18 +400,21 @@ struct Dashboard: View {
             calorieProgress = CGFloat(intakeViewModel.consumedDailyCalorie) / CGFloat(intakeViewModel.latestChallenge.dailyNutrition.calorie)
         }
         
+        print(calorieProgress)
+        
         if calorieProgress > 1 {
             calorieCondition = .over
         } else if calorieProgress >= 0.75 {
             
             if isChallengeComplete() {
+                print("Masuk Sini")
                 calorieCondition = .complete
                 
                 intakeViewModel.latestChallenge.isComplete = true
                 try? context.save()
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    isShowPopup.toggle()
+                    isShowPopup = true
                 }
             } else {
                 calorieCondition = .full
@@ -427,22 +433,10 @@ struct Dashboard: View {
                 fiber: intakeViewModel.consumedFiber
             ),
             minimumCalorie: (
-                protein: getTotalMinimumCalorieLimit(
-                    totalCalorie: intakeViewModel.latestChallenge.dailyNutritionLimit.protein,
-                    nutritionType: .protein
-                ).minimumCalorie,
-                fat: getTotalMinimumCalorieLimit(
-                    totalCalorie: intakeViewModel.latestChallenge.dailyNutritionLimit.fat,
-                    nutritionType: .fat
-                ).minimumCalorie,
-                carb: getTotalMinimumCalorieLimit(
-                    totalCalorie: intakeViewModel.latestChallenge.dailyNutritionLimit.carb,
-                    nutritionType: .carb
-                ).minimumCalorie,
-                fiber: getTotalMinimumCalorieLimit(
-                    totalCalorie: intakeViewModel.latestChallenge.dailyNutritionLimit.fiber,
-                    nutritionType: .fiber
-                ).minimumCalorie
+                protein: intakeViewModel.latestChallenge.dailyNutritionLimit.protein,
+                fat: intakeViewModel.latestChallenge.dailyNutritionLimit.fat,
+                carb: intakeViewModel.latestChallenge.dailyNutritionLimit.carb,
+                fiber: intakeViewModel.latestChallenge.dailyNutritionLimit.fiber
             )
         )
     }

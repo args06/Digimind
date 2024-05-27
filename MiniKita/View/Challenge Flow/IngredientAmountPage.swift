@@ -164,6 +164,7 @@ struct IngredientAmountPage: View {
                 if isShowPopup {
                     CustomDialog(
                         isActive: $isShowPopup,
+                        isStopShow: .constant(true),
                         calorieCondition: .full,
                         message: "Eating more of this might push your calorie intake over your daily limit. Let's keep it balanced for a healthier you!",
                         buttonTitle: "Enough for Today",
@@ -241,10 +242,14 @@ struct IngredientAmountPage: View {
     }
     
     func checkCalorie() -> Bool {
+        print(intakeViewModel.consumedCarb + calorieResult.carb)
+        print(intakeViewModel.latestChallenge.dailyNutrition.carb)
+        print(intakeViewModel.latestChallenge.dailyNutritionLimit.carb)
+        
         return intakeViewModel.consumedDailyCalorie + calorieResult.calorie > intakeViewModel.latestChallenge.dailyNutrition.calorie
-        || intakeViewModel.consumedDailyCalorie + calorieResult.protein > intakeViewModel.latestChallenge.dailyNutrition.protein
-        || intakeViewModel.consumedDailyCalorie + calorieResult.fat > intakeViewModel.latestChallenge.dailyNutrition.fat
-        || intakeViewModel.consumedDailyCalorie + calorieResult.carb > intakeViewModel.latestChallenge.dailyNutrition.carb
+        || intakeViewModel.consumedProtein + calorieResult.protein > intakeViewModel.latestChallenge.dailyNutrition.protein
+        || intakeViewModel.consumedFat + calorieResult.fat > intakeViewModel.latestChallenge.dailyNutrition.fat
+        || intakeViewModel.consumedCarb + calorieResult.carb > intakeViewModel.latestChallenge.dailyNutrition.carb
     }
 }
 
