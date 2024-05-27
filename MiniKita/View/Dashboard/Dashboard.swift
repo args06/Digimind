@@ -373,7 +373,7 @@ struct Dashboard: View {
             
             removedIngredients = allergies + dislikes
             
-            intakeViewModel.filteredIngredients = intakeViewModel.filteredIngredients
+            intakeViewModel.filteredIngredients = ingredients
                 .filter { !removedIngredients.contains($0) }
         }
         .onChange(of: dailyIntakes) {
@@ -400,14 +400,11 @@ struct Dashboard: View {
             calorieProgress = CGFloat(intakeViewModel.consumedDailyCalorie) / CGFloat(intakeViewModel.latestChallenge.dailyNutrition.calorie)
         }
         
-        print(calorieProgress)
-        
         if calorieProgress > 1 {
             calorieCondition = .over
         } else if calorieProgress >= 0.75 {
             
             if isChallengeComplete() {
-                print("Masuk Sini")
                 calorieCondition = .complete
                 
                 intakeViewModel.latestChallenge.isComplete = true

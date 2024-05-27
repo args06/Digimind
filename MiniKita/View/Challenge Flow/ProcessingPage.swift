@@ -48,7 +48,7 @@ struct ProcessingPage: View {
                     }
                     .padding(.bottom, 88)
                     
-                    Text("Did you know? The less processed your food, the better it is for you! Whole foods pack more nutrients and fewer additives, making them the healthier choice for your body. 🌿🍎🍞")
+                    Text("Did you know? The less processed your food, the better it is for you! Whole foods pack more nutrients and fewer additives, making them the healthier choice for your body. ")
                         .padding()
                         .foregroundColor(.graniteGray)
                         .background {

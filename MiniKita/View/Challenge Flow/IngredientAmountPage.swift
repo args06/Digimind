@@ -24,6 +24,8 @@ struct IngredientAmountPage: View {
 
     @State var isShowPopup = false
     
+    @State var isStopShow = true
+    
     var body: some View {
         NavigationStack{
             ZStack {
@@ -161,10 +163,10 @@ struct IngredientAmountPage: View {
                     .listRowBackground(Color("AntiFlashWhite"))
                 }
                 
-                if isShowPopup {
+                if isShowPopup && isStopShow {
                     CustomDialog(
                         isActive: $isShowPopup,
-                        isStopShow: .constant(true),
+                        isStopShow: $isStopShow,
                         calorieCondition: .full,
                         message: "Eating more of this might push your calorie intake over your daily limit. Let's keep it balanced for a healthier you!",
                         buttonTitle: "Enough for Today",
@@ -189,7 +191,7 @@ struct IngredientAmountPage: View {
                 
                 Button("Done") {
                     
-                    if checkCalorie() {
+                    if checkCalorie() && isStopShow {
                         isShowPopup = true
                     } else {
                         intakeViewModel.consumedDailyCalorie += calorieResult.calorie
@@ -197,8 +199,6 @@ struct IngredientAmountPage: View {
                         intakeViewModel.consumedFat += (calorieResult.fat * 9)
                         intakeViewModel.consumedCarb += (calorieResult.carb * 4)
                         intakeViewModel.consumedFiber += calorieResult.fiber
-                        
-                        print(intakeViewModel.selectedIngredient)
                         
                         let dailyIntake = DailyIntake(
                             identifier: UUID().uuidString,
@@ -242,9 +242,6 @@ struct IngredientAmountPage: View {
     }
     
     func checkCalorie() -> Bool {
-        print(intakeViewModel.consumedCarb + calorieResult.carb)
-        print(intakeViewModel.latestChallenge.dailyNutrition.carb)
-        print(intakeViewModel.latestChallenge.dailyNutritionLimit.carb)
         
         return intakeViewModel.consumedDailyCalorie + calorieResult.calorie > intakeViewModel.latestChallenge.dailyNutrition.calorie
         || intakeViewModel.consumedProtein + calorieResult.protein > intakeViewModel.latestChallenge.dailyNutrition.protein
