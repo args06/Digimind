@@ -331,6 +331,10 @@ struct Dashboard: View {
                 
                 let difference = differeceDay(from: latestStoredChallenge.challengeDate)
                 
+                print(latestStoredChallenge.challengeDate.formatted(date: .abbreviated, time: .omitted))
+                print(difference)
+                print(latestStoredChallenge.isComplete)
+                
                 if difference == 0 {
                     intakeViewModel.latestChallenge = latestStoredChallenge
                     
@@ -358,7 +362,7 @@ struct Dashboard: View {
                         )
                         
                         context.insert(newChallenge)
-                        intakeViewModel.latestChallenge = challenges.last!
+                        intakeViewModel.latestChallenge = newChallenge
                     } else {
                         resetStreak(latestStoredChallenge: latestStoredChallenge)
                     }
@@ -455,7 +459,7 @@ struct Dashboard: View {
             context.insert(newChallenge)
             try? context.save()
             
-            intakeViewModel.latestChallenge = challenges.last!
+            intakeViewModel.latestChallenge = newChallenge
         } catch {
             print("Failed to clear all Country and City data.")
         }
